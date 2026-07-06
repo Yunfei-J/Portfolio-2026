@@ -5,32 +5,30 @@ This site is a static Astro app. Cloudflare Pages builds `dist/` on every push.
 ## One-time setup
 
 1. Push this repo to GitHub (if not already):
-   ```bash
+  ```bash
    git init
    git add .
    git commit -m "Initial portfolio"
    git branch -M main
    git remote add origin https://github.com/YOUR_USER/portfolio-2026.git
    git push -u origin main
-   ```
-
+  ```
 2. In [Cloudflare Dashboard](https://dash.cloudflare.com/) → **Workers & Pages** → **Create** → **Pages** → **Connect to Git**.
-
 3. Select the repository and use these build settings:
 
-   | Setting | Value |
-   |---------|--------|
-   | Framework preset | Astro |
-   | Build command | `npm run build` |
-   | Build output directory | `dist` |
-   | Node.js version | `20` |
+  | Setting                | Value           |
+  | ---------------------- | --------------- |
+  | Framework preset       | Astro           |
+  | Build command          | `npm run build` |
+  | Build output directory | `dist`          |
+  | Node.js version        | `22+`           |
 
 4. Add environment variables (Settings → Environment variables):
 
-   | Name | Value | Notes |
-   |------|-------|-------|
-   | `PUBLIC_GA_ID` | `G-XXXXXXXXXX` | Your GA4 measurement ID |
-   | `OPENAI_API_KEY` | *(optional)* | Enables semantic search embeddings at build |
+  | Name             | Value          | Notes                                       |
+  | ---------------- | -------------- | ------------------------------------------- |
+  | `PUBLIC_GA_ID`   | `G-XXXXXXXXXX` | Your GA4 measurement ID                     |
+  | `OPENAI_API_KEY` | *(optional)*   | Enables semantic search embeddings at build |
 
 5. Deploy. Your site will be live at `https://<project-name>.pages.dev`.
 
@@ -48,3 +46,4 @@ npm run preview      # serve dist/ locally
 npm run localize:assets   # download Webflow CDN images to public/assets/
 npm run build:search      # regenerate semantic search embeddings
 ```
+
