@@ -1,0 +1,485 @@
+{
+  "url": "https://yunfeis-portfolio.webflow.io/research/cruz-roja",
+  "title": "Cruz Roja",
+  "description": "",
+  "canonical": "",
+  "openGraph": {
+    "title": "Cruz Roja",
+    "description": "",
+    "image": ""
+  },
+  "h1": "Cruz Roja Tijuana -- Optimizing Ambulance Dispatching System",
+  "blocks": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Cruz Roja Tijuana -- Optimizing Ambulance Dispatching System"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Overview"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6506772c80671c09d5f5a09a_Screen%20Shot%202023-09-16%20at%2011.48.06%20PM.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/650675ff85186409b592d1fe_Screen%20Shot%202023-09-16%20at%2011.43.47%20PM.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6506772b00c14d13e9c37b5c_Screen%20Shot%202023-09-16%20at%2011.48.13%20PM.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/650675ff107238bf788fc863_Screen%20Shot%202023-09-16%20at%2011.43.32%20PM.png",
+      "alt": ""
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Mission statement"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Our mission is to help residents of underserved communities worldwide make better use of their resources in emergency medical situations by providing them with technologies through software programming."
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Problem"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "The red cross in Tijuana has limited resources. They must deal with outdated and highly unreliable technologies (radio, satellite) that come with large costs. They have only 13 ambulances for almost 2 million people, boiling down to 1 ambulance for every 150,000 people. As a result, the time it takes for an ambulance to attend to a patient and deliver them to a hospital often can go from 30 minutes up to over an hour."
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Solution"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "By providing a software interface to allow dispatchers to visualize ambulances in real time, communicate directly with ambulance drivers/hospital employees, and dispatch ambulances more effectively, we can help them optimize resource usage."
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Our software consists of two main components: The first component involves a mobile application for tablets installed in all ambulances within Tijuana. The mobile application will be used by EMTs and ambulance drivers to track ambulance location, perform routing, and accept dispatching calls. The second component is a website dispatcher interface. With this tool, dispatchers can visualize the locations of all ambulances on a map, check their status, and dispatch them to areas of emergency. In addition, our software will help Cruz Roja determine the optimal placement of ambulances, compute most effective routes, and analyze the results of the dispatching process."
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "Understanding the Workflow"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "The \"call\" here refers to the assignment of patient-pickup task to an ambulance driver. By clicking on \"New Call\", the dispatcher assigns a \"call\" to a driver along with the patient's information (e.g. age, location, and emergency level). After the driver accepts the call, it will be listed below the \"Calls\" in the old UI or \"Calls In Progress\" in the new UI. Then, the dispatcher will be able to track the real-time location and mission progress of the driver."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Identifying UI problems"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Call module display on dispatcher's end"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64a8e6e08fea82aa6aa42777_Screen%20Shot%202023-01-15%20at%205.52.25%20PM-p-500.png",
+      "alt": ""
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "1. There are some idle elements such as the blue count boxes, checkboxes, and the cross right to the information icon (i)."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "2. The information icon (i) is not noticeable enough because of its small size, and because its location in the middle of a cluster of elements."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Entering patient info page through the (i) icon"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/63bfc38f1fecb54c578f6de9_Screen%20Shot%202023-01-12%20at%2012.23.17%20AM-p-500.png",
+      "alt": ""
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "1. Messages between the dispatcher and the driver are displayed as static entries. When the dialogue grows longer, the popup window will also grow with no restraint."
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "2. There is no sender identification, so it is mentally demanding to distinguish each other."
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "3. The progress of caller's ambulance could be a crucial information to be displayed side to side when communicating with the driver, but it is not included here."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Solutions"
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Call module display on dispatcher's end"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64a8e9d428069a8bf03c1ba5_Screen%20Shot%202023-01-15%20at%209.55.08%20PM-p-500.png",
+      "alt": ""
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "Icon cleanup and replacement: unnecessary elements such as the blue count boxes and checkboxes are removed."
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "Each bar of the call is now expandable, displaying all details on a drop down window rather than a pop-up window by clicking on the i icon."
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "A three-dot button is added to capture any operation that applies to the entire call rather than part of the call."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Entering patient info page through the i icon"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64a8ef920fdcdb0cb260a647_Screen%20Shot%202023-01-15%20at%2010.01.22%20PM-p-500.png",
+      "alt": ""
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "An intuitive way to redesign it may be mimicing how mobile messaging apps display a conversation. However, considering the limited space in our interface, the chat dialogue needs to be displayed in a compact way. Therefore, instead of being shown in bubbles like how the mobile app did it, the messages are reorganized to simple, diary-like entries but with a scroll bar."
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "Additionally, the sender’s name will be shown on the right hand side of each text message, distinguished by colors."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Redesign Summary"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Messaging system"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Replaced the diary-style chat display on web application with a continuously updating and interactive chat interface. Integrated autocomplete and smart suggestions into the diary and log modules."
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Notification system"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Embedded notification feature to web application and expand the features that mobile app notification system covers.Icon cleanup and replacementReplace non-intuitive icons and adjust their layout/grouping."
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Icon cleanup and replacement"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Replace non-intuitive icons and adjust their layout/grouping."
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Itinerary tracking module"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Redesigned the visualization to display all routes and status of vehicles instantly after opening the left-side menu without extra manipulation."
+    }
+  ],
+  "links": [
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/old-home",
+      "text": "Home"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/cruz-roja#0",
+      "text": "↑ Top"
+    },
+    {
+      "href": "https://webflow.com/?utm_campaign=brandjs",
+      "text": ""
+    }
+  ],
+  "slug": "research-cruz-roja",
+  "httpStatus": 200,
+  "pageType": "case-study",
+  "sections": [
+    {
+      "level": 1,
+      "heading": "Cruz Roja Tijuana -- Optimizing Ambulance Dispatching System",
+      "content": [
+        "Overview",
+        "Mission statement",
+        "Our mission is to help residents of underserved communities worldwide make better use of their resources in emergency medical situations by providing them with technologies through software programming.",
+        "Problem",
+        "The red cross in Tijuana has limited resources. They must deal with outdated and highly unreliable technologies (radio, satellite) that come with large costs. They have only 13 ambulances for almost 2 million people, boiling down to 1 ambulance for every 150,000 people. As a result, the time it takes for an ambulance to attend to a patient and deliver them to a hospital often can go from 30 minutes up to over an hour.",
+        "Solution",
+        "By providing a software interface to allow dispatchers to visualize ambulances in real time, communicate directly with ambulance drivers/hospital employees, and dispatch ambulances more effectively, we can help them optimize resource usage.",
+        "Our software consists of two main components: The first component involves a mobile application for tablets installed in all ambulances within Tijuana. The mobile application will be used by EMTs and ambulance drivers to track ambulance location, perform routing, and accept dispatching calls. The second component is a website dispatcher interface. With this tool, dispatchers can visualize the locations of all ambulances on a map, check their status, and dispatch them to areas of emergency. In addition, our software will help Cruz Roja determine the optimal placement of ambulances, compute most effective routes, and analyze the results of the dispatching process.",
+        "Understanding the Workflow",
+        "The \"call\" here refers to the assignment of patient-pickup task to an ambulance driver. By clicking on \"New Call\", the dispatcher assigns a \"call\" to a driver along with the patient's information (e.g. age, location, and emergency level). After the driver accepts the call, it will be listed below the \"Calls\" in the old UI or \"Calls In Progress\" in the new UI. Then, the dispatcher will be able to track the real-time location and mission progress of the driver."
+      ],
+      "media": [
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6506772c80671c09d5f5a09a_Screen%20Shot%202023-09-16%20at%2011.48.06%20PM.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/650675ff85186409b592d1fe_Screen%20Shot%202023-09-16%20at%2011.43.47%20PM.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6506772b00c14d13e9c37b5c_Screen%20Shot%202023-09-16%20at%2011.48.13%20PM.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/650675ff107238bf788fc863_Screen%20Shot%202023-09-16%20at%2011.43.32%20PM.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "heading": "Identifying UI problems",
+      "content": [],
+      "media": []
+    },
+    {
+      "level": 2,
+      "heading": "Call module display on dispatcher's end",
+      "content": [],
+      "media": [
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64a8e6e08fea82aa6aa42777_Screen%20Shot%202023-01-15%20at%205.52.25%20PM-p-500.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "heading": "1. There are some idle elements such as the blue count boxes, checkboxes, and the cross right to the information icon (i).",
+      "content": [],
+      "media": []
+    },
+    {
+      "level": 2,
+      "heading": "2. The information icon (i) is not noticeable enough because of its small size, and because its location in the middle of a cluster of elements.",
+      "content": [],
+      "media": []
+    },
+    {
+      "level": 2,
+      "heading": "Entering patient info page through the (i) icon",
+      "content": [
+        "1. Messages between the dispatcher and the driver are displayed as static entries. When the dialogue grows longer, the popup window will also grow with no restraint.",
+        "2. There is no sender identification, so it is mentally demanding to distinguish each other.",
+        "3. The progress of caller's ambulance could be a crucial information to be displayed side to side when communicating with the driver, but it is not included here."
+      ],
+      "media": [
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/63bfc38f1fecb54c578f6de9_Screen%20Shot%202023-01-12%20at%2012.23.17%20AM-p-500.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "heading": "Solutions",
+      "content": [],
+      "media": []
+    },
+    {
+      "level": 2,
+      "heading": "Call module display on dispatcher's end",
+      "content": [
+        "Icon cleanup and replacement: unnecessary elements such as the blue count boxes and checkboxes are removed.",
+        "Each bar of the call is now expandable, displaying all details on a drop down window rather than a pop-up window by clicking on the i icon.",
+        "A three-dot button is added to capture any operation that applies to the entire call rather than part of the call."
+      ],
+      "media": [
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64a8e9d428069a8bf03c1ba5_Screen%20Shot%202023-01-15%20at%209.55.08%20PM-p-500.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "heading": "Entering patient info page through the i icon",
+      "content": [
+        "An intuitive way to redesign it may be mimicing how mobile messaging apps display a conversation. However, considering the limited space in our interface, the chat dialogue needs to be displayed in a compact way. Therefore, instead of being shown in bubbles like how the mobile app did it, the messages are reorganized to simple, diary-like entries but with a scroll bar.",
+        "Additionally, the sender’s name will be shown on the right hand side of each text message, distinguished by colors."
+      ],
+      "media": [
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64a8ef920fdcdb0cb260a647_Screen%20Shot%202023-01-15%20at%2010.01.22%20PM-p-500.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "heading": "Redesign Summary",
+      "content": [
+        "Messaging system",
+        "Replaced the diary-style chat display on web application with a continuously updating and interactive chat interface. Integrated autocomplete and smart suggestions into the diary and log modules.",
+        "Notification system",
+        "Embedded notification feature to web application and expand the features that mobile app notification system covers.Icon cleanup and replacementReplace non-intuitive icons and adjust their layout/grouping.",
+        "Icon cleanup and replacement",
+        "Replace non-intuitive icons and adjust their layout/grouping.",
+        "Itinerary tracking module",
+        "Redesigned the visualization to display all routes and status of vehicles instantly after opening the left-side menu without extra manipulation."
+      ],
+      "media": []
+    }
+  ],
+  "images": [
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6506772c80671c09d5f5a09a_Screen%20Shot%202023-09-16%20at%2011.48.06%20PM.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/650675ff85186409b592d1fe_Screen%20Shot%202023-09-16%20at%2011.43.47%20PM.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6506772b00c14d13e9c37b5c_Screen%20Shot%202023-09-16%20at%2011.48.13%20PM.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/650675ff107238bf788fc863_Screen%20Shot%202023-09-16%20at%2011.43.32%20PM.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64a8e6e08fea82aa6aa42777_Screen%20Shot%202023-01-15%20at%205.52.25%20PM-p-500.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/63bfc38f1fecb54c578f6de9_Screen%20Shot%202023-01-12%20at%2012.23.17%20AM-p-500.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64a8e9d428069a8bf03c1ba5_Screen%20Shot%202023-01-15%20at%209.55.08%20PM-p-500.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64a8ef920fdcdb0cb260a647_Screen%20Shot%202023-01-15%20at%2010.01.22%20PM-p-500.png",
+      "alt": ""
+    }
+  ],
+  "media": [
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6506772c80671c09d5f5a09a_Screen%20Shot%202023-09-16%20at%2011.48.06%20PM.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/650675ff85186409b592d1fe_Screen%20Shot%202023-09-16%20at%2011.43.47%20PM.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6506772b00c14d13e9c37b5c_Screen%20Shot%202023-09-16%20at%2011.48.13%20PM.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/650675ff107238bf788fc863_Screen%20Shot%202023-09-16%20at%2011.43.32%20PM.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64a8e6e08fea82aa6aa42777_Screen%20Shot%202023-01-15%20at%205.52.25%20PM-p-500.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/63bfc38f1fecb54c578f6de9_Screen%20Shot%202023-01-12%20at%2012.23.17%20AM-p-500.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64a8e9d428069a8bf03c1ba5_Screen%20Shot%202023-01-15%20at%209.55.08%20PM-p-500.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64a8ef920fdcdb0cb260a647_Screen%20Shot%202023-01-15%20at%2010.01.22%20PM-p-500.png",
+      "alt": ""
+    }
+  ],
+  "internalLinks": [
+    "https://yunfeis-portfolio.webflow.io/old-home",
+    "https://yunfeis-portfolio.webflow.io/research/cruz-roja"
+  ],
+  "externalLinks": [
+    {
+      "href": "https://webflow.com/?utm_campaign=brandjs",
+      "text": ""
+    }
+  ],
+  "screenshot": "screenshots/research-cruz-roja.png",
+  "scrapedAt": "2026-06-17T03:22:42.975Z"
+}

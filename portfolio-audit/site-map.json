@@ -1,0 +1,122 @@
+[
+  {
+    "url": "https://yunfeis-portfolio.webflow.io/",
+    "title": "New Home",
+    "httpStatus": 200,
+    "pageType": "home",
+    "h1": "Oowls: Personalized, on-demand senior care",
+    "screenshot": "screenshots/home.png",
+    "markdown": "pages/home.md",
+    "json": "pages/home.json"
+  },
+  {
+    "url": "https://yunfeis-portfolio.webflow.io/research/universal-processing",
+    "title": "Universal Processing",
+    "httpStatus": 200,
+    "pageType": "case-study",
+    "h1": "Overview",
+    "screenshot": "screenshots/research-universal-processing.png",
+    "markdown": "pages/research-universal-processing.md",
+    "json": "pages/research-universal-processing.json"
+  },
+  {
+    "url": "https://yunfeis-portfolio.webflow.io/research/oowls",
+    "title": "OOWLS",
+    "httpStatus": 200,
+    "pageType": "case-study",
+    "h1": "Overview",
+    "screenshot": "screenshots/research-oowls.png",
+    "markdown": "pages/research-oowls.md",
+    "json": "pages/research-oowls.json"
+  },
+  {
+    "url": "https://yunfeis-portfolio.webflow.io/research/green-it",
+    "title": "Green it!",
+    "httpStatus": 200,
+    "pageType": "case-study",
+    "h1": "Overview",
+    "screenshot": "screenshots/research-green-it.png",
+    "markdown": "pages/research-green-it.md",
+    "json": "pages/research-green-it.json"
+  },
+  {
+    "url": "https://yunfeis-portfolio.webflow.io/research/research-ubi-gestures",
+    "title": "Cross-modality gestures",
+    "httpStatus": 200,
+    "pageType": "case-study",
+    "h1": "Overview",
+    "screenshot": "screenshots/research-research-ubi-gestures.png",
+    "markdown": "pages/research-research-ubi-gestures.md",
+    "json": "pages/research-research-ubi-gestures.json"
+  },
+  {
+    "url": "https://yunfeis-portfolio.webflow.io/research/starward",
+    "title": "Starward",
+    "httpStatus": 200,
+    "pageType": "case-study",
+    "h1": "Overview",
+    "screenshot": "screenshots/research-starward.png",
+    "markdown": "pages/research-starward.md",
+    "json": "pages/research-starward.json"
+  },
+  {
+    "url": "https://yunfeis-portfolio.webflow.io/research/cruz-roja",
+    "title": "Cruz Roja",
+    "httpStatus": 200,
+    "pageType": "case-study",
+    "h1": "Cruz Roja Tijuana -- Optimizing Ambulance Dispatching System",
+    "screenshot": "screenshots/research-cruz-roja.png",
+    "markdown": "pages/research-cruz-roja.md",
+    "json": "pages/research-cruz-roja.json"
+  },
+  {
+    "url": "https://yunfeis-portfolio.webflow.io/research/moneywise",
+    "title": "MoneyWise",
+    "httpStatus": 200,
+    "pageType": "case-study",
+    "h1": "Overview",
+    "screenshot": "screenshots/research-moneywise.png",
+    "markdown": "pages/research-moneywise.md",
+    "json": "pages/research-moneywise.json"
+  },
+  {
+    "url": "https://yunfeis-portfolio.webflow.io/research/fork-it",
+    "title": "Fork It",
+    "httpStatus": 200,
+    "pageType": "case-study",
+    "h1": "Overview",
+    "screenshot": "screenshots/research-fork-it.png",
+    "markdown": "pages/research-fork-it.md",
+    "json": "pages/research-fork-it.json"
+  },
+  {
+    "url": "https://yunfeis-portfolio.webflow.io/deprecated/old-home",
+    "title": "404 - Page not found",
+    "httpStatus": 404,
+    "pageType": "not-found",
+    "h1": "Page not found",
+    "screenshot": "screenshots/deprecated-old-home.png",
+    "markdown": "pages/deprecated-old-home.md",
+    "json": "pages/deprecated-old-home.json"
+  },
+  {
+    "url": "https://yunfeis-portfolio.webflow.io/deprecated/old-home-2",
+    "title": "About Me",
+    "httpStatus": 200,
+    "pageType": "page",
+    "h1": "",
+    "screenshot": "screenshots/deprecated-old-home-2.png",
+    "markdown": "pages/deprecated-old-home-2.md",
+    "json": "pages/deprecated-old-home-2.json"
+  },
+  {
+    "url": "https://yunfeis-portfolio.webflow.io/research",
+    "title": "404 - Page not found",
+    "httpStatus": 404,
+    "pageType": "not-found",
+    "h1": "Page not found",
+    "screenshot": "screenshots/research.png",
+    "markdown": "pages/research.md",
+    "json": "pages/research.json"
+  }
+]

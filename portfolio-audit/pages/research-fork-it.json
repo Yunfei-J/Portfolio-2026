@@ -1,0 +1,399 @@
+{
+  "url": "https://yunfeis-portfolio.webflow.io/research/fork-it",
+  "title": "Fork It",
+  "description": "",
+  "canonical": "",
+  "openGraph": {
+    "title": "Fork It",
+    "description": "",
+    "image": ""
+  },
+  "h1": "Overview",
+  "blocks": [
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f378d84ed95e1f9f6_back%20arrow.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/67db57ac631bb73df822c6b3_ForkIt%20thumbnail-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "Fork It AI"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "If you ask me what's the project that I'm most proud of, this is it! I'm building ForkIt, a tool designed for food lovers, frequent travelers, and anyone looking for a seamless, stress-free dining experience."
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66a2ac26af28d71faea660fc_Subtract%20white.png",
+      "alt": ""
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Timeframe: Sep 2024 - Jun 2026"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Startup Studio project"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "My role: Leader, PM, UIUX Design and Research"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Final product: Cross-platform mobile app"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66a2abbe39d4e32449faa33d_Subtract%20black.png",
+      "alt": ""
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "RESEARCH"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "MARKET RESEARCH"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "CUSTOMER RESEARCH"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "IMPLEMENTATION"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "FIGMA PROTOTYPE"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "DEPLOYED MOBILE APP"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "BUSINESS DEV"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/67db778f761ad1c7637026fb_Screen%20Shot%202025-03-19%20at%2010.04.05%20PM-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/67db77cd5830691b81f9773b_Screen%20Shot%202025-03-19%20at%2010.05.07%20PM-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/67db77e9bab2a85381c3d083_Screen%20Shot%202025-03-19%20at%2010.05.37%20PM-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/67db78004273f3474d39bcb1_Screen%20Shot%202025-03-19%20at%2010.05.59%20PM-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f69736ba3dbad5ba6_arrow-ios-back.svg",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f69736ba3dbad5ba6_arrow-ios-back.svg",
+      "alt": ""
+    }
+  ],
+  "links": [
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/old-home",
+      "text": "Projects"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/deprecated/old-home-2",
+      "text": "About Me"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/#3",
+      "text": ""
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/fork-it#w-tabs-0-data-w-pane-0",
+      "text": "RESEARCH"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/fork-it#w-tabs-0-data-w-pane-1",
+      "text": "MARKET RESEARCH"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/fork-it#w-tabs-0-data-w-pane-2",
+      "text": "CUSTOMER RESEARCH"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/fork-it#w-tabs-0-data-w-pane-3",
+      "text": "IMPLEMENTATION"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/fork-it#w-tabs-0-data-w-pane-4",
+      "text": "FIGMA PROTOTYPE"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/fork-it#w-tabs-0-data-w-pane-5",
+      "text": "DEPLOYED MOBILE APP"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/fork-it#w-tabs-0-data-w-pane-6",
+      "text": "BUSINESS DEV"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/fork-it#",
+      "text": "Overview"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/fork-it#",
+      "text": "Ideation Journey"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/fork-it#",
+      "text": "Conceptualization"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/fork-it#",
+      "text": "- User Flows"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/fork-it#",
+      "text": "- Personas"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/fork-it#",
+      "text": "Final Prototypes"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/fork-it#",
+      "text": "Competitive Analysis"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/fork-it#0",
+      "text": "↑ Top"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/oowls",
+      "text": "Previous"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/starward",
+      "text": "Next"
+    },
+    {
+      "href": "https://webflow.com/?utm_campaign=brandjs",
+      "text": ""
+    }
+  ],
+  "slug": "research-fork-it",
+  "httpStatus": 200,
+  "pageType": "case-study",
+  "sections": [
+    {
+      "level": 1,
+      "heading": "Overview",
+      "content": [
+        "Timeframe: Sep 2024 - Jun 2026",
+        "Startup Studio project",
+        "My role: Leader, PM, UIUX Design and Research",
+        "Final product: Cross-platform mobile app",
+        "RESEARCH",
+        "MARKET RESEARCH",
+        "CUSTOMER RESEARCH",
+        "IMPLEMENTATION",
+        "FIGMA PROTOTYPE",
+        "DEPLOYED MOBILE APP",
+        "BUSINESS DEV"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66a2abbe39d4e32449faa33d_Subtract%20black.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/67db778f761ad1c7637026fb_Screen%20Shot%202025-03-19%20at%2010.04.05%20PM-p-1600.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/67db77cd5830691b81f9773b_Screen%20Shot%202025-03-19%20at%2010.05.07%20PM-p-1600.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/67db77e9bab2a85381c3d083_Screen%20Shot%202025-03-19%20at%2010.05.37%20PM-p-1600.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/67db78004273f3474d39bcb1_Screen%20Shot%202025-03-19%20at%2010.05.59%20PM-p-1600.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f69736ba3dbad5ba6_arrow-ios-back.svg",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f69736ba3dbad5ba6_arrow-ios-back.svg",
+          "alt": ""
+        }
+      ]
+    }
+  ],
+  "images": [
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f378d84ed95e1f9f6_back%20arrow.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/67db57ac631bb73df822c6b3_ForkIt%20thumbnail-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66a2ac26af28d71faea660fc_Subtract%20white.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66a2abbe39d4e32449faa33d_Subtract%20black.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/67db778f761ad1c7637026fb_Screen%20Shot%202025-03-19%20at%2010.04.05%20PM-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/67db77cd5830691b81f9773b_Screen%20Shot%202025-03-19%20at%2010.05.07%20PM-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/67db77e9bab2a85381c3d083_Screen%20Shot%202025-03-19%20at%2010.05.37%20PM-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/67db78004273f3474d39bcb1_Screen%20Shot%202025-03-19%20at%2010.05.59%20PM-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f69736ba3dbad5ba6_arrow-ios-back.svg",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f69736ba3dbad5ba6_arrow-ios-back.svg",
+      "alt": ""
+    }
+  ],
+  "media": [
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f378d84ed95e1f9f6_back%20arrow.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/67db57ac631bb73df822c6b3_ForkIt%20thumbnail-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66a2ac26af28d71faea660fc_Subtract%20white.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66a2abbe39d4e32449faa33d_Subtract%20black.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/67db778f761ad1c7637026fb_Screen%20Shot%202025-03-19%20at%2010.04.05%20PM-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/67db77cd5830691b81f9773b_Screen%20Shot%202025-03-19%20at%2010.05.07%20PM-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/67db77e9bab2a85381c3d083_Screen%20Shot%202025-03-19%20at%2010.05.37%20PM-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/67db78004273f3474d39bcb1_Screen%20Shot%202025-03-19%20at%2010.05.59%20PM-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f69736ba3dbad5ba6_arrow-ios-back.svg",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f69736ba3dbad5ba6_arrow-ios-back.svg",
+      "alt": ""
+    }
+  ],
+  "internalLinks": [
+    "https://yunfeis-portfolio.webflow.io/old-home",
+    "https://yunfeis-portfolio.webflow.io/deprecated/old-home-2",
+    "https://yunfeis-portfolio.webflow.io/",
+    "https://yunfeis-portfolio.webflow.io/research/fork-it",
+    "https://yunfeis-portfolio.webflow.io/research/oowls",
+    "https://yunfeis-portfolio.webflow.io/research/starward"
+  ],
+  "externalLinks": [
+    {
+      "href": "https://webflow.com/?utm_campaign=brandjs",
+      "text": ""
+    }
+  ],
+  "screenshot": "screenshots/research-fork-it.png",
+  "scrapedAt": "2026-06-17T03:22:48.439Z"
+}

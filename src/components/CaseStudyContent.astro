@@ -1,0 +1,52 @@
+---
+import type { CaseStudyBlock } from "../../lib/case-studies";
+
+type Props = {
+  blocks: CaseStudyBlock[];
+};
+
+const { blocks } = Astro.props;
+
+function isDecorativeImage(src: string, alt: string): boolean {
+  if (alt) return false;
+  return (
+    src.includes("back%20arrow") ||
+    src.includes("back arrow") ||
+    src.includes("arrow-ios-back") ||
+    src.includes("Subtract")
+  );
+}
+---
+
+<div class="case-study-content">
+  {
+    blocks.map((block) => {
+      if (block.type === "image") {
+        if (isDecorativeImage(block.src, block.alt)) return null;
+        return (
+          <figure class="case-study-figure">
+            <img src={block.src} alt={block.alt} loading="lazy" />
+          </figure>
+        );
+      }
+
+      const text = block.text.trim();
+      if (!text) return null;
+
+      if (block.tag === "h1") {
+        return <h2 class="case-study-heading">{text}</h2>;
+      }
+      if (block.tag === "h2") {
+        return <h3 class="case-study-subheading">{text}</h3>;
+      }
+      if (block.tag === "h3" || block.tag === "h4") {
+        return <h4 class="case-study-subheading">{text}</h4>;
+      }
+      if (text.startsWith("- ")) {
+        return <li class="case-study-list-item">{text.slice(2)}</li>;
+      }
+
+      return <p class="case-study-paragraph">{text}</p>;
+    })
+  }
+</div>

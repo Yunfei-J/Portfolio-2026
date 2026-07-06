@@ -1,0 +1,402 @@
+{
+  "url": "https://yunfeis-portfolio.webflow.io/research/starward",
+  "title": "Starward",
+  "description": "",
+  "canonical": "",
+  "openGraph": {
+    "title": "Starward",
+    "description": "",
+    "image": ""
+  },
+  "h1": "Overview",
+  "blocks": [
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/670abb1a67f337fb7b490f02_cyber%20imposter%20home.png",
+      "alt": ""
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "Cyber Imposter"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "A multi-player mobile strategy game. Players' goal is to cover the AI teammate and identify the AI opponent."
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66a2ac26af28d71faea660fc_Subtract%20white.png",
+      "alt": ""
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Timeline: Sep 2024 - Feb 2025"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Company: Starward Game Studios"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Role: UX Designer Intern"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66a2abbe39d4e32449faa33d_Subtract%20black.png",
+      "alt": ""
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Prototypes"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Enter lobby and join a room"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "Users can join or create a room to start the game."
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "Rooms can be filtered by language preference, genre preference, and room size."
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/670ac6d9e0143bf29f7beafc_Screen%20Shot%202024-10-12%20at%202.54.42%20PM.png",
+      "alt": ""
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Teams take turns to ask, answer, and vote, with the goal of finding the hidden non-human player"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "Each team is made up of one AI player (bot) and three real players."
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "The teams take turns asking the opposing team a question."
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "Based on the responses given, the objective is to figure out which answer came from the AI and which came from the human players."
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Ask Phase"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/670acb3c1420c81b83150fbf_Asking.png",
+      "alt": ""
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Answer Phase"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/670acb8282b2f8887db8cf36_Answering-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Voting Phase"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/670acb3cdcc461672d8ee354_voting-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f378d84ed95e1f9f6_back%20arrow.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f69736ba3dbad5ba6_arrow-ios-back.svg",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f69736ba3dbad5ba6_arrow-ios-back.svg",
+      "alt": ""
+    }
+  ],
+  "links": [
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/old-home",
+      "text": "Projects"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/deprecated/old-home-2",
+      "text": "About Me"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/starward#0",
+      "text": "↑ Top"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/#3",
+      "text": ""
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/oowls",
+      "text": "Previous"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/research-ubi-gestures",
+      "text": "Next"
+    },
+    {
+      "href": "https://webflow.com/?utm_campaign=brandjs",
+      "text": ""
+    }
+  ],
+  "slug": "research-starward",
+  "httpStatus": 200,
+  "pageType": "case-study",
+  "sections": [
+    {
+      "level": 1,
+      "heading": "Overview",
+      "content": [
+        "Timeline: Sep 2024 - Feb 2025",
+        "Company: Starward Game Studios",
+        "Role: UX Designer Intern"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66a2abbe39d4e32449faa33d_Subtract%20black.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "heading": "Prototypes",
+      "content": [],
+      "media": []
+    },
+    {
+      "level": 1,
+      "heading": "Enter lobby and join a room",
+      "content": [
+        "Users can join or create a room to start the game.",
+        "Rooms can be filtered by language preference, genre preference, and room size."
+      ],
+      "media": [
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/670ac6d9e0143bf29f7beafc_Screen%20Shot%202024-10-12%20at%202.54.42%20PM.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "heading": "Teams take turns to ask, answer, and vote, with the goal of finding the hidden non-human player",
+      "content": [
+        "Each team is made up of one AI player (bot) and three real players.",
+        "The teams take turns asking the opposing team a question.",
+        "Based on the responses given, the objective is to figure out which answer came from the AI and which came from the human players."
+      ],
+      "media": []
+    },
+    {
+      "level": 1,
+      "heading": "Ask Phase",
+      "content": [],
+      "media": [
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/670acb3c1420c81b83150fbf_Asking.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "heading": "Answer Phase",
+      "content": [],
+      "media": [
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/670acb8282b2f8887db8cf36_Answering-p-1600.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "heading": "Voting Phase",
+      "content": [],
+      "media": [
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/670acb3cdcc461672d8ee354_voting-p-1600.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f378d84ed95e1f9f6_back%20arrow.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f69736ba3dbad5ba6_arrow-ios-back.svg",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f69736ba3dbad5ba6_arrow-ios-back.svg",
+          "alt": ""
+        }
+      ]
+    }
+  ],
+  "images": [
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/670abb1a67f337fb7b490f02_cyber%20imposter%20home.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66a2ac26af28d71faea660fc_Subtract%20white.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66a2abbe39d4e32449faa33d_Subtract%20black.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/670ac6d9e0143bf29f7beafc_Screen%20Shot%202024-10-12%20at%202.54.42%20PM.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/670acb3c1420c81b83150fbf_Asking.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/670acb8282b2f8887db8cf36_Answering-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/670acb3cdcc461672d8ee354_voting-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f378d84ed95e1f9f6_back%20arrow.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f69736ba3dbad5ba6_arrow-ios-back.svg",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f69736ba3dbad5ba6_arrow-ios-back.svg",
+      "alt": ""
+    }
+  ],
+  "media": [
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/670abb1a67f337fb7b490f02_cyber%20imposter%20home.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66a2ac26af28d71faea660fc_Subtract%20white.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66a2abbe39d4e32449faa33d_Subtract%20black.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/670ac6d9e0143bf29f7beafc_Screen%20Shot%202024-10-12%20at%202.54.42%20PM.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/670acb3c1420c81b83150fbf_Asking.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/670acb8282b2f8887db8cf36_Answering-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/670acb3cdcc461672d8ee354_voting-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f378d84ed95e1f9f6_back%20arrow.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f69736ba3dbad5ba6_arrow-ios-back.svg",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f69736ba3dbad5ba6_arrow-ios-back.svg",
+      "alt": ""
+    }
+  ],
+  "internalLinks": [
+    "https://yunfeis-portfolio.webflow.io/old-home",
+    "https://yunfeis-portfolio.webflow.io/deprecated/old-home-2",
+    "https://yunfeis-portfolio.webflow.io/research/starward",
+    "https://yunfeis-portfolio.webflow.io/",
+    "https://yunfeis-portfolio.webflow.io/research/oowls",
+    "https://yunfeis-portfolio.webflow.io/research/research-ubi-gestures"
+  ],
+  "externalLinks": [
+    {
+      "href": "https://webflow.com/?utm_campaign=brandjs",
+      "text": ""
+    }
+  ],
+  "screenshot": "screenshots/research-starward.png",
+  "scrapedAt": "2026-06-17T03:22:40.374Z"
+}

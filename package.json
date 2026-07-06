@@ -1,0 +1,24 @@
+{
+  "name": "portfolio-2026",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "npm run build:search && astro build",
+    "preview": "astro preview",
+    "build:search": "node scripts/generate-search-embeddings.mjs",
+    "localize:assets": "node scripts/localize-assets.mjs",
+    "scrape:sample": "node scripts/scrape-portfolio.mjs --limit 3",
+    "scrape": "node scripts/scrape-portfolio.mjs --limit 50"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "astro": "^6.4.8",
+    "playwright": "^1.61.0"
+  },
+  "dependencies": {
+    "fuse.js": "^7.1.0"
+  }
+}

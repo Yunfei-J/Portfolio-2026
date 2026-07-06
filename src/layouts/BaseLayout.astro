@@ -1,0 +1,42 @@
+---
+type Props = {
+  title?: string;
+  description?: string;
+};
+
+const {
+  title = "Yunfei Jiao — Portfolio",
+  description = "Product designer portfolio — UX, research, and product work.",
+} = Astro.props;
+
+const gaId = import.meta.env.PUBLIC_GA_ID;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    {
+      gaId && (
+        <>
+          <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} />
+          <script is:inline define:vars={{ gaId }}>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+              dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+            gtag("config", gaId);
+          </script>
+        </>
+      )
+    }
+    <slot name="head" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

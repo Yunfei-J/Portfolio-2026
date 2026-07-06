@@ -1,0 +1,519 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/tokens.css";
+import "../styles/global.css";
+import WaveDivider from "../components/WaveDivider.astro";
+import PolaroidCard from "../components/PolaroidCard.astro";
+import ScrollingText from "../components/ScrollingText.astro";
+import { projects, carouselProjects } from "../data/projects";
+
+const skills = [
+  { label: "HCI", startYear: 2021 },
+  { label: "Figma", startYear: 2021 },
+  { label: "UIUX Design", startYear: 2021 },
+  { label: "Frontend Engineering", startYear: 2023 },
+  { label: "Cross-functional Project Lead", startYear: 2024 },
+];
+
+const years = ["2021", "2022", "2023", "2024", "2025", "2026"];
+const yearCount = years.length;
+const searchTags = ["UX Design", "Product", "Mobile", "Research", "Branding", "AI"];
+const renderedCarousel = carouselProjects;
+---
+
+<BaseLayout>
+  <main class="portfolio-page">
+      <section class="hero-section" aria-labelledby="hero-name">
+
+        <div class="hero-stage">
+          <!-- z:2 — "hi I'm" (behind Polaroid) -->
+          <span class="hero-hi" aria-hidden="true">hi I'm</span>
+
+          <!-- z:3 — Polaroid (rotated, sandwiched between title halves) -->
+          <div class="hero-polaroid-wrap">
+            <div class="hero-polaroid-inner">
+              <PolaroidCard />
+            </div>
+          </div>
+
+          <!-- z:4 — name (in front of Polaroid) -->
+          <h1 id="hero-name" class="hero-name">YUNFEI</h1>
+
+          <!-- z:5 — subtitle: The / ticker / PRODUCT DESIGNER -->
+          <div class="hero-subtitle">
+            <span class="hero-sub-the">The</span>
+            <div class="hero-sub-ticker" role="marquee" aria-label="Key qualities">
+              <div class="hero-sub-ticker-inner" aria-live="polite">
+                <span>PERCEPTIVE</span>
+                <span>PRACTICAL</span>
+                <span>PROACTIVE</span>
+                <span aria-hidden="true">PERCEPTIVE</span>
+              </div>
+            </div>
+            <p class="hero-sub-role">PRODUCT<br>
+             DESIGNER
+            </p>
+          </div>
+
+          <div class="hero-bottom-panel">
+            <div class="hero-year-bar" aria-label="Experience timeline">
+              <div class="timeline-grid">
+                {years.map((year) => <span class="timeline-year">{year}</span>)}
+              </div>
+            </div>
+
+            <div class="hero-timelines" data-hero-timelines aria-hidden="true">
+              <div
+                class="skill-map"
+                aria-label="Skills over time"
+                style={`--year-count: ${yearCount}`}
+              >
+                <div class="skill-bars">
+                  {
+                    skills.map((skill) => {
+                      const startIndex = years.indexOf(String(skill.startYear));
+                      const dotYears = years.filter((_, index) => index > startIndex);
+
+                      return (
+                        <div
+                          class="skill-track"
+                          style={`--start-index: ${startIndex}`}
+                        >
+                          <div class="skill-track-main">
+                            <span class="skill-label">{skill.label}</span>
+                            <div class="skill-line" aria-hidden="true"></div>
+                          </div>
+                          <div class="skill-dots" aria-hidden="true">
+                            {dotYears.map((year) => {
+                              const yearIndex = years.indexOf(year);
+                              return (
+                                <span
+                                  class="skill-dot"
+                                  style={`--year-index: ${yearIndex}`}
+                                ></span>
+                              );
+                            })}
+                          </div>
+                        </div>
+                      );
+                    })
+                  }
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <section class="project-list" aria-label="Featured projects">
+        {
+          projects.map((project) => (
+            <div class="project-card-wrap">
+              <a
+                class="project-card"
+                href={project.href}
+                aria-label={`Open ${project.title}`}
+              >
+                <div class="project-copy">
+                  <div class="project-heading-group">
+                    <h1>{project.title}</h1>
+                    <div class="project-details">
+                      <p class="project-description">{project.description}</p>
+                      <p class="project-timeframe">{project.timeframe}</p>
+                    </div>
+                  </div>
+                  <div class="compact-tags" aria-label={`${project.title} tags`}>
+                    {project.tags.map((tag) => <span>{tag}</span>)}
+                  </div>
+                </div>
+                <div class="project-visual">
+                  <img src={project.image} alt="" loading="lazy" />
+                </div>
+              </a>
+            </div>
+          ))
+        }
+      </section>
+
+      <section class="project-carousel" aria-label="Project carousel" data-carousel>
+        <div class="carousel-brush" aria-hidden="true">
+          <img src="/assets/brush2.png" alt="" />
+        </div>
+        <div class="carousel-track">
+          {renderedCarousel.map((card, i) => {
+            const dist = Math.abs(i - 0); // initial cActiveIdx = 0 (Green it!)
+            const initialState = dist === 0 ? "active" : dist === 1 ? "adjacent" : "far";
+            return (
+              <a
+                class="carousel-card"
+                href={card.href}
+                data-rendered-idx={i}
+                data-state={initialState}
+                aria-label={card.title}
+              >
+                <div class="carousel-card-body">
+                  <div class="carousel-card-inner">
+                    <img src={card.image} alt={card.title} loading="lazy" />
+                  </div>
+                  <div class="carousel-card-footer">
+                    <span class="carousel-card-label">{card.title}</span>
+                    <div class="carousel-card-details">
+                      <p class="carousel-card-desc">{card.description}</p>
+                    </div>
+                    <div class="carousel-tags" aria-label={`${card.title} tags`}>
+                      {card.tags.map((tag) => <span>{tag}</span>)}
+                    </div>
+                  </div>
+                </div>
+              </a>
+            );
+          })}
+        </div>
+        <nav class="carousel-nav" aria-label="Carousel navigation">
+          {renderedCarousel.map((card, i) => (
+            <button
+              type="button"
+              class="carousel-dot"
+              data-carousel-dot={i}
+              aria-label={`Go to ${card.title}`}
+              aria-current={i === 0 ? "true" : undefined}
+            />
+          ))}
+        </nav>
+      </section>
+
+      <section class="reading-search" aria-labelledby="reading-title">
+        <h1 id="reading-title">Tired of reading?</h1>
+        <label class="search-pill" for="project-search">
+          <input
+            id="project-search"
+            type="search"
+            placeholder="Search key words you are interested in"
+            data-search
+            autocomplete="off"
+            spellcheck="false"
+          />
+        </label>
+        <div class="large-tags" aria-label="Search suggestions">
+          {searchTags.map((tag) => <button type="button" data-search-tag>{tag}</button>)}
+        </div>
+        <div class="search-results" aria-live="polite" data-search-results hidden></div>
+      </section>
+
+      <footer class="footer-links">
+        <a href="https://www.linkedin.com/" rel="noreferrer">LinkedIn</a>
+        <a href="/CV.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+        <a href="mailto:yj497@cornell.com">Email</a>
+      </footer>
+      <div class="my-wave-wrap" aria-hidden="true">
+        <div class="my-wave-track">
+          <WaveDivider class="my-wave" />
+          <WaveDivider class="my-wave" />
+        </div>
+      </div>
+    </main>
+
+    <script>
+      import { SEARCH_INDEX } from "../data/search-index";
+      import { createSearchEngine, highlight, trackSearch } from "../scripts/search";
+
+      const input = document.querySelector<HTMLInputElement>("[data-search]");
+      const tagButtons = document.querySelectorAll<HTMLButtonElement>("[data-search-tag]");
+      const container = document.querySelector<HTMLElement>("[data-search-results]");
+
+      async function initSearch() {
+        let embeddings: { slug: string; vector: Record<string, number> }[] = [];
+        try {
+          const res = await fetch("/search-embeddings.json");
+          if (res.ok) embeddings = await res.json();
+        } catch {
+          /* semantic search optional */
+        }
+
+        const search = createSearchEngine(SEARCH_INDEX, embeddings);
+
+        function renderResults(query: string) {
+          if (!container) return;
+
+          if (!query.trim()) {
+            container.hidden = true;
+            container.innerHTML = "";
+            return;
+          }
+
+          trackSearch(query);
+          const results = search(query);
+
+          if (!results.length) {
+            container.hidden = false;
+            container.innerHTML = `<p class="search-empty">No matches for "<strong>${query}</strong>"</p>`;
+            return;
+          }
+
+          container.hidden = false;
+          container.innerHTML = results
+            .map(
+              ({ project, snippet }) => `
+              <a class="search-result-card" href="${project.href}">
+                <img src="${project.thumbnail}" alt="${project.title}" loading="lazy" />
+                <div class="search-result-body">
+                  <p class="search-result-title">${highlight(project.title, query)}</p>
+                  <div class="search-result-tags">
+                    ${project.tags.map((t) => `<span>${highlight(t, query)}</span>`).join("")}
+                  </div>
+                  ${snippet ? `<p class="search-result-snippet">${snippet}</p>` : ""}
+                </div>
+              </a>
+            `,
+            )
+            .join("");
+        }
+
+        input?.addEventListener("input", () => renderResults(input.value));
+
+        tagButtons.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            if (!input) return;
+            input.value = btn.textContent?.trim() ?? "";
+            renderResults(input.value);
+            input.focus();
+          });
+        });
+      }
+
+      initSearch();
+    </script>
+
+    <script is:inline>
+      (function () {
+        var heroSection = document.querySelector(".hero-section");
+        var timelines = document.querySelector("[data-hero-timelines]");
+        var yearBar = document.querySelector(".hero-year-bar");
+        if (!heroSection || !timelines || !yearBar) return;
+
+        var parallaxMax = window.innerHeight * 0.6;
+        var lockLength = window.innerHeight;
+        var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+        function easeOut(t) {
+          return 1 - Math.pow(1 - t, 3);
+        }
+
+        function clamp(value, min, max) {
+          return Math.min(Math.max(value, min), max);
+        }
+
+        function readPx(value) {
+          var n = parseFloat(value);
+          return Number.isFinite(n) ? n : 0;
+        }
+
+        function measureHero() {
+          var yearBarHeight = yearBar.offsetHeight;
+          var timelineStyles = getComputedStyle(timelines);
+          var padTop = readPx(timelineStyles.paddingTop);
+          var padBottom = readPx(
+            getComputedStyle(heroSection).getPropertyValue("--hero-timeline-pad-bottom")
+          );
+
+          // Measure intrinsic content — never stretch the flex child to 100vh.
+          var skillMap = timelines.querySelector(".skill-map");
+          var timelineContentHeight = skillMap
+            ? skillMap.offsetHeight + padTop
+            : timelines.scrollHeight - padBottom;
+
+          var fullTimelineHeight = timelineContentHeight + padBottom;
+
+          heroSection.style.setProperty("--hero-year-bar-height", yearBarHeight + "px");
+          heroSection.style.setProperty("--hero-timeline-height", timelineContentHeight + "px");
+
+          parallaxMax = window.innerHeight * 0.6;
+          lockLength = Math.max(
+            window.innerHeight,
+            fullTimelineHeight + parallaxMax * 0.5
+          );
+          heroSection.style.setProperty("--hero-scroll-length", lockLength + "px");
+        }
+
+        function applyReducedMotion() {
+          if (!reducedMotion.matches) return false;
+
+          measureHero();
+          heroSection.style.setProperty("--hero-scroll-length", "0px");
+          heroSection.style.setProperty("--hero-panel-reveal", "1");
+          heroSection.style.setProperty("--hero-parallax-y", "0px");
+          timelines.setAttribute("aria-hidden", "false");
+          return true;
+        }
+
+        function updateHeroScroll() {
+          if (reducedMotion.matches) {
+            applyReducedMotion();
+            return;
+          }
+
+          var progress = clamp(
+            (window.scrollY - heroSection.offsetTop) / lockLength,
+            0,
+            1
+          );
+          var eased = easeOut(progress);
+
+          heroSection.style.setProperty("--hero-panel-reveal", String(eased));
+          heroSection.style.setProperty(
+            "--hero-parallax-y",
+            -eased * parallaxMax + "px"
+          );
+          timelines.setAttribute("aria-hidden", progress > 0 ? "false" : "true");
+        }
+
+        if (applyReducedMotion()) return;
+
+        measureHero();
+        updateHeroScroll();
+        window.addEventListener("scroll", updateHeroScroll, { passive: true });
+        window.addEventListener("resize", function () {
+          measureHero();
+          updateHeroScroll();
+        });
+        if (typeof ResizeObserver !== "undefined") {
+          var skillMap = timelines.querySelector(".skill-map");
+          if (skillMap) {
+            new ResizeObserver(function () {
+              measureHero();
+              updateHeroScroll();
+            }).observe(skillMap);
+          }
+        }
+        reducedMotion.addEventListener("change", function () {
+          if (applyReducedMotion()) return;
+          measureHero();
+          updateHeroScroll();
+        });
+      })();
+
+      // ── Carousel (Rolling Tape, no loop) ──────────────────────────────────
+      var carousel = document.querySelector("[data-carousel]");
+
+      if (carousel) {
+        var cTrack = carousel.querySelector(".carousel-track");
+        var cCards = Array.from(cTrack.querySelectorAll(".carousel-card"));
+        var cDots = Array.from(carousel.querySelectorAll("[data-carousel-dot]"));
+        var cActiveIdx = 0;
+        var cNavigating = false;
+
+        function cGetOffset(idx) {
+          var cw = carousel.offsetWidth;
+          var card = cCards[idx];
+          return cw / 2 - card.offsetWidth / 2 - card.offsetLeft;
+        }
+
+        function cUpdateTrack(animate) {
+          if (!animate) cTrack.style.transition = "none";
+          cTrack.style.transform = "translateX(" + cGetOffset(cActiveIdx) + "px)";
+          if (!animate) {
+            void cTrack.offsetWidth;
+            cTrack.style.transition = "";
+          }
+        }
+
+        function cUpdateStates() {
+          cCards.forEach(function (card, i) {
+            var dist = Math.abs(i - cActiveIdx);
+            card.dataset.state = dist === 0 ? "active" : dist === 1 ? "adjacent" : "far";
+          });
+        }
+
+        function cUpdateDots() {
+          cDots.forEach(function (dot, i) {
+            if (i === cActiveIdx) {
+              dot.setAttribute("aria-current", "true");
+            } else {
+              dot.removeAttribute("aria-current");
+            }
+          });
+        }
+
+        function cGoTo(idx) {
+          if (cNavigating || idx === cActiveIdx) return;
+          if (idx < 0 || idx >= cCards.length) return;
+
+          cNavigating = true;
+          cActiveIdx = idx;
+          cUpdateTrack(true);
+          cUpdateStates();
+          cUpdateDots();
+
+          setTimeout(function () {
+            cNavigating = false;
+          }, 450);
+        }
+
+        function cNavigate(dir) {
+          cGoTo(cActiveIdx + dir);
+        }
+
+        cTrack.addEventListener("click", function (e) {
+          var card = e.target.closest(".carousel-card");
+          if (!card || card.dataset.state !== "adjacent") return;
+          e.preventDefault();
+          var idx = parseInt(card.dataset.renderedIdx, 10);
+          cNavigate(idx < cActiveIdx ? -1 : 1);
+        });
+
+        cDots.forEach(function (dot, i) {
+          dot.addEventListener("click", function () {
+            cGoTo(i);
+          });
+        });
+
+        window.addEventListener("resize", function () {
+          cUpdateTrack(false);
+        });
+
+        requestAnimationFrame(function () {
+          cUpdateTrack(false);
+          cUpdateStates();
+          cUpdateDots();
+          cTrack.style.visibility = "visible";
+        });
+      }
+
+      // ── Project card hover while scrolling ────────────────────────────────
+      // Browsers skip :hover updates during wheel/scroll; sync a class instead.
+      (function () {
+        if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+
+        var wraps = Array.from(document.querySelectorAll(".project-card-wrap"));
+        var mx = -1;
+        var my = -1;
+
+        function syncProjectCardHover() {
+          wraps.forEach(function (wrap) {
+            wrap.classList.remove("is-hover");
+          });
+          if (mx < 0) return;
+          var el = document.elementFromPoint(mx, my);
+          if (!el) return;
+          var wrap = el.closest(".project-card-wrap");
+          if (wrap) wrap.classList.add("is-hover");
+        }
+
+        document.addEventListener("mousemove", function (e) {
+          mx = e.clientX;
+          my = e.clientY;
+          syncProjectCardHover();
+        }, { passive: true });
+
+        document.documentElement.addEventListener("mouseleave", function () {
+          mx = -1;
+          my = -1;
+          syncProjectCardHover();
+        });
+
+        window.addEventListener("scroll", syncProjectCardHover, { passive: true, capture: true });
+        window.addEventListener("wheel", syncProjectCardHover, { passive: true });
+      })();
+    </script>
+</BaseLayout>

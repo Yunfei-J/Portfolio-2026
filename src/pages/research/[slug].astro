@@ -1,0 +1,29 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import "../../styles/tokens.css";
+import "../../styles/global.css";
+import "../../styles/case-study.css";
+import CaseStudyContent from "../../components/CaseStudyContent.astro";
+import { CASE_STUDY_SLUGS, getCaseStudy } from "../../lib/case-studies";
+
+export async function getStaticPaths() {
+  return CASE_STUDY_SLUGS.map((slug) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+const study = slug ? await getCaseStudy(slug) : null;
+
+if (!study) {
+  return Astro.redirect("/");
+}
+---
+
+<BaseLayout title={`${study.title} — Yunfei Jiao`} description={study.description || `${study.title} case study`}>
+  <main class="case-study-page">
+    <header class="case-study-header">
+      <a class="case-study-back" href="/">← Back to portfolio</a>
+      <h1>{study.title}</h1>
+    </header>
+    <CaseStudyContent blocks={study.blocks} />
+  </main>
+</BaseLayout>

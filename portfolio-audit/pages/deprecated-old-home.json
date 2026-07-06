@@ -1,0 +1,44 @@
+{
+  "url": "https://yunfeis-portfolio.webflow.io/deprecated/old-home",
+  "title": "404 - Page not found",
+  "description": "The page you are looking for doesn't exist or has been moved.",
+  "canonical": "",
+  "openGraph": {
+    "title": "",
+    "description": "",
+    "image": ""
+  },
+  "h1": "Page not found",
+  "blocks": [
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Page not found"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "The page you are looking for doesn't exist or has been moved."
+    }
+  ],
+  "links": [],
+  "slug": "deprecated-old-home",
+  "httpStatus": 404,
+  "pageType": "not-found",
+  "sections": [
+    {
+      "level": 1,
+      "heading": "Page not found",
+      "content": [
+        "The page you are looking for doesn't exist or has been moved."
+      ],
+      "media": []
+    }
+  ],
+  "images": [],
+  "media": [],
+  "internalLinks": [],
+  "externalLinks": [],
+  "screenshot": "screenshots/deprecated-old-home.png",
+  "scrapedAt": "2026-06-17T03:22:50.525Z"
+}

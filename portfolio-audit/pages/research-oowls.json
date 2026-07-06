@@ -1,0 +1,1117 @@
+{
+  "url": "https://yunfeis-portfolio.webflow.io/research/oowls",
+  "title": "OOWLS",
+  "description": "",
+  "canonical": "",
+  "openGraph": {
+    "title": "OOWLS",
+    "description": "",
+    "image": ""
+  },
+  "h1": "Overview",
+  "blocks": [
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65d438eaa78b395bbf79685a_Mockup%20Cover-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "OOWLS"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "Match with an OOWL and order personalized, on-demand care!"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66a2ac26af28d71faea660fc_Subtract%20white.png",
+      "alt": ""
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Timeline: 2023.04 - 2023.10"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Location: UC San Diego"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Acheived: Catalyst Funding by the Sullivan Center"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Tools: Webflow, Figma, Unbounce, Canva, Google Analytics"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66a2abbe39d4e32449faa33d_Subtract%20black.png",
+      "alt": ""
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "Content"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "Overview"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "Ideation Journey"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "Conceptualization"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "- User Flows"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "- Personas"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "Final Prototypes"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "Competitive Analysis"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Problem"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Meeting the rising demand for paid caregivers in the United States is a challenge. According to one AARP report, 3 out of 4 seniors over 50 wish to age in place (age at home), but the necessary assistance within the caregiving market is both understudied and undersupplied."
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "Meeting the rising demand for paid caregivers in the United States is a challenge. According to one AARP report, 3 out of 4 seniors over 50 wish to age in place (age at home), but the necessary assistance within the caregiving market is both understudied and undersupplied."
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Objective"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Enhance accessibility and affordability of caregiving services for seniors, particularly those opting to age in place."
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "Enhance accessibility and affordability of caregiving services for seniors, particularly those opting to age in place."
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Solutions"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "We created OOWLS, a platform that connects families with verified gig-workers (Owls) for personalized, on-demand senior care --- empowering loved ones to support the health, safety, and social well-being of aging family members."
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Website"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64a59bcf92841340fa4856ed_ezgif.com-video-to-gif.gif",
+      "alt": ""
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Mobile App Hi-fi prototypes"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/657f72181eee1bef26d95b97_ezgif-3-oowl2_0.gif",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/657f7c6474351fdd7edc62cc_ezgif-2-oowl%202_1.gif",
+      "alt": ""
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Ideation Journey"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Initial objective"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Initially, our focus was on supporting the senior populations' psychological and social well-being. We aimed at creating a gig-based service that connects seniors with youth who could offer companionship and living assistance."
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Survey results"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "We distributed surveys @ senior living communities, student discord servers, and NextDoor. Out of the 6 effective responses from seniors, we found that all seniors didn't show much desire of fostering new social connections‍. Many of them were unwilling to do something out of their current routine."
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Interviews"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Structured Interviews"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "- The set, wording, and the order of questions are fixed between each interview - One participant per interview - Required planning, note-taking, encoding, analyzing"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66abcebd8799dfb15ee26f27_Screen%20Shot%202024-08-01%20at%202.03.18%20PM.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66abceca2b014d29a6733e84_Screen%20Shot%202024-08-01%20at%202.03.41%20PM.png",
+      "alt": ""
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Unstructured Focus Group Interviews"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "- Open-ended questions, a free-flowing conversation - A group of participants - Required scheduling with facilities, note-taking, transcribing, encoding, analyzing"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66abea0cfca1c3a2cc129ee9_Screen%20Shot%202024-08-01%20at%204.03.08%20PM.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66abe9a13b9a609f88c04435_Screen%20Shot%202024-08-01%20at%204.01.01%20PM.png",
+      "alt": ""
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "We conducted interviews with 7 seniors (1 living with her adult child,1 living alone, 5 living in an assisted living community)."
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "There seems to be a need for more advocacy for seniors . Seniors often fail to communicate their needs to their loved ones timely due to: 1 ) long residential distance 2 ) limited tech literacy 3 ) concerns about burdening their family members"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Help with chores, welfare checks, technology, transportation, etc are appealing to the seniors"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Pivot"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Firstly, we shift from just focusing on elderly's mental health to a wider coverage that also includes physical health, environmental checks, daily chores, and abuse check."
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Secondly, we re-position ourselves as a \"primary care doctor\" who does preliminary checks and send referrals rather than the specialist doctors who provide the actual treatments."
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Conceptualization"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "User Flow Diagrams"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "2 user flows: one for individuals seeking check-in services for seniors, and another for gig-workers providing these services. ‍"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "• My first goal is to ensure the entire process is intuitive and accessible to elderly users with limited tech-literacy."
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "E.g. All necessary steps, from landing to scheduling a check-in with a trusted person, are seamlessly integrated in one flow, eliminating the need to switch between tabs."
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "• Additionally, I prioritize building trust between service providers and seekers. This is achieved through enhanced information transparency and user control."
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "E.g. Senior families (service requesters) have access to the OWL's (service provider) real-time location during check-ins. A built-in chat module facilitates communication between the parties. Ratings and reviews are applied and visible to both sides."
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "• Doubtlessly, I want to ensure good experiences for service providers as well."
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "E.g. The app offers pre-formulated checklist templates to streamline the check-in process across various categories. This not only simplifies the workflow but also minimizes the risk of errors that could potentially lead to legal liabilities. Additionally, service providers have the flexibility to decline a check-in request, provided they provide a valid reason."
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66637893233aaddcc804937e_User%20Flow%20-v2%20(Seeker).png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6663789364289b94e8a08ccc_User%20Flow%20-v2%20(Provider).png",
+      "alt": ""
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Personas"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "After interviewing with 7 seniors and 3 senior takers, I created two family personas based off their background and needs. Note that these are not typical individual personas but are sets of personas which constitute \"family personas\"."
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/653df373efe0c8de1284e52e_Family%20persona%201-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/653df373ae6bc59344288b64_Family%20persona%202-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Final Prototypes"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66ac047233b666c924dd4770_Screen%20Shot%202024-08-01%20at%205.55.52%20PM.png",
+      "alt": ""
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "The straightforward onboading process starts with a concise one-page guide outlining how OOWLS works, and then lead users to a set of simple questions to establish a basic, tentative preference profile."
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6663701b7b0ab49d4381f47b_Frame%202335-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "Next, users can see a list of nearby care provider profiles, with their skills, rating, price, and other information displayed to help users make informed selection."
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "Flexible filters are right accessible on top of the list for personalized filtering."
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/660f1effe3629b63421f1dbb_Frame%202362-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66636796d5d10924a248938d_oowl_filter.gif",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66636e603767110946bb56fa_Card%202.0.png",
+      "alt": ""
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "Upon entering a detailed profile page, users can contact the care provider and schedule a check-in. Users can tailor their check-in requests based on the provider's specialty and will need to wait for the provider to accept their request."
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/657fb57430cef4d166c5414e_Frame%202336-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66ac047233b666c924dd4770_Screen%20Shot%202024-08-01%20at%205.55.52%20PM.png",
+      "alt": ""
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "Care providers are expected to follow more trackable procedures to make analysis of the seniors' living conditions and their needs and send a summary report to their families."
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/657fb995b452e23ec92c4b7d_Frame%202337-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Benefits of our idea"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Empowering both families and the seniors -Helps families far away to check up on their seniors -Seniors and their families can filter the available oowls by different criteria to choose the best fitting helper for them -Elderly abuse in institutions can be effectively detected"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Low entry barrier for gig worker (no specialized skills) --> More available contractors"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Language Support -Inclusive of non-English speaking seniors"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Legal Protection/Security -Strict background check -App tracks location of the gig worker while in session"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Competitive Analysis"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64a84103843c06fc437298bf_Screen%20Shot%202023-07-08%20at%2012.44.25%20AM-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f69736ba3dbad5ba6_arrow-ios-back.svg",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f69736ba3dbad5ba6_arrow-ios-back.svg",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f378d84ed95e1f9f6_back%20arrow.png",
+      "alt": ""
+    }
+  ],
+  "links": [
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/old-home",
+      "text": "Projects"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/deprecated/old-home-2",
+      "text": "About Me"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/oowls#012",
+      "text": "Overview"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/oowls#02",
+      "text": "Ideation Journey"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/oowls#03",
+      "text": "Conceptualization"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/oowls#",
+      "text": "- User Flows"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/oowls#032",
+      "text": "- Personas"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/oowls#04",
+      "text": "Final Prototypes"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/oowls#05",
+      "text": "Competitive Analysis"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/oowls#012",
+      "text": "Overview"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/oowls#02",
+      "text": "Ideation Journey"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/oowls#03",
+      "text": "Conceptualization"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/oowls#",
+      "text": "- User Flows"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/oowls#032",
+      "text": "- Personas"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/oowls#04",
+      "text": "Final Prototypes"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/oowls#05",
+      "text": "Competitive Analysis"
+    },
+    {
+      "href": "https://www.aarp.org/retirement/planning-for-retirement/info-2018/retirees-age-in-place-aarp-study.html",
+      "text": "one AARP report"
+    },
+    {
+      "href": "https://oowls.webflow.io/",
+      "text": ""
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/oowls#04",
+      "text": "UI for service seekers"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/oowls#",
+      "text": "UI for service providers"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/oowls#4",
+      "text": "2 user flows"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/research-ubi-gestures",
+      "text": "Previous"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/universal-processing",
+      "text": "Next"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/oowls#0",
+      "text": "↑ Top"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/#3",
+      "text": ""
+    },
+    {
+      "href": "https://webflow.com/?utm_campaign=brandjs",
+      "text": ""
+    }
+  ],
+  "slug": "research-oowls",
+  "httpStatus": 200,
+  "pageType": "case-study",
+  "sections": [
+    {
+      "level": 1,
+      "heading": "Overview",
+      "content": [
+        "Timeline: 2023.04 - 2023.10",
+        "Location: UC San Diego",
+        "Acheived: Catalyst Funding by the Sullivan Center",
+        "Tools: Webflow, Figma, Unbounce, Canva, Google Analytics",
+        "Content",
+        "Overview",
+        "Ideation Journey",
+        "Conceptualization",
+        "- User Flows",
+        "- Personas",
+        "Final Prototypes",
+        "Competitive Analysis"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66a2abbe39d4e32449faa33d_Subtract%20black.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "heading": "Problem",
+      "content": [
+        "Meeting the rising demand for paid caregivers in the United States is a challenge. According to one AARP report, 3 out of 4 seniors over 50 wish to age in place (age at home), but the necessary assistance within the caregiving market is both understudied and undersupplied.",
+        "Meeting the rising demand for paid caregivers in the United States is a challenge. According to one AARP report, 3 out of 4 seniors over 50 wish to age in place (age at home), but the necessary assistance within the caregiving market is both understudied and undersupplied."
+      ],
+      "media": []
+    },
+    {
+      "level": 1,
+      "heading": "Objective",
+      "content": [
+        "Enhance accessibility and affordability of caregiving services for seniors, particularly those opting to age in place.",
+        "Enhance accessibility and affordability of caregiving services for seniors, particularly those opting to age in place."
+      ],
+      "media": []
+    },
+    {
+      "level": 1,
+      "heading": "Solutions",
+      "content": [
+        "We created OOWLS, a platform that connects families with verified gig-workers (Owls) for personalized, on-demand senior care --- empowering loved ones to support the health, safety, and social well-being of aging family members.",
+        "Website",
+        "Mobile App Hi-fi prototypes"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64a59bcf92841340fa4856ed_ezgif.com-video-to-gif.gif",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/657f72181eee1bef26d95b97_ezgif-3-oowl2_0.gif",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/657f7c6474351fdd7edc62cc_ezgif-2-oowl%202_1.gif",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "heading": "Ideation Journey",
+      "content": [
+        "Initial objective",
+        "Initially, our focus was on supporting the senior populations' psychological and social well-being. We aimed at creating a gig-based service that connects seniors with youth who could offer companionship and living assistance.",
+        "Survey results",
+        "We distributed surveys @ senior living communities, student discord servers, and NextDoor. Out of the 6 effective responses from seniors, we found that all seniors didn't show much desire of fostering new social connections‍. Many of them were unwilling to do something out of their current routine.",
+        "Interviews"
+      ],
+      "media": []
+    },
+    {
+      "level": 1,
+      "heading": "Structured Interviews",
+      "content": [
+        "- The set, wording, and the order of questions are fixed between each interview - One participant per interview - Required planning, note-taking, encoding, analyzing"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66abcebd8799dfb15ee26f27_Screen%20Shot%202024-08-01%20at%202.03.18%20PM.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66abceca2b014d29a6733e84_Screen%20Shot%202024-08-01%20at%202.03.41%20PM.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "heading": "Unstructured Focus Group Interviews",
+      "content": [
+        "- Open-ended questions, a free-flowing conversation - A group of participants - Required scheduling with facilities, note-taking, transcribing, encoding, analyzing",
+        "We conducted interviews with 7 seniors (1 living with her adult child,1 living alone, 5 living in an assisted living community).",
+        "There seems to be a need for more advocacy for seniors . Seniors often fail to communicate their needs to their loved ones timely due to: 1 ) long residential distance 2 ) limited tech literacy 3 ) concerns about burdening their family members",
+        "Help with chores, welfare checks, technology, transportation, etc are appealing to the seniors",
+        "Pivot",
+        "Firstly, we shift from just focusing on elderly's mental health to a wider coverage that also includes physical health, environmental checks, daily chores, and abuse check.",
+        "Secondly, we re-position ourselves as a \"primary care doctor\" who does preliminary checks and send referrals rather than the specialist doctors who provide the actual treatments."
+      ],
+      "media": [
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66abea0cfca1c3a2cc129ee9_Screen%20Shot%202024-08-01%20at%204.03.08%20PM.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66abe9a13b9a609f88c04435_Screen%20Shot%202024-08-01%20at%204.01.01%20PM.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "heading": "Conceptualization",
+      "content": [
+        "User Flow Diagrams",
+        "2 user flows: one for individuals seeking check-in services for seniors, and another for gig-workers providing these services. ‍",
+        "• My first goal is to ensure the entire process is intuitive and accessible to elderly users with limited tech-literacy.",
+        "E.g. All necessary steps, from landing to scheduling a check-in with a trusted person, are seamlessly integrated in one flow, eliminating the need to switch between tabs.",
+        "• Additionally, I prioritize building trust between service providers and seekers. This is achieved through enhanced information transparency and user control.",
+        "E.g. Senior families (service requesters) have access to the OWL's (service provider) real-time location during check-ins. A built-in chat module facilitates communication between the parties. Ratings and reviews are applied and visible to both sides.",
+        "• Doubtlessly, I want to ensure good experiences for service providers as well.",
+        "E.g. The app offers pre-formulated checklist templates to streamline the check-in process across various categories. This not only simplifies the workflow but also minimizes the risk of errors that could potentially lead to legal liabilities. Additionally, service providers have the flexibility to decline a check-in request, provided they provide a valid reason.",
+        "Personas",
+        "After interviewing with 7 seniors and 3 senior takers, I created two family personas based off their background and needs. Note that these are not typical individual personas but are sets of personas which constitute \"family personas\"."
+      ],
+      "media": [
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66637893233aaddcc804937e_User%20Flow%20-v2%20(Seeker).png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6663789364289b94e8a08ccc_User%20Flow%20-v2%20(Provider).png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/653df373efe0c8de1284e52e_Family%20persona%201-p-1600.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/653df373ae6bc59344288b64_Family%20persona%202-p-1600.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "heading": "Final Prototypes",
+      "content": [
+        "The straightforward onboading process starts with a concise one-page guide outlining how OOWLS works, and then lead users to a set of simple questions to establish a basic, tentative preference profile.",
+        "Next, users can see a list of nearby care provider profiles, with their skills, rating, price, and other information displayed to help users make informed selection.",
+        "Flexible filters are right accessible on top of the list for personalized filtering.",
+        "Upon entering a detailed profile page, users can contact the care provider and schedule a check-in. Users can tailor their check-in requests based on the provider's specialty and will need to wait for the provider to accept their request.",
+        "Care providers are expected to follow more trackable procedures to make analysis of the seniors' living conditions and their needs and send a summary report to their families."
+      ],
+      "media": [
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66ac047233b666c924dd4770_Screen%20Shot%202024-08-01%20at%205.55.52%20PM.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6663701b7b0ab49d4381f47b_Frame%202335-p-1600.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/660f1effe3629b63421f1dbb_Frame%202362-p-1600.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66636796d5d10924a248938d_oowl_filter.gif",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66636e603767110946bb56fa_Card%202.0.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/657fb57430cef4d166c5414e_Frame%202336-p-1600.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66ac047233b666c924dd4770_Screen%20Shot%202024-08-01%20at%205.55.52%20PM.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/657fb995b452e23ec92c4b7d_Frame%202337-p-1600.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "heading": "Benefits of our idea",
+      "content": [
+        "Empowering both families and the seniors -Helps families far away to check up on their seniors -Seniors and their families can filter the available oowls by different criteria to choose the best fitting helper for them -Elderly abuse in institutions can be effectively detected",
+        "Low entry barrier for gig worker (no specialized skills) --> More available contractors",
+        "Language Support -Inclusive of non-English speaking seniors",
+        "Legal Protection/Security -Strict background check -App tracks location of the gig worker while in session"
+      ],
+      "media": []
+    },
+    {
+      "level": 1,
+      "heading": "Competitive Analysis",
+      "content": [],
+      "media": [
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64a84103843c06fc437298bf_Screen%20Shot%202023-07-08%20at%2012.44.25%20AM-p-1600.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f69736ba3dbad5ba6_arrow-ios-back.svg",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f69736ba3dbad5ba6_arrow-ios-back.svg",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f378d84ed95e1f9f6_back%20arrow.png",
+          "alt": ""
+        }
+      ]
+    }
+  ],
+  "images": [
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65d438eaa78b395bbf79685a_Mockup%20Cover-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66a2ac26af28d71faea660fc_Subtract%20white.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66a2abbe39d4e32449faa33d_Subtract%20black.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64a59bcf92841340fa4856ed_ezgif.com-video-to-gif.gif",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/657f72181eee1bef26d95b97_ezgif-3-oowl2_0.gif",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/657f7c6474351fdd7edc62cc_ezgif-2-oowl%202_1.gif",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66abcebd8799dfb15ee26f27_Screen%20Shot%202024-08-01%20at%202.03.18%20PM.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66abceca2b014d29a6733e84_Screen%20Shot%202024-08-01%20at%202.03.41%20PM.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66abea0cfca1c3a2cc129ee9_Screen%20Shot%202024-08-01%20at%204.03.08%20PM.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66abe9a13b9a609f88c04435_Screen%20Shot%202024-08-01%20at%204.01.01%20PM.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66637893233aaddcc804937e_User%20Flow%20-v2%20(Seeker).png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6663789364289b94e8a08ccc_User%20Flow%20-v2%20(Provider).png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/653df373efe0c8de1284e52e_Family%20persona%201-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/653df373ae6bc59344288b64_Family%20persona%202-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66ac047233b666c924dd4770_Screen%20Shot%202024-08-01%20at%205.55.52%20PM.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6663701b7b0ab49d4381f47b_Frame%202335-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/660f1effe3629b63421f1dbb_Frame%202362-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66636796d5d10924a248938d_oowl_filter.gif",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66636e603767110946bb56fa_Card%202.0.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/657fb57430cef4d166c5414e_Frame%202336-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66ac047233b666c924dd4770_Screen%20Shot%202024-08-01%20at%205.55.52%20PM.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/657fb995b452e23ec92c4b7d_Frame%202337-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64a84103843c06fc437298bf_Screen%20Shot%202023-07-08%20at%2012.44.25%20AM-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f69736ba3dbad5ba6_arrow-ios-back.svg",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f69736ba3dbad5ba6_arrow-ios-back.svg",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f378d84ed95e1f9f6_back%20arrow.png",
+      "alt": ""
+    }
+  ],
+  "media": [
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65d438eaa78b395bbf79685a_Mockup%20Cover-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66a2ac26af28d71faea660fc_Subtract%20white.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66a2abbe39d4e32449faa33d_Subtract%20black.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64a59bcf92841340fa4856ed_ezgif.com-video-to-gif.gif",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/657f72181eee1bef26d95b97_ezgif-3-oowl2_0.gif",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/657f7c6474351fdd7edc62cc_ezgif-2-oowl%202_1.gif",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66abcebd8799dfb15ee26f27_Screen%20Shot%202024-08-01%20at%202.03.18%20PM.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66abceca2b014d29a6733e84_Screen%20Shot%202024-08-01%20at%202.03.41%20PM.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66abea0cfca1c3a2cc129ee9_Screen%20Shot%202024-08-01%20at%204.03.08%20PM.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66abe9a13b9a609f88c04435_Screen%20Shot%202024-08-01%20at%204.01.01%20PM.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66637893233aaddcc804937e_User%20Flow%20-v2%20(Seeker).png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6663789364289b94e8a08ccc_User%20Flow%20-v2%20(Provider).png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/653df373efe0c8de1284e52e_Family%20persona%201-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/653df373ae6bc59344288b64_Family%20persona%202-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66ac047233b666c924dd4770_Screen%20Shot%202024-08-01%20at%205.55.52%20PM.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6663701b7b0ab49d4381f47b_Frame%202335-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/660f1effe3629b63421f1dbb_Frame%202362-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66636796d5d10924a248938d_oowl_filter.gif",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66636e603767110946bb56fa_Card%202.0.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/657fb57430cef4d166c5414e_Frame%202336-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66ac047233b666c924dd4770_Screen%20Shot%202024-08-01%20at%205.55.52%20PM.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/657fb995b452e23ec92c4b7d_Frame%202337-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64a84103843c06fc437298bf_Screen%20Shot%202023-07-08%20at%2012.44.25%20AM-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f69736ba3dbad5ba6_arrow-ios-back.svg",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f69736ba3dbad5ba6_arrow-ios-back.svg",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f378d84ed95e1f9f6_back%20arrow.png",
+      "alt": ""
+    }
+  ],
+  "internalLinks": [
+    "https://yunfeis-portfolio.webflow.io/old-home",
+    "https://yunfeis-portfolio.webflow.io/deprecated/old-home-2",
+    "https://yunfeis-portfolio.webflow.io/research/oowls",
+    "https://yunfeis-portfolio.webflow.io/research/research-ubi-gestures",
+    "https://yunfeis-portfolio.webflow.io/research/universal-processing",
+    "https://yunfeis-portfolio.webflow.io/"
+  ],
+  "externalLinks": [
+    {
+      "href": "https://www.aarp.org/retirement/planning-for-retirement/info-2018/retirees-age-in-place-aarp-study.html",
+      "text": "one AARP report"
+    },
+    {
+      "href": "https://oowls.webflow.io/",
+      "text": ""
+    },
+    {
+      "href": "https://webflow.com/?utm_campaign=brandjs",
+      "text": ""
+    }
+  ],
+  "screenshot": "screenshots/research-oowls.png",
+  "scrapedAt": "2026-06-17T03:22:29.926Z"
+}

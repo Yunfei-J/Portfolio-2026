@@ -1,0 +1,147 @@
+/* ─────────────────────────────────────────────────────────────────────────
+   Design tokens
+   Edit ONLY this file to change sizes across the whole site.
+
+   Breakpoints:
+     > 1000px   standard (1×)
+     600–1000px 0.8×
+     < 600px    0.6×
+   ───────────────────────────────────────────────────────────────────────── */
+
+:root {
+  /* ── Standard type scale (auto-scales at breakpoints below) ── */
+  --text-xs: 16px;
+  --text-sm: 20px;
+  --text-md: 24px;
+  --text-lg: 32px;
+  --text-xl: 48px;
+  --text-xxl: 64px;
+
+  /* ── Font sizes (element / layout) ── */
+  --fs-hero: 90px;            /* hero section title */
+  --fs-h1: var(--text-xxl);   /* section headings: project title, search title */
+  --fs-carousel-label: var(--text-xl);
+  --fs-search-input: var(--text-md);
+  --fs-body: var(--text-sm);  /* project description, year row */
+  --fs-tag-small: var(--text-xs);
+  --fs-ui: var(--text-md);    /* carousel prev/next controls */
+  --fs-meta: var(--text-sm);  /* timeframe, skill-row labels */
+  --fs-xs: 14px;              /* search result count */
+
+  /* ── Standard spacing scale (auto-scales at breakpoints below) ── */
+  --space-micro: 4px;
+  --space-xxs: 16px;
+  --space-xs: 20px;
+  --space-sm: 24px;
+  --space-md: 32px;
+  --space-lg: 40px;
+  --space-xl: 48px;
+  --space-xxl: 56px;
+  --space-xxxl: 64px;
+
+  /* ── Spacing (element / layout) ── */
+  --side-padding: 120px;          /* horizontal page gutter */
+  --main-gap: var(--space-md);    /* vertical gap between page sections */
+  --hero-inner-gap: 155px;        /* gap between h1 and skill-map */
+  --hero-timeline-pad-bottom: 50px; /* bottom inset below skill rows */
+  --skill-row-gap: var(--space-md);
+  --project-list-gap: var(--space-md);
+  --project-card-gap: 70px;       /* internal gap in .project-card */
+  --project-card-pad-v: var(--space-lg);
+  --project-card-min-h: 533px;    /* min-height of .project-card */
+  --project-visual-min-h: 462px;  /* min-height of .project-visual */
+  --carousel-gap: 0px;            /* gap between cards */
+  --carousel-pad-v: 80px;
+  --reading-pad-top: 176px;       /* top padding of .reading-search */
+  --search-pill-min-h: 135px;     /* min-height of .search-pill */
+  --search-pill-pad-h: 52px;      /* horizontal padding inside pill */
+  --search-pill-pad-v: var(--space-xs);
+  --search-pill-mt: 76px;         /* margin-top of .search-pill */
+  --large-tags-mt: var(--space-md);
+  --large-tags-btn-pad-h: var(--space-sm);
+  --compact-tag-pad-h: var(--space-sm);
+  --hero-section-pad-top: var(--space-xxxl);
+  --hero-section-pad-right: 126px;/* hero right padding */
+  --hero-section-pad-bottom: 128px;/* hero bottom padding */
+
+  /* ── Colors ── */
+  --color-primary: #89954d;
+  --color-secondary: #c4d81a;
+}
+
+/* ── 0.8× at medium viewports (600px–1000px) ─────────────────────────── */
+@media (max-width: 1000px) {
+  :root {
+    --fs-hero: 77px;
+    --fs-xs: 11px;
+    --fs-tag-large: 19px;
+
+    --text-xs: 13px;
+    --text-sm: 16px;
+    --text-md: 19px;
+    --text-lg: 26px;
+    --text-xl: 38px;
+    --text-xxl: 51px;
+
+    --space-xxs: 13px;
+    --space-xs: 16px;
+    --space-sm: 19px;
+    --space-md: 26px;
+    --space-lg: 32px;
+    --space-xl: 38px;
+    --space-xxl: 45px;
+    --space-xxxl: 51px;
+
+    --side-padding: 96px;
+    --hero-inner-gap: 124px;
+    --project-card-gap: 56px;
+    --project-card-min-h: 426px;
+    --project-visual-min-h: 370px;
+    --carousel-gap: 80px;
+    --reading-pad-top: 141px;
+    --search-pill-min-h: 108px;
+    --search-pill-pad-h: 60px;
+    --search-pill-mt: 61px;
+    --footer-pad-top: 138px;
+    --hero-section-pad-right: 101px;
+    --hero-section-pad-bottom: 102px;
+  }
+}
+
+/* ── 0.6× at narrow viewports (< 600px) ─────────────────────────────── */
+@media (max-width: 600px) {
+  :root {
+    --fs-hero: 58px;
+    --fs-xs: 8px;
+    --fs-tag-large: 14px;
+
+    --text-xs: 10px;
+    --text-sm: 12px;
+    --text-md: 14px;
+    --text-lg: 19px;
+    --text-xl: 29px;
+    --text-xxl: 38px;
+
+    --space-xxs: 10px;
+    --space-xs: 12px;
+    --space-sm: 14px;
+    --space-md: 19px;
+    --space-lg: 24px;
+    --space-xl: 29px;
+    --space-xxl: 34px;
+    --space-xxxl: 38px;
+
+    --side-padding: 72px;
+    --hero-inner-gap: 93px;
+    --project-card-gap: 42px;
+    --project-card-min-h: 320px;
+    --project-visual-min-h: 277px;
+    --carousel-gap: 60px;
+    --reading-pad-top: 106px;
+    --search-pill-pad-h: 48px;
+    --search-pill-mt: 46px;
+    --footer-pad-top: 103px;
+    --hero-section-pad-right: 76px;
+    --hero-section-pad-bottom: 77px;
+  }
+}

@@ -1,0 +1,204 @@
+{
+  "url": "https://yunfeis-portfolio.webflow.io/deprecated/old-home-2",
+  "title": "About Me",
+  "description": "",
+  "canonical": "",
+  "openGraph": {
+    "title": "About Me",
+    "description": "",
+    "image": ""
+  },
+  "h1": "",
+  "blocks": [
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Hi! My name is Yunfei Jiao"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "Currently, I am a master student at Cornell Tech, pursuing Dual M.S. Degrees in Information Systems, with a specialization in Connective Media. Prior to this, I completed double B.S. degrees in Cognitive Science and Economics at UC San Diego."
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "Teams that I've worked with ➩"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64b804c8dbb69cc7577178f8_WechatIMG93-p-800.jpeg",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64b96c1a72ad75507ef47881_WechatIMG100-p-800.jpeg",
+      "alt": ""
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "text": "View my past projects ➩➩"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64b96b31ae29172f6eaba10e_WechatIMG98-p-800.jpeg",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64b80458464197a725dda877_WechatIMG95-p-800.jpeg",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64b804c6578af1e52e304f3a_WechatIMG94-p-800.jpeg",
+      "alt": ""
+    }
+  ],
+  "links": [
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/deprecated/old-home-2#",
+      "text": "YunfeiJiao"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/old-home",
+      "text": "Design"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research",
+      "text": "Research"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/deprecated/old-home-2#",
+      "text": "About Me"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/deprecated/old-home-2#",
+      "text": "View my past projects ➩➩"
+    },
+    {
+      "href": "https://webflow.com/?utm_campaign=brandjs",
+      "text": ""
+    }
+  ],
+  "slug": "deprecated-old-home-2",
+  "httpStatus": 200,
+  "pageType": "page",
+  "sections": [
+    {
+      "level": 2,
+      "heading": "Hi! My name is Yunfei Jiao",
+      "content": [
+        "Currently, I am a master student at Cornell Tech, pursuing Dual M.S. Degrees in Information Systems, with a specialization in Connective Media. Prior to this, I completed double B.S. degrees in Cognitive Science and Economics at UC San Diego."
+      ],
+      "media": []
+    },
+    {
+      "level": 2,
+      "heading": "Teams that I've worked with ➩",
+      "content": [],
+      "media": [
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64b804c8dbb69cc7577178f8_WechatIMG93-p-800.jpeg",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64b96c1a72ad75507ef47881_WechatIMG100-p-800.jpeg",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "heading": "View my past projects ➩➩",
+      "content": [],
+      "media": [
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64b96b31ae29172f6eaba10e_WechatIMG98-p-800.jpeg",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64b80458464197a725dda877_WechatIMG95-p-800.jpeg",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64b804c6578af1e52e304f3a_WechatIMG94-p-800.jpeg",
+          "alt": ""
+        }
+      ]
+    }
+  ],
+  "images": [
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64b804c8dbb69cc7577178f8_WechatIMG93-p-800.jpeg",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64b96c1a72ad75507ef47881_WechatIMG100-p-800.jpeg",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64b96b31ae29172f6eaba10e_WechatIMG98-p-800.jpeg",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64b80458464197a725dda877_WechatIMG95-p-800.jpeg",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64b804c6578af1e52e304f3a_WechatIMG94-p-800.jpeg",
+      "alt": ""
+    }
+  ],
+  "media": [
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64b804c8dbb69cc7577178f8_WechatIMG93-p-800.jpeg",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64b96c1a72ad75507ef47881_WechatIMG100-p-800.jpeg",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64b96b31ae29172f6eaba10e_WechatIMG98-p-800.jpeg",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64b80458464197a725dda877_WechatIMG95-p-800.jpeg",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/64b804c6578af1e52e304f3a_WechatIMG94-p-800.jpeg",
+      "alt": ""
+    }
+  ],
+  "internalLinks": [
+    "https://yunfeis-portfolio.webflow.io/deprecated/old-home-2",
+    "https://yunfeis-portfolio.webflow.io/old-home",
+    "https://yunfeis-portfolio.webflow.io/research"
+  ],
+  "externalLinks": [
+    {
+      "href": "https://webflow.com/?utm_campaign=brandjs",
+      "text": ""
+    }
+  ],
+  "screenshot": "screenshots/deprecated-old-home-2.png",
+  "scrapedAt": "2026-06-17T03:22:52.632Z"
+}

@@ -1,0 +1,1234 @@
+{
+  "url": "https://yunfeis-portfolio.webflow.io/research/universal-processing",
+  "title": "Universal Processing",
+  "description": "",
+  "canonical": "",
+  "openGraph": {
+    "title": "Universal Processing",
+    "description": "",
+    "image": ""
+  },
+  "h1": "Overview",
+  "blocks": [
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "uServe POS"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "End-to-end redesign of a point-of-sale system UIUX."
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Overview"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Timeframe: Feb 2024 - Present"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Company: Universal Processing"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Role: UIUX designer"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Product coverage: 35,000+ merchants nationwide"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6a00bbd52b104a42072be037_f61a244bbbd615f77bb18b5fe746f2c7_Cover-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f378d84ed95e1f9f6_back%20arrow.png",
+      "alt": ""
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Deliverables"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66ef984643461a2e10f6d549_POS%20mockup.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66ef9863b53c1e60b775ea2b_BackOffice%20mockup%20tablet.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66ef99c7f2044c73d88eba4d_BackOffice%20mockup%20iphone.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66ef986e000b4f57b163132f_UOrder%20mockup%20tablet.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66ef987df2044c73d88dc5e9_UOrder%20mockup%20iphone.png",
+      "alt": ""
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "POS system"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "POS backoffice + CRM"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "Food ordering platform"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "For waitstaff"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "For restaurant owners"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "For customers"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "POS Ecosystem Overview"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/698920d676065530eaccd1ef_631f40ef0a301d96550f8a99b90de7a8_Core%20technologies-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Mission"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "My mission is to rebrand, modernize, and lower both the learning and re-learning cost of the U Serve interface. POS interfaces are conventionally text-dense and have a flat information architecture. The goal is to achieve a balance between aesthetics and functional efficiency, ensuring a smooth transition for all users."
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Problem Analysis"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Stakeholder Research"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697bacaeef7b740f74c9b518_Stakeholder%20quotes-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697bacaebf1ebecd2b6fa143_4d38980cec0ce912ccfa1d2ab353b25d_image%2011.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697baecf8e25076e79c8e3b3_Toast%20field%20study.jpg",
+      "alt": ""
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Solutions"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "First Let's Rebrand"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697fc5f13f3c129452a6b061_v2.3%20Navy-Light-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697fd70f93596baf58039674_Color%20guide.png",
+      "alt": ""
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Beyond “Ugly”: Understanding the Real Problem"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/698007be22ab0480e2643753_afadc73aee37f0414b37ee42eac1cd0c_Table.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/69800b564b5c74df253bff4d_6839e739a789d50dc59c1199a2faa1c7_image%20118.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/69800c5a098a1b3502f30e5e_cfea14f53dc52928f8f4fddd6718f236_image%20123.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/698010f44e975939ef19b77f_7cb689ca4024fd3bf12b04882596c09a_dark%20mode%20in%20field%201.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/698018ac653118b4ddefad05_Screenshot%202026-02-01%20at%2010.24.20%E2%80%AFPM.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/698031936e8c903cff2776bd_c4a51f813cd6c95c025e1885a934f435_Frame%20100866-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/698031934c68f6f4eaa663e2_3b2ce923e38152c81cdded65d978c0c8_Frame%20100867-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/698022b9465d75efe5a8b1d0_handle%20pattern.png",
+      "alt": ""
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Efficiency optimization & Error provention"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6683709298117f1dc228a8f6_Frame%20802.png",
+      "alt": ""
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Final Prototype"
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Desktop POS"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988b73934bfc24ce1b4e58d_v2.3%20Green-Light.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988b739f8ded21285a6ffbf_v2.3%20Green-Dark.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988b739a4277990f2bf5825_v2.3%20Green-Light-2.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988b7395c02d9c200fcd21f_v2.3%20Green-Dark-Modifier%20Page-1.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988b739cc9dfd12cda7d885_v2.3%20Green-Light-3.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988c2c3471507cc30701f3c_v2.3%20Green-Dark-Edit%20quantity.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988c24bfad96919145c4687_v2.3%20Green-Light-Add%20notes.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988c24ba3138ce814340cf6_v2.3%20Green-Dark-Add%20notes.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988c25b30db7aa5d75dfe05_Light-Open%20item.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988c25bb5fc24fdf3c2030b_Dark-Open%20item.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988b7397217b5a3f363bdbe_v2.3%20Green-Light-1.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988b73985481737cc4d56dc_v2.3%20Green-Dark-LayoutSetting.png",
+      "alt": ""
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Backoffice"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697adada643aaab0d260eb6b_Report_Overview-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697adadaa91c911841723243_Group_Categories%20%5BEdit%20Mode%5D-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697adadaa91c911841723243_Group_Categories%20%5BEdit%20Mode%5D-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697adadaa91c911841723243_Group_Categories%20%5BEdit%20Mode%5D-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Specs for Dev Team"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "Considering the varying screen sizes of POS tablets, I defined the specifications for a responsive design to assist our development team in implementing it effectively."
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697aeb724d25cda58b27bca5_Design%20System-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66d51d61e232491615b8e5af_Screen%20Shot%202024-09-01%20at%2010.04.46%20PM.png",
+      "alt": ""
+    },
+    {
+      "type": "heading",
+      "level": 1,
+      "text": "Reflections"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "I am grateful to Universal Processing LLC for giving me this internship opportunity. It has been an invaluable experience designing for systems with unique structures and an extensive user coverage. Over the past few months, I have learned to communicate more effectively with the development team through:"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Providing detailed specifications for responsive design, including different breakpoints and layout adjustments for various screen sizes."
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Asking and understanding the technical feasibility of design elements and adjust designs accordingly."
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Identifying as many edge cases as possible to ensure the design accommodates a wide range of scenarios and user interactions."
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "‍I also enhanced my UIUX skills in how to :"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Represent complicate data relationships by using multi-status elements, layered levels with independent affordances, parallel and sequential processes, and accounting information."
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Prioritize features and employ design tactics to manage space efficiently, ensuring a clean and functional layout."
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f69736ba3dbad5ba6_arrow-ios-back.svg",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f69736ba3dbad5ba6_arrow-ios-back.svg",
+      "alt": ""
+    }
+  ],
+  "links": [
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/old-home",
+      "text": "Projects"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/deprecated/old-home-2",
+      "text": "About Me"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/#3",
+      "text": ""
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/universal-processing#w-tabs-0-data-w-pane-0",
+      "text": "Core technologies"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/universal-processing#w-tabs-0-data-w-pane-1",
+      "text": "Key stakeholders"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/universal-processing#w-tabs-1-data-w-pane-0",
+      "text": "Color Guide"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/universal-processing#w-tabs-1-data-w-pane-1",
+      "text": "Responsive Design"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/universal-processing#w-tabs-1-data-w-pane-2",
+      "text": "Spacing Guide"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/universal-processing#0",
+      "text": "↑ Top"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/research-ubi-gestures",
+      "text": "Previous"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/green-it",
+      "text": "Next"
+    },
+    {
+      "href": "https://webflow.com/?utm_campaign=brandjs",
+      "text": ""
+    }
+  ],
+  "slug": "research-universal-processing",
+  "httpStatus": 200,
+  "pageType": "case-study",
+  "sections": [
+    {
+      "level": 1,
+      "heading": "Overview",
+      "content": [
+        "Timeframe: Feb 2024 - Present",
+        "Company: Universal Processing",
+        "Role: UIUX designer",
+        "Product coverage: 35,000+ merchants nationwide"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6a00bbd52b104a42072be037_f61a244bbbd615f77bb18b5fe746f2c7_Cover-p-1600.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f378d84ed95e1f9f6_back%20arrow.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "heading": "Deliverables",
+      "content": [
+        "POS system",
+        "POS backoffice + CRM",
+        "Food ordering platform",
+        "For waitstaff",
+        "For restaurant owners",
+        "For customers"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66ef984643461a2e10f6d549_POS%20mockup.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66ef9863b53c1e60b775ea2b_BackOffice%20mockup%20tablet.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66ef99c7f2044c73d88eba4d_BackOffice%20mockup%20iphone.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66ef986e000b4f57b163132f_UOrder%20mockup%20tablet.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66ef987df2044c73d88dc5e9_UOrder%20mockup%20iphone.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "heading": "POS Ecosystem Overview",
+      "content": [],
+      "media": [
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/698920d676065530eaccd1ef_631f40ef0a301d96550f8a99b90de7a8_Core%20technologies-p-1600.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "heading": "Mission",
+      "content": [
+        "My mission is to rebrand, modernize, and lower both the learning and re-learning cost of the U Serve interface. POS interfaces are conventionally text-dense and have a flat information architecture. The goal is to achieve a balance between aesthetics and functional efficiency, ensuring a smooth transition for all users."
+      ],
+      "media": []
+    },
+    {
+      "level": 1,
+      "heading": "Problem Analysis",
+      "content": [],
+      "media": []
+    },
+    {
+      "level": 1,
+      "heading": "Stakeholder Research",
+      "content": [],
+      "media": [
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697bacaeef7b740f74c9b518_Stakeholder%20quotes-p-1600.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697bacaebf1ebecd2b6fa143_4d38980cec0ce912ccfa1d2ab353b25d_image%2011.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697baecf8e25076e79c8e3b3_Toast%20field%20study.jpg",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "heading": "Solutions",
+      "content": [],
+      "media": []
+    },
+    {
+      "level": 1,
+      "heading": "First Let's Rebrand",
+      "content": [],
+      "media": [
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697fc5f13f3c129452a6b061_v2.3%20Navy-Light-p-1600.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697fd70f93596baf58039674_Color%20guide.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "heading": "Beyond “Ugly”: Understanding the Real Problem",
+      "content": [],
+      "media": [
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/698007be22ab0480e2643753_afadc73aee37f0414b37ee42eac1cd0c_Table.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/69800b564b5c74df253bff4d_6839e739a789d50dc59c1199a2faa1c7_image%20118.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/69800c5a098a1b3502f30e5e_cfea14f53dc52928f8f4fddd6718f236_image%20123.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/698010f44e975939ef19b77f_7cb689ca4024fd3bf12b04882596c09a_dark%20mode%20in%20field%201.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/698018ac653118b4ddefad05_Screenshot%202026-02-01%20at%2010.24.20%E2%80%AFPM.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/698031936e8c903cff2776bd_c4a51f813cd6c95c025e1885a934f435_Frame%20100866-p-1600.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/698031934c68f6f4eaa663e2_3b2ce923e38152c81cdded65d978c0c8_Frame%20100867-p-1600.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/698022b9465d75efe5a8b1d0_handle%20pattern.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "heading": "Efficiency optimization & Error provention",
+      "content": [],
+      "media": [
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6683709298117f1dc228a8f6_Frame%20802.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "heading": "Final Prototype",
+      "content": [],
+      "media": []
+    },
+    {
+      "level": 1,
+      "heading": "Desktop POS",
+      "content": [],
+      "media": [
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988b73934bfc24ce1b4e58d_v2.3%20Green-Light.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988b739f8ded21285a6ffbf_v2.3%20Green-Dark.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988b739a4277990f2bf5825_v2.3%20Green-Light-2.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988b7395c02d9c200fcd21f_v2.3%20Green-Dark-Modifier%20Page-1.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988b739cc9dfd12cda7d885_v2.3%20Green-Light-3.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988c2c3471507cc30701f3c_v2.3%20Green-Dark-Edit%20quantity.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988c24bfad96919145c4687_v2.3%20Green-Light-Add%20notes.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988c24ba3138ce814340cf6_v2.3%20Green-Dark-Add%20notes.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988c25b30db7aa5d75dfe05_Light-Open%20item.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988c25bb5fc24fdf3c2030b_Dark-Open%20item.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988b7397217b5a3f363bdbe_v2.3%20Green-Light-1.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988b73985481737cc4d56dc_v2.3%20Green-Dark-LayoutSetting.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "heading": "Backoffice",
+      "content": [],
+      "media": [
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697adada643aaab0d260eb6b_Report_Overview-p-1600.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697adadaa91c911841723243_Group_Categories%20%5BEdit%20Mode%5D-p-1600.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697adadaa91c911841723243_Group_Categories%20%5BEdit%20Mode%5D-p-1600.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697adadaa91c911841723243_Group_Categories%20%5BEdit%20Mode%5D-p-1600.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "heading": "Specs for Dev Team",
+      "content": [
+        "Considering the varying screen sizes of POS tablets, I defined the specifications for a responsive design to assist our development team in implementing it effectively."
+      ],
+      "media": [
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697aeb724d25cda58b27bca5_Design%20System-p-1600.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66d51d61e232491615b8e5af_Screen%20Shot%202024-09-01%20at%2010.04.46%20PM.png",
+          "alt": ""
+        }
+      ]
+    },
+    {
+      "level": 1,
+      "heading": "Reflections",
+      "content": [
+        "I am grateful to Universal Processing LLC for giving me this internship opportunity. It has been an invaluable experience designing for systems with unique structures and an extensive user coverage. Over the past few months, I have learned to communicate more effectively with the development team through:",
+        "Providing detailed specifications for responsive design, including different breakpoints and layout adjustments for various screen sizes.",
+        "Asking and understanding the technical feasibility of design elements and adjust designs accordingly.",
+        "Identifying as many edge cases as possible to ensure the design accommodates a wide range of scenarios and user interactions.",
+        "‍I also enhanced my UIUX skills in how to :",
+        "Represent complicate data relationships by using multi-status elements, layered levels with independent affordances, parallel and sequential processes, and accounting information.",
+        "Prioritize features and employ design tactics to manage space efficiently, ensuring a clean and functional layout."
+      ],
+      "media": [
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f69736ba3dbad5ba6_arrow-ios-back.svg",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f69736ba3dbad5ba6_arrow-ios-back.svg",
+          "alt": ""
+        }
+      ]
+    }
+  ],
+  "images": [
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6a00bbd52b104a42072be037_f61a244bbbd615f77bb18b5fe746f2c7_Cover-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f378d84ed95e1f9f6_back%20arrow.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66ef984643461a2e10f6d549_POS%20mockup.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66ef9863b53c1e60b775ea2b_BackOffice%20mockup%20tablet.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66ef99c7f2044c73d88eba4d_BackOffice%20mockup%20iphone.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66ef986e000b4f57b163132f_UOrder%20mockup%20tablet.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66ef987df2044c73d88dc5e9_UOrder%20mockup%20iphone.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/698920d676065530eaccd1ef_631f40ef0a301d96550f8a99b90de7a8_Core%20technologies-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697bacaeef7b740f74c9b518_Stakeholder%20quotes-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697bacaebf1ebecd2b6fa143_4d38980cec0ce912ccfa1d2ab353b25d_image%2011.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697baecf8e25076e79c8e3b3_Toast%20field%20study.jpg",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697fc5f13f3c129452a6b061_v2.3%20Navy-Light-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697fd70f93596baf58039674_Color%20guide.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/698007be22ab0480e2643753_afadc73aee37f0414b37ee42eac1cd0c_Table.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/69800b564b5c74df253bff4d_6839e739a789d50dc59c1199a2faa1c7_image%20118.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/69800c5a098a1b3502f30e5e_cfea14f53dc52928f8f4fddd6718f236_image%20123.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/698010f44e975939ef19b77f_7cb689ca4024fd3bf12b04882596c09a_dark%20mode%20in%20field%201.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/698018ac653118b4ddefad05_Screenshot%202026-02-01%20at%2010.24.20%E2%80%AFPM.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/698031936e8c903cff2776bd_c4a51f813cd6c95c025e1885a934f435_Frame%20100866-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/698031934c68f6f4eaa663e2_3b2ce923e38152c81cdded65d978c0c8_Frame%20100867-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/698022b9465d75efe5a8b1d0_handle%20pattern.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6683709298117f1dc228a8f6_Frame%20802.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988b73934bfc24ce1b4e58d_v2.3%20Green-Light.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988b739f8ded21285a6ffbf_v2.3%20Green-Dark.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988b739a4277990f2bf5825_v2.3%20Green-Light-2.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988b7395c02d9c200fcd21f_v2.3%20Green-Dark-Modifier%20Page-1.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988b739cc9dfd12cda7d885_v2.3%20Green-Light-3.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988c2c3471507cc30701f3c_v2.3%20Green-Dark-Edit%20quantity.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988c24bfad96919145c4687_v2.3%20Green-Light-Add%20notes.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988c24ba3138ce814340cf6_v2.3%20Green-Dark-Add%20notes.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988c25b30db7aa5d75dfe05_Light-Open%20item.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988c25bb5fc24fdf3c2030b_Dark-Open%20item.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988b7397217b5a3f363bdbe_v2.3%20Green-Light-1.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988b73985481737cc4d56dc_v2.3%20Green-Dark-LayoutSetting.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697adada643aaab0d260eb6b_Report_Overview-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697adadaa91c911841723243_Group_Categories%20%5BEdit%20Mode%5D-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697adadaa91c911841723243_Group_Categories%20%5BEdit%20Mode%5D-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697adadaa91c911841723243_Group_Categories%20%5BEdit%20Mode%5D-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697aeb724d25cda58b27bca5_Design%20System-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66d51d61e232491615b8e5af_Screen%20Shot%202024-09-01%20at%2010.04.46%20PM.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f69736ba3dbad5ba6_arrow-ios-back.svg",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f69736ba3dbad5ba6_arrow-ios-back.svg",
+      "alt": ""
+    }
+  ],
+  "media": [
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6a00bbd52b104a42072be037_f61a244bbbd615f77bb18b5fe746f2c7_Cover-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f378d84ed95e1f9f6_back%20arrow.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66ef984643461a2e10f6d549_POS%20mockup.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66ef9863b53c1e60b775ea2b_BackOffice%20mockup%20tablet.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66ef99c7f2044c73d88eba4d_BackOffice%20mockup%20iphone.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66ef986e000b4f57b163132f_UOrder%20mockup%20tablet.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66ef987df2044c73d88dc5e9_UOrder%20mockup%20iphone.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/698920d676065530eaccd1ef_631f40ef0a301d96550f8a99b90de7a8_Core%20technologies-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697bacaeef7b740f74c9b518_Stakeholder%20quotes-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697bacaebf1ebecd2b6fa143_4d38980cec0ce912ccfa1d2ab353b25d_image%2011.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697baecf8e25076e79c8e3b3_Toast%20field%20study.jpg",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697fc5f13f3c129452a6b061_v2.3%20Navy-Light-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697fd70f93596baf58039674_Color%20guide.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/698007be22ab0480e2643753_afadc73aee37f0414b37ee42eac1cd0c_Table.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/69800b564b5c74df253bff4d_6839e739a789d50dc59c1199a2faa1c7_image%20118.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/69800c5a098a1b3502f30e5e_cfea14f53dc52928f8f4fddd6718f236_image%20123.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/698010f44e975939ef19b77f_7cb689ca4024fd3bf12b04882596c09a_dark%20mode%20in%20field%201.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/698018ac653118b4ddefad05_Screenshot%202026-02-01%20at%2010.24.20%E2%80%AFPM.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/698031936e8c903cff2776bd_c4a51f813cd6c95c025e1885a934f435_Frame%20100866-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/698031934c68f6f4eaa663e2_3b2ce923e38152c81cdded65d978c0c8_Frame%20100867-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/698022b9465d75efe5a8b1d0_handle%20pattern.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6683709298117f1dc228a8f6_Frame%20802.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988b73934bfc24ce1b4e58d_v2.3%20Green-Light.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988b739f8ded21285a6ffbf_v2.3%20Green-Dark.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988b739a4277990f2bf5825_v2.3%20Green-Light-2.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988b7395c02d9c200fcd21f_v2.3%20Green-Dark-Modifier%20Page-1.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988b739cc9dfd12cda7d885_v2.3%20Green-Light-3.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988c2c3471507cc30701f3c_v2.3%20Green-Dark-Edit%20quantity.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988c24bfad96919145c4687_v2.3%20Green-Light-Add%20notes.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988c24ba3138ce814340cf6_v2.3%20Green-Dark-Add%20notes.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988c25b30db7aa5d75dfe05_Light-Open%20item.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988c25bb5fc24fdf3c2030b_Dark-Open%20item.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988b7397217b5a3f363bdbe_v2.3%20Green-Light-1.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6988b73985481737cc4d56dc_v2.3%20Green-Dark-LayoutSetting.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697adada643aaab0d260eb6b_Report_Overview-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697adadaa91c911841723243_Group_Categories%20%5BEdit%20Mode%5D-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697adadaa91c911841723243_Group_Categories%20%5BEdit%20Mode%5D-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697adadaa91c911841723243_Group_Categories%20%5BEdit%20Mode%5D-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/697aeb724d25cda58b27bca5_Design%20System-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66d51d61e232491615b8e5af_Screen%20Shot%202024-09-01%20at%2010.04.46%20PM.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f69736ba3dbad5ba6_arrow-ios-back.svg",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/65ff3d8f69736ba3dbad5ba6_arrow-ios-back.svg",
+      "alt": ""
+    }
+  ],
+  "internalLinks": [
+    "https://yunfeis-portfolio.webflow.io/old-home",
+    "https://yunfeis-portfolio.webflow.io/deprecated/old-home-2",
+    "https://yunfeis-portfolio.webflow.io/",
+    "https://yunfeis-portfolio.webflow.io/research/universal-processing",
+    "https://yunfeis-portfolio.webflow.io/research/research-ubi-gestures",
+    "https://yunfeis-portfolio.webflow.io/research/green-it"
+  ],
+  "externalLinks": [
+    {
+      "href": "https://webflow.com/?utm_campaign=brandjs",
+      "text": ""
+    }
+  ],
+  "screenshot": "screenshots/research-universal-processing.png",
+  "scrapedAt": "2026-06-17T03:22:24.759Z"
+}

@@ -1,0 +1,618 @@
+{
+  "url": "https://yunfeis-portfolio.webflow.io/",
+  "title": "New Home",
+  "description": "",
+  "canonical": "",
+  "openGraph": {
+    "title": "New Home",
+    "description": "",
+    "image": ""
+  },
+  "h1": "Oowls: Personalized, on-demand senior care",
+  "blocks": [
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "About"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "UX Work Cases"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Work In Progress"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "Other Skills"
+    },
+    {
+      "type": "listItem",
+      "tag": "li",
+      "text": "CONTACT"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66dd17cbd8240ad070f4c202_Pointer.png",
+      "alt": ""
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "Green it!"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "Find nearby eco-friendly businesses and Green-buddies"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6590e1e2322c326ec8813622_green%20it_cover.png",
+      "alt": ""
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "Ubiquitous"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "Cross-modality gestures and modality-adaptive UI in VR"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "@ UC San Diego"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/657e4f4f8d8a3149071db951_Screen%20Shot%202023-12-16%20at%208.27.20%20PM.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/63a11652bbe732df40527e97_Screen%20Shot%202022-12-19%20at%205.56.14%20PM.webp",
+      "alt": "Me in the VR studio testing our Unity model"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "U-Serve"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "End-to-end redesign of cross-platform point-of-sale (POS) system"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "@ Universal Processing LLC"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/698cd85ef96b5435b28631b5_Group%20857.png",
+      "alt": ""
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "Money Wise"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "Personal finance tool with conversaitonal AI gadgets"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/67c3b4c870acacede42e809a_Frame%202145.png",
+      "alt": ""
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "OOWLS"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "Personalized, on-demand wellness checkins for seniors"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/657e4db9b5510e0d52866400_Oowl%20Portfolio%202.0%20(2).png",
+      "alt": ""
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "Cyber Imposter"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "Multi-player mobile strategy game with AI characters"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/67c3b3cb9473be3220ef2fdc_Frame%20201.png",
+      "alt": ""
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "@ Starward Game Studios"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "Projects In Progress"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/67db57ac631bb73df822c6b3_ForkIt%20thumbnail-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "ForkIt AI Transform physical menus into interactive digital menus using gen-AI and NLP"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66d52721cbdf198a9e393b46_Tesla%20redesign-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "Customizable Shortcut Menu to Reduce Driver Distraction"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66c2704828e6153e8e0f87ee_Google%20Maps%20Redesign-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "Redesigning Google Maps in Apple Vision Pro"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "LinkedIn"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "CV"
+    },
+    {
+      "type": "text",
+      "tag": "p",
+      "text": "Email"
+    }
+  ],
+  "links": [
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/#2",
+      "text": "About"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/#3",
+      "text": "UX Work Cases"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/#4",
+      "text": "Work In Progress"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/#",
+      "text": "Data Visualization"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/#",
+      "text": "Front-End Dev"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/#",
+      "text": "More"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/#5",
+      "text": "CONTACT"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/universal-processing",
+      "text": "AccessibilityAdaptive UIInteract with VR interfaces with feet, head, and more!# Finance # Multi-tenant systemU-ServeRebrand and enhance the usability of point-of-sale (POS) system@ Universal Processing LLCFeb-Sep 2024"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/oowls",
+      "text": "AccessibilityAdaptive UIEasier, transparent, customized care to promote senior advocacy# Senior WellnessOOWLSPersonalized, on-demand senior careMar-Jun 2023"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/green-it",
+      "text": "AccessibilityAdaptive UIDesignathon# Community # SustainabilityGreen it!Find nearby eco-friendly businesses and Green-buddiesFeb 2022"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/research-ubi-gestures",
+      "text": "AccessibilityAdaptive UIInteract with VR interfaces with feet, head, and more!# Accessibility # VR ResearchUbiquitousCross-modality gestures and modality-adaptive UI in VRManipulate VR interfaces with feet, head, and more!Jun 2022-Apr 2023"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/starward",
+      "text": "AccessibilityAdaptive UIDesignathon# Mobile Game Cyber ImposterMulti-player mobile strategy gameSep 2024 - Present"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/cruz-roja",
+      "text": "AccessibilityAdaptive UIStart-up studio project# Optimization # EmergencyRed Cross Tijuana:Optimizing ambulence dispatch system Mar-Jun 2023"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/oowls",
+      "text": "AccessibilityAdaptive UIEasier, transparent, customized care to promote senior advocacy# Senior WellnessOOWLSPersonalized, on-demand senior careMar-Jun 2023"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/green-it",
+      "text": "AccessibilityAdaptive UIDesignathon# Rapid Prototyping # SustainabilityGreen it!Find nearby eco-friendly businesses and Green-buddiesFeb 2022"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/research-ubi-gestures",
+      "text": "AccessibilityAdaptive UIInteract with VR interfaces with feet, head, and more!# Accessibility # ResearchUbiquitousCross-modality gestures and modality-adaptive UI in VRManipulate VR interfaces with feet, head, and more!Jun 2022-Apr 2023"
+    },
+    {
+      "href": "https://sites.google.com/ucsd.edu/art-tree-portfolio/home",
+      "text": "AccessibilityAdaptive UICourse Project# Gamification # Collaboration# Gamification# CollaborationArt Tree: Motivating art collaboration while respecting individual spaceOct 2022-Feb 2023"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/universal-processing",
+      "text": "AccessibilityAdaptive UIInteract with VR interfaces with feet, head, and more!# Retail # Multi-tenant systemU-ServeRebrand and enhance the usability of point-of-sale (POS) system@ Universal Processing LLCFeb-Sep 2024"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/starward",
+      "text": "AccessibilityAdaptive UIDesignathon# Mobile Game Cyber ImposterMulti-player mobile strategy gameSep 2024 - Present"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/moneywise",
+      "text": "AccessibilityAdaptive UIDesignathon# Finance # Conversaitonal AIMoneyWisePersonal finance tool with conversaitonal AI gadgetsSep 2024 - Present"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/cruz-roja",
+      "text": "AccessibilityAdaptive UIStart-up studio project# Optimization # EmergencyRed Cross Tijuana:Optimizing ambulence dispatch system Mar-Jun 2023"
+    },
+    {
+      "href": "https://sites.google.com/ucsd.edu/art-tree-portfolio/home",
+      "text": "Social ComputingGamificationArt TreeMotivating art collaboration while respecting individual spaceOct 2022-Feb 2023Course Project"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/oowls",
+      "text": "HealthcareOowls: Personalized, on-demand senior careMar-Jun 2023Start-up studio project"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/green-it",
+      "text": "# Sustainability # Community Green it! Find nearby eco-friendly businesses and Green-buddies"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/research-ubi-gestures",
+      "text": "# Accessibility # VR Research Ubiquitous Cross-modality gestures and modality-adaptive UI in VR @ UC San Diego"
+    },
+    {
+      "href": "https://sites.google.com/ucsd.edu/art-tree-portfolio/home",
+      "text": "AccessibilityAdaptive UICourse Project# Gamification # Collaboration# Gamification# CollaborationArt Tree: Motivating art collaboration while respecting individual spaceOct 2022-Feb 2023"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/universal-processing",
+      "text": "# Finance # Multi-tenant system U-Serve End-to-end redesign of cross-platform point-of-sale (POS) system @ Universal Processing LLC"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/moneywise",
+      "text": "# Finance # Conversaitonal AI Money Wise Personal finance tool with conversaitonal AI gadgets"
+    },
+    {
+      "href": "https://sites.google.com/ucsd.edu/art-tree-portfolio/home",
+      "text": "AccessibilityAdaptive UICourse Project# Gamification # Collaboration# Gamification# CollaborationArt Tree: Motivating art collaboration while respecting individual spaceOct 2022-Feb 2023"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/oowls",
+      "text": "# Senior Wellness OOWLS Personalized, on-demand wellness checkins for seniors"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/starward",
+      "text": "# Mobile Game Cyber Imposter Multi-player mobile strategy game with AI characters @ Starward Game Studios"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/cruz-roja",
+      "text": "AccessibilityAdaptive UIStart-up studio project# Optimization # EmergencyRed Cross Tijuana:Optimizing ambulence dispatch system Mar-Jun 2023"
+    },
+    {
+      "href": "https://sites.google.com/ucsd.edu/art-tree-portfolio/home",
+      "text": "Social ComputingGamificationArt TreeMotivating art collaboration while respecting individual spaceOct 2022-Feb 2023Course Project"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/oowls",
+      "text": "HealthcareOowls: Personalized, on-demand senior careMar-Jun 2023Start-up studio project"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/research/fork-it",
+      "text": "ForkIt AI Transform physical menus into interactive digital menus using gen-AI and NLP"
+    },
+    {
+      "href": "https://www.linkedin.com/in/yunfei-jiao-a221801a3/",
+      "text": "LinkedIn"
+    },
+    {
+      "href": "https://yunfeis-portfolio.webflow.io/#",
+      "text": "CV"
+    },
+    {
+      "href": "mailto:yj497@cornell.edu",
+      "text": "Email"
+    },
+    {
+      "href": "https://webflow.com/?utm_campaign=brandjs",
+      "text": ""
+    }
+  ],
+  "slug": "home",
+  "httpStatus": 200,
+  "pageType": "home",
+  "sections": [
+    {
+      "level": 0,
+      "heading": "Page Start",
+      "content": [
+        "About",
+        "UX Work Cases",
+        "Work In Progress",
+        "Other Skills",
+        "CONTACT",
+        "Green it!",
+        "Find nearby eco-friendly businesses and Green-buddies",
+        "Ubiquitous",
+        "Cross-modality gestures and modality-adaptive UI in VR",
+        "@ UC San Diego",
+        "U-Serve",
+        "End-to-end redesign of cross-platform point-of-sale (POS) system",
+        "@ Universal Processing LLC",
+        "Money Wise",
+        "Personal finance tool with conversaitonal AI gadgets",
+        "OOWLS",
+        "Personalized, on-demand wellness checkins for seniors",
+        "Cyber Imposter",
+        "Multi-player mobile strategy game with AI characters",
+        "@ Starward Game Studios",
+        "Projects In Progress",
+        "ForkIt AI Transform physical menus into interactive digital menus using gen-AI and NLP",
+        "Customizable Shortcut Menu to Reduce Driver Distraction",
+        "Redesigning Google Maps in Apple Vision Pro",
+        "LinkedIn",
+        "CV",
+        "Email"
+      ],
+      "media": [
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66dd17cbd8240ad070f4c202_Pointer.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6590e1e2322c326ec8813622_green%20it_cover.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/657e4f4f8d8a3149071db951_Screen%20Shot%202023-12-16%20at%208.27.20%20PM.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/63a11652bbe732df40527e97_Screen%20Shot%202022-12-19%20at%205.56.14%20PM.webp",
+          "alt": "Me in the VR studio testing our Unity model"
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/698cd85ef96b5435b28631b5_Group%20857.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/67c3b4c870acacede42e809a_Frame%202145.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/657e4db9b5510e0d52866400_Oowl%20Portfolio%202.0%20(2).png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/67c3b3cb9473be3220ef2fdc_Frame%20201.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/67db57ac631bb73df822c6b3_ForkIt%20thumbnail-p-1600.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66d52721cbdf198a9e393b46_Tesla%20redesign-p-1600.png",
+          "alt": ""
+        },
+        {
+          "type": "image",
+          "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66c2704828e6153e8e0f87ee_Google%20Maps%20Redesign-p-1600.png",
+          "alt": ""
+        }
+      ]
+    }
+  ],
+  "images": [
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66dd17cbd8240ad070f4c202_Pointer.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6590e1e2322c326ec8813622_green%20it_cover.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/657e4f4f8d8a3149071db951_Screen%20Shot%202023-12-16%20at%208.27.20%20PM.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/63a11652bbe732df40527e97_Screen%20Shot%202022-12-19%20at%205.56.14%20PM.webp",
+      "alt": "Me in the VR studio testing our Unity model"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/698cd85ef96b5435b28631b5_Group%20857.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/67c3b4c870acacede42e809a_Frame%202145.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/657e4db9b5510e0d52866400_Oowl%20Portfolio%202.0%20(2).png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/67c3b3cb9473be3220ef2fdc_Frame%20201.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/67db57ac631bb73df822c6b3_ForkIt%20thumbnail-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66d52721cbdf198a9e393b46_Tesla%20redesign-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66c2704828e6153e8e0f87ee_Google%20Maps%20Redesign-p-1600.png",
+      "alt": ""
+    }
+  ],
+  "media": [
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66dd17cbd8240ad070f4c202_Pointer.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6590e1e2322c326ec8813622_green%20it_cover.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/657e4f4f8d8a3149071db951_Screen%20Shot%202023-12-16%20at%208.27.20%20PM.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/63a11652bbe732df40527e97_Screen%20Shot%202022-12-19%20at%205.56.14%20PM.webp",
+      "alt": "Me in the VR studio testing our Unity model"
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/698cd85ef96b5435b28631b5_Group%20857.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/67c3b4c870acacede42e809a_Frame%202145.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/657e4db9b5510e0d52866400_Oowl%20Portfolio%202.0%20(2).png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/67c3b3cb9473be3220ef2fdc_Frame%20201.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/67db57ac631bb73df822c6b3_ForkIt%20thumbnail-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66d52721cbdf198a9e393b46_Tesla%20redesign-p-1600.png",
+      "alt": ""
+    },
+    {
+      "type": "image",
+      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66c2704828e6153e8e0f87ee_Google%20Maps%20Redesign-p-1600.png",
+      "alt": ""
+    }
+  ],
+  "internalLinks": [
+    "https://yunfeis-portfolio.webflow.io/",
+    "https://yunfeis-portfolio.webflow.io/research/universal-processing",
+    "https://yunfeis-portfolio.webflow.io/research/oowls",
+    "https://yunfeis-portfolio.webflow.io/research/green-it",
+    "https://yunfeis-portfolio.webflow.io/research/research-ubi-gestures",
+    "https://yunfeis-portfolio.webflow.io/research/starward",
+    "https://yunfeis-portfolio.webflow.io/research/cruz-roja",
+    "https://yunfeis-portfolio.webflow.io/research/moneywise",
+    "https://yunfeis-portfolio.webflow.io/research/fork-it"
+  ],
+  "externalLinks": [
+    {
+      "href": "https://sites.google.com/ucsd.edu/art-tree-portfolio/home",
+      "text": "AccessibilityAdaptive UICourse Project# Gamification # Collaboration# Gamification# CollaborationArt Tree: Motivating art collaboration while respecting individual spaceOct 2022-Feb 2023"
+    },
+    {
+      "href": "https://sites.google.com/ucsd.edu/art-tree-portfolio/home",
+      "text": "Social ComputingGamificationArt TreeMotivating art collaboration while respecting individual spaceOct 2022-Feb 2023Course Project"
+    },
+    {
+      "href": "https://sites.google.com/ucsd.edu/art-tree-portfolio/home",
+      "text": "AccessibilityAdaptive UICourse Project# Gamification # Collaboration# Gamification# CollaborationArt Tree: Motivating art collaboration while respecting individual spaceOct 2022-Feb 2023"
+    },
+    {
+      "href": "https://sites.google.com/ucsd.edu/art-tree-portfolio/home",
+      "text": "AccessibilityAdaptive UICourse Project# Gamification # Collaboration# Gamification# CollaborationArt Tree: Motivating art collaboration while respecting individual spaceOct 2022-Feb 2023"
+    },
+    {
+      "href": "https://sites.google.com/ucsd.edu/art-tree-portfolio/home",
+      "text": "Social ComputingGamificationArt TreeMotivating art collaboration while respecting individual spaceOct 2022-Feb 2023Course Project"
+    },
+    {
+      "href": "https://www.linkedin.com/in/yunfei-jiao-a221801a3/",
+      "text": "LinkedIn"
+    },
+    {
+      "href": "mailto:yj497@cornell.edu",
+      "text": "Email"
+    },
+    {
+      "href": "https://webflow.com/?utm_campaign=brandjs",
+      "text": ""
+    }
+  ],
+  "screenshot": "screenshots/home.png",
+  "scrapedAt": "2026-06-17T03:22:20.781Z"
+}
