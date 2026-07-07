@@ -2,7 +2,7 @@
   {
     "slug": "universal-processing",
     "title": "uServe POS",
-    "href": "/research/universal-processing",
+    "href": "https://yunfeis-portfolio.webflow.io/research/universal-processing",
     "tags": ["UX Design", "Product", "Branding", "POS", "B2B"],
     "thumbnail": "/assets/projects/universal-processing.png",
     "text": "uServe POS End-to-end redesign of a point-of-sale system UIUX. Timeframe Feb 2024 Present Company Universal Processing Role UIUX designer Product coverage 35000 merchants nationwide POS system POS backoffice CRM Food ordering platform waitstaff restaurant owners customers Mission rebrand modernize lower learning cost U Serve interface POS interfaces conventionally text-dense flat information architecture balance aesthetics functional efficiency smooth transition Stakeholder Research Solutions Rebrand Beyond Ugly Efficiency optimization Error prevention Final Prototype Desktop POS Backoffice Specs Dev Team Reflections responsive design breakpoints layout adjustments screen sizes technical feasibility edge cases multi-status elements layered levels independent affordances parallel sequential processes accounting information space efficiency"
@@ -10,7 +10,7 @@
   {
     "slug": "fork-it",
     "title": "ForkIt AI",
-    "href": "/research/fork-it",
+    "href": "https://yunfeis-portfolio.webflow.io/research/fork-it",
     "tags": ["Mobile", "AI", "NLP", "Startup", "Food", "GenAI"],
     "thumbnail": "/assets/projects/fork-it.png",
     "text": "Fork It AI food lovers frequent travelers seamless stress-free dining experience Timeframe Sep 2024 Jun 2026 Startup Studio project Leader PM UIUX Design Research Cross-platform mobile app market research customer research implementation Figma prototype deployed mobile app business development gen-AI NLP transform physical menus interactive digital menus"
@@ -18,7 +18,7 @@
   {
     "slug": "oowls",
     "title": "OOWLS",
-    "href": "/research/oowls",
+    "href": "https://yunfeis-portfolio.webflow.io/research/oowls",
     "tags": ["UX", "Mobile", "Healthcare", "Seniors", "Gig Economy"],
     "thumbnail": "/assets/projects/oowls.png",
     "text": "OOWLS personalized on-demand senior care wellness check-ins gig workers aging in place caregiving accessibility affordability family platform verified gig-workers Owls health safety social well-being UC San Diego Catalyst Funding Sullivan Center Webflow Figma user flow personas competitive analysis onboarding scheduling trust transparency real-time location"
@@ -26,7 +26,7 @@
   {
     "slug": "green-it",
     "title": "Green it!",
-    "href": "/research/green-it",
+    "href": "https://yunfeis-portfolio.webflow.io/research/green-it",
     "tags": ["UX", "Sustainability", "Mobile", "Community"],
     "thumbnail": "/assets/projects/green-it.png",
     "text": "Green it find nearby eco-friendly businesses green buddies sustainability local services trade-off time stamina accessibility pro-environmental resources user research insights solution info card reflections future work community environmental impact"
@@ -34,7 +34,7 @@
   {
     "slug": "moneywise",
     "title": "MoneyWise",
-    "href": "/research/moneywise",
+    "href": "https://yunfeis-portfolio.webflow.io/research/moneywise",
     "tags": ["Product", "Finance", "AI", "Conversational UI"],
     "thumbnail": "/assets/projects/moneywise.png",
     "text": "MoneyWise personal finance tool conversational AI gadgets budgeting money management financial literacy savings spending tracking AI assistant chatbot"
@@ -42,7 +42,7 @@
   {
     "slug": "starward",
     "title": "Cyber Imposter",
-    "href": "/research/starward",
+    "href": "https://yunfeis-portfolio.webflow.io/research/starward",
     "tags": ["Game UX", "Mobile", "AI", "Multiplayer"],
     "thumbnail": "/assets/projects/starward.png",
     "text": "Cyber Imposter multiplayer mobile strategy game AI teammate identify AI opponent players cover Starward Game Studios UX Designer Intern lobby room ask answer vote language genre preference"
@@ -50,7 +50,7 @@
   {
     "slug": "cruz-roja",
     "title": "Cruz Roja",
-    "href": "/research/cruz-roja",
+    "href": "https://yunfeis-portfolio.webflow.io/research/cruz-roja",
     "tags": ["UX", "Public Service", "Emergency", "Dispatch"],
     "thumbnail": "/assets/projects/cruz-roja.png",
     "text": "Cruz Roja Tijuana ambulance dispatching system emergency medical underserved communities outdated technology radio satellite 13 ambulances 2 million people real-time visualization dispatcher mobile tablet routing notification itinerary tracking icon cleanup messaging redesign"
@@ -58,7 +58,7 @@
   {
     "slug": "research-ubi-gestures",
     "title": "Ubiquitous Gestures",
-    "href": "/research/research-ubi-gestures",
+    "href": "https://yunfeis-portfolio.webflow.io/research/research-ubi-gestures",
     "tags": ["HCI", "VR", "Research", "Accessibility", "Gestures"],
     "thumbnail": "/assets/projects/ubi-gestures.webp",
     "text": "Ubiquitous Gestures VR AR cross-modality gestural commands hands feet head eye gaze disabilities permanent temporary vocabulary inter-translation body parts UC San Diego database 2000 photos human behaviors encoding framework AUI templates gesture vocabulary Unity React Firebase image annotation user elicitation Wizard of Oz adaptive UI"

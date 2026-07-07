@@ -113,6 +113,8 @@ const renderedCarousel = carouselProjects;
               <a
                 class="project-card"
                 href={project.href}
+                target={project.href.startsWith("http") ? "_blank" : undefined}
+                rel={project.href.startsWith("http") ? "noopener noreferrer" : undefined}
                 aria-label={`Open ${project.title}`}
               >
                 <div class="project-copy">
@@ -148,6 +150,8 @@ const renderedCarousel = carouselProjects;
               <a
                 class="carousel-card"
                 href={card.href}
+                target={card.href.startsWith("http") ? "_blank" : undefined}
+                rel={card.href.startsWith("http") ? "noopener noreferrer" : undefined}
                 data-rendered-idx={i}
                 data-state={initialState}
                 aria-label={card.title}
@@ -254,8 +258,13 @@ const renderedCarousel = carouselProjects;
           container.hidden = false;
           container.innerHTML = results
             .map(
-              ({ project, snippet }) => `
-              <a class="search-result-card" href="${project.href}">
+              ({ project, snippet }) => {
+                const external = project.href.startsWith("http");
+                const linkAttrs = external
+                  ? ' target="_blank" rel="noopener noreferrer"'
+                  : "";
+                return `
+              <a class="search-result-card" href="${project.href}"${linkAttrs}>
                 <img src="${project.thumbnail}" alt="${project.title}" loading="lazy" />
                 <div class="search-result-body">
                   <p class="search-result-title">${highlight(project.title, query)}</p>
@@ -265,7 +274,8 @@ const renderedCarousel = carouselProjects;
                   ${snippet ? `<p class="search-result-snippet">${snippet}</p>` : ""}
                 </div>
               </a>
-            `,
+            `;
+              },
             )
             .join("");
         }
