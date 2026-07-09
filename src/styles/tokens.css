@@ -27,6 +27,8 @@
   --fs-ui: var(--text-md);    /* carousel prev/next controls */
   --fs-meta: var(--text-sm);  /* timeframe, skill-row labels */
   --fs-xs: 14px;              /* search result count */
+  --fs-tag-large: var(--text-md); /* footer links */
+  --fs-hero-impact: calc(200 / 1280 * 100vw); /* hero-hi + hero-name (200px @ 1440px) */
 
   /* ── Standard spacing scale (auto-scales at breakpoints below) ── */
   --space-micro: 4px;
@@ -72,10 +74,7 @@
 /* ── 0.8× at medium viewports (600px–1000px) ─────────────────────────── */
 @media (max-width: 1000px) {
   :root {
-    --fs-hero: 77px;
-    --fs-xs: 11px;
-    --fs-tag-large: 19px;
-
+    /* type scale (1× × 0.8) */
     --text-xs: 13px;
     --text-sm: 16px;
     --text-md: 19px;
@@ -83,6 +82,11 @@
     --text-xl: 38px;
     --text-xxl: 51px;
 
+    --fs-hero: 72px;
+    --fs-xs: 11px;
+
+    /* spacing scale (1× × 0.8) */
+    --space-micro: 3px;
     --space-xxs: 13px;
     --space-xs: 16px;
     --space-sm: 19px;
@@ -92,17 +96,19 @@
     --space-xxl: 45px;
     --space-xxxl: 51px;
 
+    /* layout (1× × 0.8) */
     --side-padding: 96px;
     --hero-inner-gap: 124px;
+    --hero-timeline-pad-bottom: 40px;
     --project-card-gap: 56px;
     --project-card-min-h: 426px;
     --project-visual-min-h: 370px;
-    --carousel-gap: 80px;
+    --carousel-gap: 0px;
+    --carousel-pad-v: 64px;
     --reading-pad-top: 141px;
     --search-pill-min-h: 108px;
-    --search-pill-pad-h: 60px;
+    --search-pill-pad-h: 42px;
     --search-pill-mt: 61px;
-    --footer-pad-top: 138px;
     --hero-section-pad-right: 101px;
     --hero-section-pad-bottom: 102px;
   }
@@ -111,10 +117,7 @@
 /* ── 0.6× at narrow viewports (< 600px) ─────────────────────────────── */
 @media (max-width: 600px) {
   :root {
-    --fs-hero: 58px;
-    --fs-xs: 8px;
-    --fs-tag-large: 14px;
-
+    /* type scale (1× × 0.6) */
     --text-xs: 10px;
     --text-sm: 12px;
     --text-md: 14px;
@@ -122,6 +125,11 @@
     --text-xl: 29px;
     --text-xxl: 38px;
 
+    --fs-hero: 54px;
+    --fs-xs: 8px;
+
+    /* spacing scale (1× × 0.6) */
+    --space-micro: 2px;
     --space-xxs: 10px;
     --space-xs: 12px;
     --space-sm: 14px;
@@ -131,16 +139,19 @@
     --space-xxl: 34px;
     --space-xxxl: 38px;
 
+    /* layout (1× × 0.6) */
     --side-padding: 72px;
     --hero-inner-gap: 93px;
+    --hero-timeline-pad-bottom: 30px;
     --project-card-gap: 42px;
     --project-card-min-h: 320px;
     --project-visual-min-h: 277px;
-    --carousel-gap: 60px;
+    --carousel-gap: 0px;
+    --carousel-pad-v: 48px;
     --reading-pad-top: 106px;
-    --search-pill-pad-h: 48px;
+    --search-pill-min-h: 81px;
+    --search-pill-pad-h: 31px;
     --search-pill-mt: 46px;
-    --footer-pad-top: 103px;
     --hero-section-pad-right: 76px;
     --hero-section-pad-bottom: 77px;
   }
