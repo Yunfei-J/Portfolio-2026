@@ -27,8 +27,12 @@ This site is a static Astro app. Cloudflare Pages builds `dist/` on every push.
 
   | Name             | Value          | Notes                                       |
   | ---------------- | -------------- | ------------------------------------------- |
-  | `PUBLIC_GA_ID`   | `G-XXXXXXXXXX` | Your GA4 measurement ID                     |
+  | `PUBLIC_GTM_ID`  | `GTM-XXXXXXXX` | Google Tag Manager container (if using GTM) |
+  | `PUBLIC_GA_ID`   | `G-XXXXXXXXXX` | GA4 measurement ID (only if not using GTM)    |
   | `OPENAI_API_KEY` | *(optional)*   | Enables semantic search embeddings at build |
+
+  Use **either** `PUBLIC_GTM_ID` or `PUBLIC_GA_ID`, not both — loading both double-counts visits.
+  If using GTM, add your GA4 tag inside the GTM container (Tags → GA4 Configuration).
 
 5. Deploy. Your site will be live at `https://<project-name>.pages.dev`.
 

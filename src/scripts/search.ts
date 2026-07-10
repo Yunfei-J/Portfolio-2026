@@ -126,11 +126,25 @@ export function createSearchEngine(
 }
 
 export function trackSearch(query: string) {
-  if (!query.trim()) return;
-  const gtag = (window as typeof window & { gtag?: (...args: unknown[]) => void }).gtag;
-  if (typeof gtag === "function") {
-    gtag("event", "search", { search_term: query.trim() });
+  const term = query.trim();
+  if (!term) return;
+
+  const win = window as typeof window & {
+    dataLayer?: Record<string, unknown>[];
+    gtag?: (...args: unknown[]) => void;
+  };
+
+  win.dataLayer = win.dataLayer || [];
+
+  if (typeof win.gtag === "function") {
+    win.gtag("event", "search", { search_term: term });
+    return;
   }
+
+  win.dataLayer.push({
+    event: "search",
+    search_term: term,
+  });
 }
 
 export { highlight };
