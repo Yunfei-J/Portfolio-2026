@@ -47,6 +47,7 @@
   --hero-inner-gap: 155px;        /* gap between h1 and skill-map */
   --hero-timeline-pad-bottom: 50px; /* bottom inset below skill rows */
   --skill-row-gap: var(--space-md);
+  --skill-dot-size: clamp(4px, calc(6 / 1440 * 100vw), 6px);
   --project-list-gap: var(--space-md);
   --project-card-gap: 70px;       /* internal gap in .project-card */
   --project-card-pad-v: var(--space-lg);

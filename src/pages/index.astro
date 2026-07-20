@@ -82,17 +82,17 @@ const renderedCarousel = carouselProjects;
                           <div class="skill-track-main">
                             <span class="skill-label">{skill.label}</span>
                             <div class="skill-line" aria-hidden="true"></div>
-                          </div>
-                          <div class="skill-dots" aria-hidden="true">
-                            {dotYears.map((year) => {
-                              const yearIndex = years.indexOf(year);
-                              return (
-                                <span
-                                  class="skill-dot"
-                                  style={`--year-index: ${yearIndex}`}
-                                ></span>
-                              );
-                            })}
+                            <div class="skill-dots" aria-hidden="true">
+                              {dotYears.map((year) => {
+                                const yearIndex = years.indexOf(year);
+                                return (
+                                  <span
+                                    class="skill-dot"
+                                    style={`--year-index: ${yearIndex}`}
+                                  ></span>
+                                );
+                              })}
+                            </div>
                           </div>
                         </div>
                       );
@@ -412,6 +412,14 @@ const renderedCarousel = carouselProjects;
         var cDots = Array.from(carousel.querySelectorAll("[data-carousel-dot]"));
         var cActiveIdx = 0;
         var cNavigating = false;
+        var cTouchStartX = 0;
+        var cTouchStartY = 0;
+        var cTouchLastX = 0;
+        var cTouchLastT = 0;
+        var cTouchAxis = null;
+        var cSuppressClick = false;
+        var C_SWIPE_THRESHOLD = 48;
+        var C_AXIS_LOCK = 10;
 
         function cGetOffset(idx) {
           var cw = carousel.offsetWidth;
@@ -419,13 +427,24 @@ const renderedCarousel = carouselProjects;
           return cw / 2 - card.offsetWidth / 2 - card.offsetLeft;
         }
 
-        function cUpdateTrack(animate) {
+        function cApplyTrackTransform(dragOffset, animate) {
           if (!animate) cTrack.style.transition = "none";
-          cTrack.style.transform = "translateX(" + cGetOffset(cActiveIdx) + "px)";
+          cTrack.style.transform =
+            "translateX(" + (cGetOffset(cActiveIdx) + dragOffset) + "px)";
           if (!animate) {
             void cTrack.offsetWidth;
             cTrack.style.transition = "";
           }
+        }
+
+        function cUpdateTrack(animate) {
+          cApplyTrackTransform(0, animate);
+        }
+
+        function cClampDrag(dx) {
+          if (cActiveIdx === 0 && dx > 0) return dx * 0.35;
+          if (cActiveIdx === cCards.length - 1 && dx < 0) return dx * 0.35;
+          return dx;
         }
 
         function cUpdateStates() {
@@ -446,8 +465,15 @@ const renderedCarousel = carouselProjects;
         }
 
         function cGoTo(idx) {
-          if (cNavigating || idx === cActiveIdx) return;
-          if (idx < 0 || idx >= cCards.length) return;
+          if (cNavigating) return;
+          if (idx === cActiveIdx) {
+            cUpdateTrack(true);
+            return;
+          }
+          if (idx < 0 || idx >= cCards.length) {
+            cUpdateTrack(true);
+            return;
+          }
 
           cNavigating = true;
           cActiveIdx = idx;
@@ -465,12 +491,106 @@ const renderedCarousel = carouselProjects;
         }
 
         cTrack.addEventListener("click", function (e) {
+          if (cSuppressClick) {
+            e.preventDefault();
+            cSuppressClick = false;
+            return;
+          }
+
           var card = e.target.closest(".carousel-card");
           if (!card || card.dataset.state !== "adjacent") return;
           e.preventDefault();
           var idx = parseInt(card.dataset.renderedIdx, 10);
           cNavigate(idx < cActiveIdx ? -1 : 1);
         });
+
+        carousel.addEventListener(
+          "touchstart",
+          function (e) {
+            if (cNavigating || e.touches.length !== 1) return;
+
+            cTouchStartX = e.touches[0].clientX;
+            cTouchStartY = e.touches[0].clientY;
+            cTouchLastX = cTouchStartX;
+            cTouchLastT = Date.now();
+            cTouchAxis = null;
+          },
+          { passive: true }
+        );
+
+        carousel.addEventListener(
+          "touchmove",
+          function (e) {
+            if (cNavigating || e.touches.length !== 1) return;
+
+            var touch = e.touches[0];
+            var dx = touch.clientX - cTouchStartX;
+            var dy = touch.clientY - cTouchStartY;
+
+            if (!cTouchAxis) {
+              if (
+                Math.abs(dx) < C_AXIS_LOCK &&
+                Math.abs(dy) < C_AXIS_LOCK
+              ) {
+                return;
+              }
+              cTouchAxis = Math.abs(dx) > Math.abs(dy) ? "x" : "y";
+            }
+
+            if (cTouchAxis !== "x") return;
+
+            e.preventDefault();
+            cTouchLastX = touch.clientX;
+            cTouchLastT = Date.now();
+            cApplyTrackTransform(cClampDrag(dx), false);
+          },
+          { passive: false }
+        );
+
+        function cFinishTouch(touch) {
+          if (!touch || cTouchAxis !== "x") {
+            cTouchAxis = null;
+            return;
+          }
+
+          var dx = touch.clientX - cTouchStartX;
+          var dt = Math.max(Date.now() - cTouchLastT, 1);
+          var velocity = (touch.clientX - cTouchLastX) / dt;
+          var passedDistance = Math.abs(dx) >= C_SWIPE_THRESHOLD;
+          var passedFlick = Math.abs(velocity) > 0.45;
+
+          if (passedDistance || passedFlick) {
+            cSuppressClick = true;
+            if (dx < 0 || velocity < -0.45) {
+              cNavigate(1);
+            } else if (dx > 0 || velocity > 0.45) {
+              cNavigate(-1);
+            } else {
+              cUpdateTrack(true);
+            }
+          } else {
+            cUpdateTrack(true);
+          }
+
+          cTouchAxis = null;
+        }
+
+        carousel.addEventListener(
+          "touchend",
+          function (e) {
+            cFinishTouch(e.changedTouches[0]);
+          },
+          { passive: true }
+        );
+
+        carousel.addEventListener(
+          "touchcancel",
+          function () {
+            cTouchAxis = null;
+            cUpdateTrack(true);
+          },
+          { passive: true }
+        );
 
         cDots.forEach(function (dot, i) {
           dot.addEventListener("click", function () {
