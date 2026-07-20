@@ -421,10 +421,20 @@ const renderedCarousel = carouselProjects;
         var C_SWIPE_THRESHOLD = 48;
         var C_AXIS_LOCK = 10;
 
+        function cGetGap() {
+          return parseFloat(getComputedStyle(cTrack).gap) || 0;
+        }
+
         function cGetOffset(idx) {
           var cw = carousel.offsetWidth;
-          var card = cCards[idx];
-          return cw / 2 - card.offsetWidth / 2 - card.offsetLeft;
+          var gap = cGetGap();
+          var left = 0;
+
+          for (var i = 0; i < idx; i++) {
+            left += cCards[i].offsetWidth + gap;
+          }
+
+          return cw / 2 - cCards[idx].offsetWidth / 2 - left;
         }
 
         function cApplyTrackTransform(dragOffset, animate) {
@@ -477,8 +487,8 @@ const renderedCarousel = carouselProjects;
 
           cNavigating = true;
           cActiveIdx = idx;
-          cUpdateTrack(true);
           cUpdateStates();
+          cUpdateTrack(true);
           cUpdateDots();
 
           setTimeout(function () {
