@@ -8,20 +8,20 @@
     "text": "uServe POS End-to-end redesign of a point-of-sale system UIUX. Timeframe Feb 2024 Present Company Universal Processing Role UIUX designer Product coverage 35000 merchants nationwide POS system POS backoffice CRM Food ordering platform waitstaff restaurant owners customers Mission rebrand modernize lower learning cost U Serve interface POS interfaces conventionally text-dense flat information architecture balance aesthetics functional efficiency smooth transition Stakeholder Research Solutions Rebrand Beyond Ugly Efficiency optimization Error prevention Final Prototype Desktop POS Backoffice Specs Dev Team Reflections responsive design breakpoints layout adjustments screen sizes technical feasibility edge cases multi-status elements layered levels independent affordances parallel sequential processes accounting information space efficiency"
   },
   {
-    "slug": "fork-it",
-    "title": "ForkIt AI",
-    "href": "https://yunfeis-portfolio.webflow.io/research/fork-it",
-    "tags": ["Mobile", "AI", "NLP", "Startup", "Food", "GenAI"],
-    "thumbnail": "/assets/projects/fork-it.png",
-    "text": "Fork It AI food lovers frequent travelers seamless stress-free dining experience Timeframe Sep 2024 Jun 2026 Startup Studio project Leader PM UIUX Design Research Cross-platform mobile app market research customer research implementation Figma prototype deployed mobile app business development gen-AI NLP transform physical menus interactive digital menus"
-  },
-  {
     "slug": "oowls",
     "title": "OOWLS",
     "href": "https://yunfeis-portfolio.webflow.io/research/oowls",
     "tags": ["UX", "Mobile", "Healthcare", "Seniors", "Gig Economy"],
     "thumbnail": "/assets/projects/oowls.png",
     "text": "OOWLS personalized on-demand senior care wellness check-ins gig workers aging in place caregiving accessibility affordability family platform verified gig-workers Owls health safety social well-being UC San Diego Catalyst Funding Sullivan Center Webflow Figma user flow personas competitive analysis onboarding scheduling trust transparency real-time location"
+  },
+  {
+    "slug": "fork-it",
+    "title": "ForkIt AI",
+    "href": "https://yunfeis-portfolio.webflow.io/research/fork-it",
+    "tags": ["Mobile", "AI", "NLP", "Startup", "Food", "GenAI"],
+    "thumbnail": "/assets/projects/fork-it.png",
+    "text": "Fork It AI food lovers frequent travelers seamless stress-free dining experience Timeframe Sep 2024 Jun 2026 Startup Studio project Leader PM UIUX Design Research Cross-platform mobile app market research customer research implementation Figma prototype deployed mobile app business development gen-AI NLP transform physical menus interactive digital menus"
   },
   {
     "slug": "green-it",
