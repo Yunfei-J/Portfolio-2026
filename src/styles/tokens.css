@@ -4,8 +4,7 @@
 
    Breakpoints:
      > 1000px   standard (1×)
-     600–1000px 0.8×
-     < 600px    0.6×
+     ≤ 1000px   0.8×
    ───────────────────────────────────────────────────────────────────────── */
 
 :root {
@@ -72,7 +71,7 @@
   --color-secondary: #c4d81a;
 }
 
-/* ── 0.8× at medium viewports (600px–1000px) ─────────────────────────── */
+/* ── 0.8× at ≤1000px (tablet + mobile) ───────────────────────────────── */
 @media (max-width: 1000px) {
   :root {
     /* type scale (1× × 0.8) */
@@ -112,48 +111,5 @@
     --search-pill-mt: 61px;
     --hero-section-pad-right: 101px;
     --hero-section-pad-bottom: 102px;
-  }
-}
-
-/* ── 0.6× at narrow viewports (< 600px) ─────────────────────────────── */
-@media (max-width: 600px) {
-  :root {
-    /* type scale (1× × 0.6) */
-    --text-xs: 10px;
-    --text-sm: 12px;
-    --text-md: 14px;
-    --text-lg: 19px;
-    --text-xl: 29px;
-    --text-xxl: 38px;
-
-    --fs-hero: 54px;
-    --fs-xs: 8px;
-
-    /* spacing scale (1× × 0.6) */
-    --space-micro: 2px;
-    --space-xxs: 10px;
-    --space-xs: 12px;
-    --space-sm: 14px;
-    --space-md: 19px;
-    --space-lg: 24px;
-    --space-xl: 29px;
-    --space-xxl: 34px;
-    --space-xxxl: 38px;
-
-    /* layout (1× × 0.6) */
-    --side-padding: 72px;
-    --hero-inner-gap: 93px;
-    --hero-timeline-pad-bottom: 30px;
-    --project-card-gap: 42px;
-    --project-card-min-h: 320px;
-    --project-visual-min-h: 277px;
-    --carousel-gap: 0px;
-    --carousel-pad-v: 48px;
-    --reading-pad-top: 106px;
-    --search-pill-min-h: 81px;
-    --search-pill-pad-h: 31px;
-    --search-pill-mt: 46px;
-    --hero-section-pad-right: 76px;
-    --hero-section-pad-bottom: 77px;
   }
 }
