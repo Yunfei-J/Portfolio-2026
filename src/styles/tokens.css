@@ -4,7 +4,8 @@
 
    Breakpoints:
      > 1000px   standard (1×)
-     ≤ 1000px   0.8×
+     ≤ 1000px   0.8× (tablet + mobile baseline)
+     ≤ 600px    mobile-only overrides (edit block below — inherits 0.8× unless listed)
    ───────────────────────────────────────────────────────────────────────── */
 
 :root {
@@ -111,5 +112,16 @@
     --search-pill-mt: 61px;
     --hero-section-pad-right: 101px;
     --hero-section-pad-bottom: 102px;
+  }
+}
+
+/* ── Mobile-only overrides (≤600px) ──────────────────────────────────────
+   Inherits all 0.8× values from above. Only list tokens that should
+   differ on phone — do not duplicate the full 0.8× scale here. */
+@media (max-width: 600px) {
+  :root {
+    --side-padding: 1.5rem;
+    --project-card-gap: 42px;
+    --project-visual-min-h: 300px;
   }
 }

@@ -403,15 +403,25 @@ h1 span {
   transition: background-color 0.25s ease, background-blend-mode 0.25s ease;
 }
 
-/* Hover only on devices with a real pointer — avoids sticky :hover on touch */
+.project-card-wrap:is(.is-in-view, .is-hover) {
+  background-image: url("/assets/project-card-pattern-hovered.png");
+  background-blend-mode: normal;
+  background-size: 580px 580px;
+}
+
+.project-card-wrap:is(.is-in-view, .is-hover) .project-card {
+  background-color: #fefff7;
+}
+
+/* Pointer hover — desktop only; touch uses .is-in-view from scroll observer */
 @media (hover: hover) and (pointer: fine) {
-  .project-card-wrap:is(:hover, .is-hover) {
+  .project-card-wrap:hover {
     background-image: url("/assets/project-card-pattern-hovered.png");
     background-blend-mode: normal;
     background-size: 580px 580px;
   }
 
-  .project-card-wrap:is(:hover, .is-hover) .project-card {
+  .project-card-wrap:hover .project-card {
     background-color: #fefff7;
   }
 }
@@ -522,7 +532,6 @@ h1 span {
   object-position: center;
   position: absolute;
   width: 100%;
-  /* padding-bottom: var(--space-sm); */
 }
 
 /* ── Project Carousel ────────────────────────────────────────────────── */
@@ -806,16 +815,12 @@ h1 span {
 }
 
 @media (max-width: 600px) {
-  :root {
-    --side-padding: 1.5rem;
-  }
-
   .hero-timelines {
-    padding-inline: 1.5rem;
+    padding-inline: var(--side-padding);
   }
 
   .hero-year-bar {
-    padding-inline: 1.5rem;
+    padding-inline: var(--side-padding);
   }
 
   .skill-track-main {
@@ -828,7 +833,7 @@ h1 span {
 
   .project-card {
     flex-direction: column;
-    max-height: none;
+    max-height: 80vh;
   }
 
   .project-copy {
@@ -910,7 +915,6 @@ h1 span {
 
   .hero-sub-the {
     color: #000;
-    line-height: 1.8;
   }
 
   .hero-sub-role {

@@ -655,5 +655,31 @@ const renderedCarousel = carouselProjects;
         window.addEventListener("scroll", syncProjectCardHover, { passive: true, capture: true });
         window.addEventListener("wheel", syncProjectCardHover, { passive: true });
       })();
+
+      // ── Project card “hover” on touch — active while in view ─────────────
+      (function () {
+        if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+
+        var wraps = Array.from(document.querySelectorAll(".project-card-wrap"));
+        if (!wraps.length) return;
+
+        var inViewObserver = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              entry.target.classList.toggle("is-in-view", entry.isIntersecting);
+            });
+          },
+          {
+            // Shrink root: top 20% + bottom 30% ignored → active in upper-middle band
+            root: null,
+            rootMargin: "-20% 0px -30% 0px",
+            threshold: 0,
+          }
+        );
+
+        wraps.forEach(function (wrap) {
+          inViewObserver.observe(wrap);
+        });
+      })();
     </script>
 </BaseLayout>
