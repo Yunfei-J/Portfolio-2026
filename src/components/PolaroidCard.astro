@@ -1,10 +1,11 @@
 ---
 /**
- * PolaroidCard — lime-green Polaroid frame, 667 × 791 px
+ * PolaroidCard — lime-green Polaroid frame
  *
- * One full-height SVG paints the lime frame + footer background.
- * The lens rectangle is cut out via an SVG mask (genuinely transparent).
- * The caption HTML is overlaid at the bottom using position: absolute.
+ * Desktop: 667 × 791 px SVG mask + HTML footer
+ * Mobile:  482 × 678 px SVG mask + HTML footer (straightened mobile proportions)
+ *
+ * Lens cutouts are genuinely transparent via SVG masks.
  */
 interface Props {
   caption?: string;
@@ -13,89 +14,168 @@ interface Props {
 
 const { caption = "You are looking for", class: className } = Astro.props;
 
-const W = 667, H = 791;
-const PAD_SIDE = 48;
-const PAD_TOP  = 48;
-const FOOTER_H = 164;
-const lensX = PAD_SIDE;
-const lensY = PAD_TOP;
-const lensW = W - PAD_SIDE * 2;      // 571
-const lensH = H - PAD_TOP - FOOTER_H; // 635
+const DESKTOP = {
+  w: 667,
+  h: 791,
+  padSide: 48,
+  padTop: 48,
+  footerH: 164,
+};
+
+const MOBILE = {
+  w: 482,
+  h: 678,
+  padSide: 35,
+  padTop: 35,
+  footerH: 141,
+};
+
+const desktopLens = {
+  x: DESKTOP.padSide,
+  y: DESKTOP.padTop,
+  w: DESKTOP.w - DESKTOP.padSide * 2,
+  h: DESKTOP.h - DESKTOP.padTop - DESKTOP.footerH,
+};
+
+const mobileLens = {
+  x: MOBILE.padSide,
+  y: MOBILE.padTop,
+  w: MOBILE.w - MOBILE.padSide * 2,
+  h: MOBILE.h - MOBILE.padTop - MOBILE.footerH,
+};
 ---
 
-<div
-  class:list={["polaroid-wrap", className]}
-  style="position:relative;width:667px;height:791px;flex-shrink:0;"
->
+<div class:list={["polaroid-wrap", className]}>
 
-  <!--
-    Full-height SVG: lime fills everything EXCEPT the lens window.
-    mask: white = paint lime, black = transparent hole.
-  -->
-  <svg
-    class="polaroid-svg"
-    width={W}
-    height={H}
-    viewBox={`0 0 ${W} ${H}`}
-    xmlns="http://www.w3.org/2000/svg"
-    aria-hidden="true"
-    style="display:block;position:absolute;top:0;left:0;"
-  >
-    <defs>
-      <mask id="frame-mask">
-        <!-- white = show lime across the full card -->
-        <rect width={W} height={H} fill="white" />
-        <!-- black = punch out the lens -->
-        <rect x={lensX} y={lensY} width={lensW} height={lensH} rx="4" fill="black" />
-      </mask>
-    </defs>
-    <rect width={W} height={H} fill="#b8d432" mask="url(#frame-mask)" />
-  </svg>
+  <!-- ── Desktop frame ─────────────────────────────────────────────── -->
+  <div class="polaroid-frame polaroid-frame--desktop">
+    <svg
+      class="polaroid-svg"
+      width={DESKTOP.w}
+      height={DESKTOP.h}
+      viewBox={`0 0 ${DESKTOP.w} ${DESKTOP.h}`}
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      style="display:block;position:absolute;top:0;left:0;"
+    >
+      <defs>
+        <mask id="frame-mask-desktop">
+          <rect width={DESKTOP.w} height={DESKTOP.h} fill="white" />
+          <rect
+            x={desktopLens.x}
+            y={desktopLens.y}
+            width={desktopLens.w}
+            height={desktopLens.h}
+            rx="4"
+            fill="black"
+          />
+        </mask>
+      </defs>
+      <rect width={DESKTOP.w} height={DESKTOP.h} fill="#b8d432" mask="url(#frame-mask-desktop)" />
+    </svg>
 
-  <!-- Caption overlay — sits over the lime footer area -->
-  <footer class="polaroid-footer">
-    <span class="polaroid-caption">{caption}</span>
+    <footer class="polaroid-footer polaroid-footer--desktop">
+      <span class="polaroid-caption">{caption}</span>
+      <div class="polaroid-actions" aria-label="Interaction icons">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06
+                   a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78
+                   1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0
+                   2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/>
+          <path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/>
+        </svg>
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="17 1 21 5 17 9"/>
+          <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
+          <polyline points="7 23 3 19 7 15"/>
+          <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+        </svg>
+      </div>
+    </footer>
+  </div>
 
-    <div class="polaroid-actions" aria-label="Interaction icons">
-      <!-- Heart outline -->
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
-           stroke="currentColor" stroke-width="2"
-           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06
-                 a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78
-                 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-      </svg>
+  <!-- ── Mobile frame (482 × 678) ─────────────────────────────────── -->
+  <div class="polaroid-frame polaroid-frame--mobile">
+    <svg
+      class="polaroid-svg"
+      width={MOBILE.w}
+      height={MOBILE.h}
+      viewBox={`0 0 ${MOBILE.w} ${MOBILE.h}`}
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      style="display:block;position:absolute;top:0;left:0;"
+    >
+      <defs>
+        <mask id="frame-mask-mobile">
+          <rect width={MOBILE.w} height={MOBILE.h} fill="white" />
+          <rect
+            x={mobileLens.x}
+            y={mobileLens.y}
+            width={mobileLens.w}
+            height={mobileLens.h}
+            rx="4"
+            fill="black"
+          />
+        </mask>
+      </defs>
+      <rect width={MOBILE.w} height={MOBILE.h} fill="#b8d432" mask="url(#frame-mask-mobile)" />
+    </svg>
 
-      <!-- Thumbs-up outline -->
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
-           stroke="currentColor" stroke-width="2"
-           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0
-                 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/>
-        <path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/>
-      </svg>
-
-      <!-- Retweet / share outline -->
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
-           stroke="currentColor" stroke-width="2"
-           stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <polyline points="17 1 21 5 17 9"/>
-        <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
-        <polyline points="7 23 3 19 7 15"/>
-        <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
-      </svg>
-    </div>
-  </footer>
+    <footer class="polaroid-footer polaroid-footer--mobile">
+      <span class="polaroid-caption">{caption}</span>
+      <div class="polaroid-actions" aria-label="Interaction icons">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06
+                   a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78
+                   1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </svg>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0
+                   2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/>
+          <path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/>
+        </svg>
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="17 1 21 5 17 9"/>
+          <path d="M3 11V9a4 4 0 0 1 4-4h14"/>
+          <polyline points="7 23 3 19 7 15"/>
+          <path d="M21 13v2a4 4 0 0 1-4 4H3"/>
+        </svg>
+      </div>
+    </footer>
+  </div>
 
 </div>
 
 <style>
-  /* ── Wrapper: contains SVG + absolutely-positioned footer ────────── */
   .polaroid-wrap {
     flex-shrink: 0;
     height: 791px;
     position: relative;
     width: 667px;
+  }
+
+  .polaroid-frame {
+    inset: 0;
+    position: absolute;
+  }
+
+  .polaroid-frame--mobile {
+    display: none;
   }
 
   .polaroid-svg {
@@ -105,19 +185,30 @@ const lensH = H - PAD_TOP - FOOTER_H; // 635
     top: 0;
   }
 
-  /* ── Caption bar — overlaid on the lime footer strip ─────────────── */
   .polaroid-footer {
     align-items: center;
-    bottom: 60px;
     color: #111;
     display: flex;
+    justify-content: space-between;
+    letter-spacing: -0.01em;
+    position: absolute;
+  }
+
+  .polaroid-footer--desktop {
+    bottom: 60px;
     font-size: 28px;
     height: 108px;
-    justify-content: space-between;
     left: 0;
-    letter-spacing: -0.01em;
     padding: 0 50px;
-    position: absolute;
+    right: 0;
+  }
+
+  .polaroid-footer--mobile {
+    bottom: 51px;
+    font-size: 20px;
+    height: 93px;
+    left: 0;
+    padding: 0 36px;
     right: 0;
   }
 
@@ -132,6 +223,10 @@ const lensH = H - PAD_TOP - FOOTER_H; // 635
     gap: 18px;
   }
 
+  .polaroid-footer--mobile .polaroid-actions {
+    gap: 14px;
+  }
+
   .polaroid-actions svg {
     cursor: pointer;
     flex-shrink: 0;
@@ -141,5 +236,24 @@ const lensH = H - PAD_TOP - FOOTER_H; // 635
 
   .polaroid-actions svg:hover {
     opacity: 1;
+  }
+
+  @media (max-width: 600px) {
+    .polaroid-wrap {
+      height: 678px;
+      width: 482px;
+    }
+
+    .polaroid-frame--desktop {
+      display: none;
+    }
+
+    .polaroid-frame--mobile {
+      display: block;
+      height: 678px;
+      inset: auto;
+      position: relative;
+      width: 482px;
+    }
   }
 </style>

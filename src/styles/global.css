@@ -522,6 +522,7 @@ h1 span {
   object-position: center;
   position: absolute;
   width: 100%;
+  padding-bottom: var(--space-sm);
 }
 
 /* ── Project Carousel ────────────────────────────────────────────────── */
@@ -864,6 +865,56 @@ h1 span {
     visibility: hidden;
   }
 
+  /* ── Mobile hero — centered Polaroid composition ─────────────────── */
+  .hero-polaroid-wrap {
+    height: 678px;
+    left: 50%;
+    top: 44%;
+    transform: translate(-50%, -50%) translateY(var(--hero-parallax-y, 0px));
+    width: 482px;
+  }
+
+  .hero-polaroid-inner {
+    height: 678px;
+    transform: rotate(-7deg);
+    width: 482px;
+  }
+
+  .hero-hi {
+    font-size: 96px;
+    left: 50%;
+    line-height: 1;
+    right: auto;
+    top: 15%;
+    transform: translateX(-50%);
+  }
+
+  .hero-name {
+    font-size: 120px;
+    left: 50%;
+    line-height: 0.88;
+    right: auto;
+    top: 25%;
+    transform: translateX(-50%);
+  }
+
+  .hero-subtitle {
+    top: 49%;
+    transform: translate(-50%, -50%) translateY(var(--hero-parallax-y, 0px));
+    width: min(68vw, 21rem);
+  }
+
+  .hero-sub-the {
+    color: #000;
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .hero-sub-role {
+    color: #000;
+    font-size: 29px;
+  }
+
   /* 0.6× hero element sizes */
   .hero-sub-ticker {
     --hero-slot-h: 39px;
@@ -873,14 +924,6 @@ h1 span {
   .hero-sub-ticker-inner span {
     font-size: 29px;
     height: 39px;
-  }
-
-  .hero-sub-role {
-    font-size: 29px;
-  }
-
-  .hero-sub-the {
-    font-size: 14px;
   }
 }
 
