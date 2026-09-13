@@ -1,0 +1,94 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CaseStudyToc from "../components/CaseStudyToc.astro";
+import "../styles/tokens.css";
+import "../styles/global.css";
+import "../styles/case-study.css";
+import { forkItMeta, forkItSections } from "../data/fork-it";
+
+const tocItems = forkItSections.map(({ id, title }) => ({ id, title }));
+---
+
+<BaseLayout
+  title={`${forkItMeta.title} — Yunfei Jiao`}
+  description={forkItMeta.description}
+>
+  <main class="fork-it-page">
+    <section class="fork-it-viewport" aria-label="Project introduction">
+      <a class="case-study-back fork-it-back" href="/">← Back to portfolio</a>
+
+      <header class="fork-it-hero">
+        <div class="fork-it-hero-copy">
+          <div class="fork-it-hero-heading">
+            <h1 class="fork-it-hero-title">{forkItMeta.title}</h1>
+            <p class="case-study-paragraph">{forkItMeta.intro}</p>
+          </div>
+
+          <div class="fork-it-hero-meta">
+            <div class="fork-it-hero-tag" aria-hidden="true">
+              <img
+                class="fork-it-hero-tag-image"
+                src="/assets/fork-it-hero-tag.png"
+                alt=""
+                width="112"
+                height="64"
+              />
+            </div>
+
+            <ul class="fork-it-hero-meta-list">
+              {
+                forkItMeta.meta.map((line) => (
+                  <li>
+                    <span class="fork-it-hero-meta-line">
+                      {line.label}: {line.value}
+                    </span>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+
+        <figure class="fork-it-hero-media">
+          <img
+            src={forkItMeta.heroImage}
+            alt=""
+            loading="eager"
+          />
+        </figure>
+      </header>
+    </section>
+
+    <div class="fork-it-content">
+      <CaseStudyToc items={tocItems} />
+
+      <div class="fork-it-body">
+        {
+          forkItSections.map((section) => (
+            <section
+              id={section.id}
+              class="fork-it-section fork-it-slide"
+              aria-labelledby={`${section.id}-heading`}
+            >
+              <h2 class="fork-it-section-heading sr-only" id={`${section.id}-heading`}>
+                {section.title}
+              </h2>
+
+              <figure class="fork-it-slide-figure">
+                {
+                  section.images.map((image) => (
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      loading="lazy"
+                    />
+                  ))
+                }
+              </figure>
+            </section>
+          ))
+        }
+      </div>
+    </div>
+  </main>
+</BaseLayout>

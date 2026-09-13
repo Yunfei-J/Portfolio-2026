@@ -42,7 +42,7 @@
   --space-xxxl: 64px;
 
   /* ── Spacing (element / layout) ── */
-  --side-padding: 120px;          /* horizontal page gutter */
+  --side-padding: 100px;          /* horizontal page gutter */
   --main-gap: var(--space-md);    /* vertical gap between page sections */
   --hero-inner-gap: 155px;        /* gap between h1 and skill-map */
   --hero-timeline-pad-bottom: 50px; /* bottom inset below skill rows */
@@ -98,7 +98,7 @@
     --space-xxxl: 51px;
 
     /* layout (1× × 0.8) */
-    --side-padding: 96px;
+    --side-padding: 80px;
     --hero-inner-gap: 124px;
     --hero-timeline-pad-bottom: 40px;
     --project-card-gap: 56px;

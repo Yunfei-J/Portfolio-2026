@@ -28,7 +28,7 @@ export const projects: ProjectCard[] = [
   },
   {
     title: "ForkIt AI",
-    href: `${WEBFLOW}/research/fork-it`,
+    href: "/fork-it",
     tags: ["Mobile", "AI", "Research"],
     description: "Cross-platform app that transforms physical menus into interactive digital experiences using gen-AI and NLP.",
     timeframe: "Sep 2024 – Jun 2026 · Startup Studio",

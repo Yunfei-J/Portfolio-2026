@@ -1,0 +1,242 @@
+---
+export type TocItem = {
+  id: string;
+  title: string;
+};
+
+type Props = {
+  items: TocItem[];
+};
+
+const { items } = Astro.props;
+---
+
+<nav
+  class="case-toc is-expanded"
+  data-case-toc
+  aria-label="Table of contents"
+>
+  <div class="case-toc-inner">
+    <div class="case-toc-rail" aria-hidden="true">
+      <div class="case-toc-rail-track"></div>
+      <div class="case-toc-rail-indicator" data-toc-indicator></div>
+    </div>
+
+    <ol class="case-toc-list">
+    {
+      items.map((item, index) => (
+        <li class="case-toc-item" data-toc-item>
+          <a
+            class="case-toc-link"
+            data-toc-link
+            data-index={index}
+            href={`#${item.id}`}
+          >
+            <span class="case-toc-num">
+              {String(index + 1).padStart(2, "0")}
+            </span>
+            <span class="case-toc-label">{item.title}</span>
+          </a>
+        </li>
+      ))
+    }
+    </ol>
+  </div>
+</nav>
+
+<script>
+  function initCaseToc() {
+    var toc = document.querySelector("[data-case-toc]");
+    if (!toc) return;
+
+    if (toc._tocAbort) toc._tocAbort.abort();
+    var ac = new AbortController();
+    toc._tocAbort = ac;
+    var signal = ac.signal;
+
+    var links = Array.from(toc.querySelectorAll("[data-toc-link]"));
+    var indicator = toc.querySelector("[data-toc-indicator]");
+    var sections = links
+      .map(function (link) {
+        var id = link.getAttribute("href")?.slice(1);
+        return id ? document.getElementById(id) : null;
+      })
+      .filter(Boolean);
+
+    if (!sections.length) return;
+
+    var alwaysExpanded = true;
+    var activeIndex = 0;
+    var lockedIndex = -1;
+    var scrollTicking = false;
+    var markerRatio = 0.25;
+
+    function setActive(index) {
+      if (index < 0 || index >= links.length || index === activeIndex) return;
+      activeIndex = index;
+      links.forEach(function (link, i) {
+        link.classList.toggle("is-active", i === index);
+      });
+      moveIndicator(index);
+    }
+
+    function moveIndicator(index) {
+      if (!indicator) return;
+      var link = links[index];
+      var item = link.closest("[data-toc-item]");
+      if (!item) return;
+      var rail = toc.querySelector(".case-toc-rail");
+      if (!rail) return;
+      var itemRect = item.getBoundingClientRect();
+      var railRect = rail.getBoundingClientRect();
+      var offset =
+        itemRect.top -
+        railRect.top +
+        (itemRect.height - indicator.offsetHeight) / 2;
+      indicator.style.transform = "translateY(" + offset + "px)";
+    }
+
+    function getActiveIndexFromScroll() {
+      var markerY = window.innerHeight * markerRatio;
+      var next = 0;
+
+      for (var i = 0; i < sections.length; i++) {
+        if (sections[i].getBoundingClientRect().top <= markerY) {
+          next = i;
+        }
+      }
+
+      return next;
+    }
+
+    function syncActiveFromScroll() {
+      scrollTicking = false;
+      if (lockedIndex >= 0) return;
+      setActive(getActiveIndexFromScroll());
+    }
+
+    function queueScrollSync() {
+      if (scrollTicking) return;
+      scrollTicking = true;
+      requestAnimationFrame(syncActiveFromScroll);
+    }
+
+    function releaseScrollLock() {
+      lockedIndex = -1;
+      syncActiveFromScroll();
+    }
+
+    function lockScrollTo(index) {
+      lockedIndex = index;
+      setActive(index);
+
+      if ("onscrollend" in window) {
+        var onScrollEnd = function () {
+          window.removeEventListener("scrollend", onScrollEnd);
+          releaseScrollLock();
+        };
+        window.addEventListener("scrollend", onScrollEnd, { once: true, signal: signal });
+        return;
+      }
+
+      var lastY = window.scrollY;
+      var stableFrames = 0;
+
+      function waitForScrollEnd() {
+        if (signal.aborted) return;
+
+        if (window.scrollY === lastY) {
+          stableFrames += 1;
+          if (stableFrames >= 3) {
+            releaseScrollLock();
+            return;
+          }
+        } else {
+          stableFrames = 0;
+          lastY = window.scrollY;
+        }
+
+        requestAnimationFrame(waitForScrollEnd);
+      }
+
+      requestAnimationFrame(waitForScrollEnd);
+    }
+
+    links.forEach(function (link, index) {
+      link.addEventListener(
+        "click",
+        function (e) {
+          e.preventDefault();
+          var id = link.getAttribute("href")?.slice(1);
+          var target = id ? document.getElementById(id) : null;
+          if (!target) return;
+          lockScrollTo(index);
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+          if (
+            !alwaysExpanded &&
+            window.matchMedia("(max-width: 900px)").matches
+          ) {
+            toc.classList.remove("is-expanded");
+          }
+        },
+        { signal: signal },
+      );
+    });
+
+    window.addEventListener("scroll", queueScrollSync, { passive: true, signal: signal });
+
+    if (!alwaysExpanded) {
+      toc.addEventListener(
+        "mouseenter",
+        function () {
+          toc.classList.add("is-expanded");
+          requestAnimationFrame(function () {
+            moveIndicator(activeIndex);
+          });
+        },
+        { signal: signal },
+      );
+
+      toc.addEventListener(
+        "mouseleave",
+        function () {
+          if (!window.matchMedia("(max-width: 900px)").matches) {
+            toc.classList.remove("is-expanded");
+          }
+        },
+        { signal: signal },
+      );
+
+      if (window.matchMedia("(max-width: 900px)").matches) {
+        toc.addEventListener(
+          "click",
+          function () {
+            toc.classList.toggle("is-expanded");
+            requestAnimationFrame(function () {
+              moveIndicator(activeIndex);
+            });
+          },
+          { signal: signal },
+        );
+      }
+    }
+
+    window.addEventListener(
+      "resize",
+      function () {
+        moveIndicator(activeIndex);
+        queueScrollSync();
+      },
+      { signal: signal },
+    );
+
+    activeIndex = -1;
+    setActive(getActiveIndexFromScroll());
+    requestAnimationFrame(function () {
+      moveIndicator(activeIndex);
+    });
+  }
+
+  initCaseToc();
+  document.addEventListener("astro:page-load", initCaseToc);
+</script>
