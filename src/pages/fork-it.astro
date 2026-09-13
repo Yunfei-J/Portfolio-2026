@@ -50,11 +50,21 @@ const tocItems = forkItSections.map(({ id, title }) => ({ id, title }));
         </div>
 
         <figure class="fork-it-hero-media">
-          <img
-            src={forkItMeta.heroImage}
-            alt=""
-            loading="eager"
-          />
+          <div class="fork-it-hero-media-stack">
+            <img
+              class="fork-it-hero-card"
+              src={forkItMeta.heroCard}
+              alt=""
+              aria-hidden="true"
+              loading="eager"
+            />
+            <img
+              class="fork-it-hero-image"
+              src={forkItMeta.heroImage}
+              alt=""
+              loading="eager"
+            />
+          </div>
         </figure>
       </header>
     </section>

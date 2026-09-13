@@ -27,7 +27,8 @@ export const forkItMeta = {
     "Cross-platform app that transforms physical menus into interactive digital experiences using gen-AI and NLP.",
   intro:
     "If you ask me what's the project that I'm most proud of, this is it! I'm building ForkIt, a tool designed for food lovers, frequent travelers, and anyone looking for a seamless, stress-free dining experience.",
-  heroImage: "/assets/fork-it-hero.png",
+  heroImage: `${SLIDE_DIR}/prototype.png`,
+  heroCard: "/assets/case-studies/dec-hero-card.png",
   meta: [
     { label: "Timeline", value: "Sep 2024 – Jun 2026" },
     { label: "Location", value: "Startup Studio project" },
