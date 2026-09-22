@@ -125,10 +125,11 @@ export function createSearchEngine(
   };
 }
 
-export function trackSearch(query: string) {
-  const term = query.trim();
-  if (!term) return;
+let searchTrackTimer: ReturnType<typeof setTimeout> | undefined;
+let lastTrackedTerm = "";
 
+/** GA4 recommended event `search` with `search_term`. Works with GTM (dataLayer) or direct gtag. */
+function pushSearchEvent(term: string, source: "typing" | "tag") {
   const win = window as typeof window & {
     dataLayer?: Record<string, unknown>[];
     gtag?: (...args: unknown[]) => void;
@@ -136,15 +137,54 @@ export function trackSearch(query: string) {
 
   win.dataLayer = win.dataLayer || [];
 
+  const payload = {
+    search_term: term,
+    search_location: "homepage_project_search",
+    search_source: source,
+  };
+
   if (typeof win.gtag === "function") {
-    win.gtag("event", "search", { search_term: term });
+    win.gtag("event", "search", payload);
     return;
   }
 
   win.dataLayer.push({
     event: "search",
-    search_term: term,
+    ...payload,
   });
+}
+
+/** Debounced by default; pass `{ immediate: true }` for tag clicks. */
+export function trackSearch(
+  query: string,
+  options?: { immediate?: boolean; source?: "typing" | "tag" },
+) {
+  const term = query.trim();
+  if (!term) {
+    lastTrackedTerm = "";
+    if (searchTrackTimer) {
+      clearTimeout(searchTrackTimer);
+      searchTrackTimer = undefined;
+    }
+    return;
+  }
+
+  const source = options?.source ?? "typing";
+
+  const send = () => {
+    if (term === lastTrackedTerm) return;
+    lastTrackedTerm = term;
+    pushSearchEvent(term, source);
+  };
+
+  if (options?.immediate) {
+    if (searchTrackTimer) clearTimeout(searchTrackTimer);
+    send();
+    return;
+  }
+
+  if (searchTrackTimer) clearTimeout(searchTrackTimer);
+  searchTrackTimer = setTimeout(send, 800);
 }
 
 export { highlight };
