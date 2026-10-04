@@ -1,0 +1,81 @@
+---
+import type { ProjectCard } from "../data/projects";
+
+type Props = {
+  projects: ProjectCard[];
+};
+
+const { projects } = Astro.props;
+
+function projectSubtitle(timeframe: string) {
+  const parts = timeframe.split("·");
+  return parts.length > 1 ? parts[parts.length - 1].trim() : timeframe.trim();
+}
+---
+
+<section
+  class="carousel-accordion-section"
+  aria-label="Project carousel"
+  data-carousel-accordion
+>
+  <div class="carousel-accordion">
+    {
+      projects.map((card, i) => {
+        const external = card.href.startsWith("http");
+        const subtitle = projectSubtitle(card.timeframe);
+        const visibleTags = card.tags.slice(0, 3);
+        const state = i === 0 ? "active" : "collapsed";
+
+        return (
+          <article
+            class="carousel-accordion__item"
+            data-index={i}
+            data-state={state}
+          >
+            <div class="carousel-accordion__panel" id={`carousel-panel-${i}`}>
+              <a
+                class="carousel-accordion__panel-link"
+                href={card.href}
+                target={external ? "_blank" : undefined}
+                rel={external ? "noopener noreferrer" : undefined}
+                aria-label={`Open ${card.title}`}
+                tabindex={state === "active" ? undefined : -1}
+              >
+                <header class="carousel-accordion__header">
+                  <h3 class="carousel-accordion__title">{card.title}</h3>
+                  <div class="carousel-accordion__meta">
+                    <p class="carousel-accordion__studio">{subtitle}</p>
+                    <div
+                      class="carousel-accordion__tags"
+                      aria-label={`${card.title} tags`}
+                    >
+                      {visibleTags.map((tag) => (
+                        <span class="carousel-accordion__tag">{tag}</span>
+                      ))}
+                    </div>
+                  </div>
+                </header>
+                <div class="carousel-accordion__media">
+                  <img src={card.image} alt="" loading="lazy" />
+                </div>
+              </a>
+            </div>
+            <button
+              type="button"
+              class="carousel-accordion__spine"
+              aria-expanded={state === "active"}
+              aria-controls={`carousel-panel-${i}`}
+            >
+              <span class="carousel-accordion__spine-rotate">
+                <span class="carousel-accordion__spine-label">
+                  <span class="carousel-accordion__spine-title">{card.title}</span>
+                  <span class="carousel-accordion__spine-subtitle">{subtitle}</span>
+                </span>
+              </span>
+            </button>
+          </article>
+        );
+      })
+    }
+  </div>
+</section>

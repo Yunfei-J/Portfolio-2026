@@ -19,16 +19,20 @@
 
   /* ── Font sizes (element / layout) ── */
   --fs-hero: 90px;            /* hero section title */
-  --fs-h1: var(--text-xxl);   /* section headings: project title, search title */
-  --fs-carousel-label: var(--text-xl);
-  --fs-search-input: var(--text-md);
+  --fs-h1: var(--text-xl);   /* section headings: project title, search title */
   --fs-body: var(--text-sm);  /* project description, year row */
   --fs-tag-small: var(--text-xs);
   --fs-ui: var(--text-md);    /* carousel prev/next controls */
   --fs-meta: var(--text-sm);  /* timeframe, skill-row labels */
   --fs-xs: 14px;              /* search result count */
   --fs-tag-large: var(--text-md); /* footer links */
-  --fs-hero-impact: calc(200 / 1280 * 100vw); /* hero-hi + hero-name (200px @ 1440px) */
+  --fs-hero-impact: calc(140 / 1280 * 100vw); /* ~90% of 200/1280 vw (180px @ 1280px) */
+  --fs-hero-sub-the: var(--text-xs);
+  --fs-hero-sub-roll: 36px;
+  --hero-sub-slot-height: 44px;
+  /* Hero polaroid (desktop >1000px). ≤1000px / ≤600px blocks below override. */
+  --hero-polaroid-width: 500px;
+  --hero-polaroid-height: 700px;
 
   /* ── Standard spacing scale (auto-scales at breakpoints below) ── */
   --space-micro: 4px;
@@ -43,7 +47,6 @@
 
   /* ── Spacing (element / layout) ── */
   --side-padding: 100px;          /* horizontal page gutter */
-  --main-gap: var(--space-md);    /* vertical gap between page sections */
   --hero-inner-gap: 155px;        /* gap between h1 and skill-map */
   --hero-timeline-pad-bottom: 50px; /* bottom inset below skill rows */
   --skill-row-gap: var(--space-md);
@@ -54,14 +57,17 @@
   --project-card-min-h: 533px;    /* min-height of .project-card */
   --project-visual-min-h: 462px;  /* min-height of .project-visual */
   --carousel-gap: 0px;            /* gap between cards */
-  --carousel-pad-v: 80px;
+  --carousel-pad-v: 88px;
   --reading-pad-top: 176px;       /* top padding of .reading-search */
-  --search-pill-min-h: 135px;     /* min-height of .search-pill */
-  --search-pill-pad-h: 52px;      /* horizontal padding inside pill */
-  --search-pill-pad-v: var(--space-xs);
-  --search-pill-mt: 76px;         /* margin-top of .search-pill */
+  --reading-search-bg-size: min(1000px, 70vw);
+  --reading-search-card-bg: #6f7358;
+  --reading-search-card-accent: #dfea81;
+  --reading-search-card-gap: 40px;
+  --reading-search-card-pad: 60px;
+  --reading-search-card-radius: 26px;
+  --fs-reading-search-body: 28px;
+  --search-pill-min-h: 135px;     /* legacy; card pill uses padding */
   --large-tags-mt: var(--space-md);
-  --large-tags-btn-pad-h: var(--space-sm);
   --compact-tag-pad-h: var(--space-sm);
   --hero-section-pad-top: var(--space-xxxl);
   --hero-section-pad-right: 126px;/* hero right padding */
@@ -70,6 +76,9 @@
   /* ── Colors ── */
   --color-primary: #89954d;
   --color-secondary: #c4d81a;
+  --color-polaroid-frame: #d7e843;
+  /* WaveDivider viewBox height 96; 48 = top half of stripe */
+  --wave-strip-visible-height: 48;
 }
 
 /* ── 0.8× at ≤1000px (tablet + mobile) ───────────────────────────────── */
@@ -84,6 +93,13 @@
     --text-xxl: 51px;
 
     --fs-hero: 72px;
+    --fs-hero-impact: calc(144 / 1280 * 100vw);
+    --fs-hero-sub-the: var(--text-sm);
+    --fs-hero-sub-roll: var(--text-xl);
+    --hero-sub-slot-height: var(--space-xl);
+    /* Tablet + mobile baseline (≤1000px viewport) */
+    --hero-polaroid-width: 384px;
+    --hero-polaroid-height: 455px;
     --fs-xs: 11px;
 
     /* spacing scale (1× × 0.8) */
@@ -107,6 +123,10 @@
     --carousel-gap: 0px;
     --carousel-pad-v: 64px;
     --reading-pad-top: 141px;
+    --reading-search-bg-size: min(560px, 72vw);
+    --reading-search-card-gap: 48px;
+    --reading-search-card-pad: 48px;
+    --fs-reading-search-body: 22px;
     --search-pill-min-h: 108px;
     --search-pill-pad-h: 42px;
     --search-pill-mt: 61px;
@@ -120,7 +140,13 @@
    differ on phone — do not duplicate the full 0.8× scale here. */
 @media (max-width: 600px) {
   :root {
+    --reading-search-card-gap: 32px;
+    --reading-search-card-pad: 24px;
+    --fs-reading-search-body: 18px;
     --side-padding: 1.5rem;
+    /* Phone (≤600px viewport) */
+    --hero-polaroid-width: 386px;
+    --hero-polaroid-height: 542px;
     --project-card-gap: 42px;
     --project-visual-min-h: 300px;
   }

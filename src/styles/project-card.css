@@ -1,0 +1,186 @@
+/* Featured project cards — Figma CV frame 3161:1674 */
+
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+  position: relative;
+  z-index: 1;
+}
+
+.project-card-v2 {
+  border-radius: 26px;
+  min-width: 0;
+}
+
+.project-card-v2__link {
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.project-card-v2__frame {
+  border-radius: 26px;
+  min-width: 0;
+}
+
+.project-card-v2__media-panel {
+  aspect-ratio: 5 / 3;
+  backdrop-filter: blur(12.5px);
+  background: #F3F5ED;
+  border-radius: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-sm) var(--space-sm);
+  transition: background-color 0.2s ease;
+  width: 100%;
+}
+
+.project-card-v2__thumbnail {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  min-height: 0;
+  padding-block: 8px;
+  width: 100%;
+}
+
+.project-card-v2__thumbnail img {
+  display: block;
+  height: auto;
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  width: auto;
+}
+
+.project-card-v2__body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 8px 0 16px;
+}
+
+.project-card-v2__title-row {
+  align-items: center;
+  display: flex;
+  min-width: 0;
+}
+
+.project-card-v2__title-group {
+  /* Grid gives the grip a definite row height (from the heading) for aspect-ratio */
+  column-gap: 0.25em;
+  display: grid;
+  font-size: clamp(32px, 3.4vw, 48px);
+  grid-template-columns: auto 1fr;
+  min-width: 0;
+}
+
+.project-card-v2__grip {
+  align-self: stretch;
+  box-sizing: border-box;
+  color: #dedede;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  justify-content: center;
+  justify-self: start;
+  min-height: 1em;
+  padding-block: 15%;
+  transition: color 0.2s ease;
+  width: auto;
+}
+
+.project-card-v2__grip-svg {
+  display: block;
+  flex: 1 1 0;
+  height: 100%;
+  min-height: 0;
+  width: auto;
+}
+
+.project-card-v2__heading {
+  color: #9fa67a;
+  font-family: var(--font-heading);
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1;
+  margin: 0;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.project-card-v2__description {
+  font-family: var(--font-libertinus-display, "Libertinus Serif Display", var(--font-serif));
+  font-size: clamp(16px, 1.8vw, 20px);
+  font-synthesis: none;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.project-card-v2__tags {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 6px;
+}
+
+.project-card-v2__tag {
+  background: #fff;
+  border: 1px solid rgb(0 0 0 / 10%);
+  border-radius: 8px;
+  color: #9fa67a;
+  font-family: var(--font-serif);
+  font-size: clamp(12px, 1.4vw, 16px);
+  letter-spacing: 0.005em;
+  line-height: 1;
+  padding: 8px 12px;
+  white-space: nowrap;
+}
+
+.project-card-v2__tag-overflow {
+  color: #9fa67a;
+  font-family: var(--font-serif);
+  font-size: clamp(16px, 1.4vw, 22px);
+  letter-spacing: 0.005em;
+  padding-inline: 8px;
+  white-space: nowrap;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .project-card-v2__link:hover .project-card-v2__media-panel {
+    background: #dfea81;
+  }
+
+  .project-card-v2__link:hover .project-card-v2__grip {
+    color: #dfea81;
+  }
+
+  .project-card-v2__link:hover .project-card-v2__heading {
+    color: var(--color-primary);
+  }
+}
+
+@media (max-width: 900px) {
+  .project-list {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card-v2__heading {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 600px) {
+  .project-list {
+    padding-inline: var(--space-md);
+  }
+}

@@ -1,0 +1,38 @@
+---
+/**
+ * Archived featured-project card markup (v1).
+ * Pair with src/styles/archive/project-card-v1.css — not used on the live homepage.
+ */
+import type { ProjectCard } from "../../data/projects";
+
+type Props = ProjectCard;
+
+const project = Astro.props;
+const external = project.href.startsWith("http");
+---
+
+<div class="project-card-wrap">
+  <a
+    class="project-card"
+    href={project.href}
+    target={external ? "_blank" : undefined}
+    rel={external ? "noopener noreferrer" : undefined}
+    aria-label={`Open ${project.title}`}
+  >
+    <div class="project-copy">
+      <div class="project-heading-group">
+        <h1>{project.title}</h1>
+        <div class="project-details">
+          <p class="project-description">{project.description}</p>
+          <p class="project-timeframe">{project.timeframe}</p>
+        </div>
+      </div>
+      <div class="compact-tags" aria-label={`${project.title} tags`}>
+        {project.tags.map((tag) => <span>{tag}</span>)}
+      </div>
+    </div>
+    <div class="project-visual">
+      <img src={project.image} alt="" loading="lazy" />
+    </div>
+  </a>
+</div>

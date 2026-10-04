@@ -7,11 +7,14 @@ export type ProjectCard = {
   description: string;
   timeframe: string;
   image: string;
+  /** Optional short header label (uppercase in UI). */
+  heading?: string;
 };
 
 export const projects: ProjectCard[] = [
   {
     title: "uServe POS",
+    heading: "USERVE",
     href: `${WEBFLOW}/research/universal-processing`,
     tags: ["UX Design", "Product", "Branding"],
     description: "End-to-end redesign of a cross-platform point-of-sale system for 35,000+ merchants nationwide.",
@@ -33,6 +36,14 @@ export const projects: ProjectCard[] = [
     description: "Cross-platform app that transforms physical menus into interactive digital experiences using gen-AI and NLP.",
     timeframe: "Sep 2024 – Jun 2026 · Startup Studio",
     image: "/assets/projects/fork-it.png",
+  },
+  {
+    title: "Ubiquitous",
+    href: `${WEBFLOW}/research/research-ubi-gestures`,
+    tags: ["HCI", "VR", "Research", "Accessibility"],
+    description: "Cross-modality gestural commands for VR — hands, feet, head, and gaze for accessible interaction.",
+    timeframe: "Jun 2022 – Apr 2023 · UC San Diego",
+    image: "/assets/projects/ubi-gestures-carousel.png",
   },
 ];
 
@@ -68,13 +79,5 @@ export const carouselProjects: ProjectCard[] = [
     description: "Personal finance tool for budgeting and investment beginners with conversational AI support.",
     timeframe: "Sep 2024 – Present · Personal project",
     image: "/assets/projects/moneywise.png",
-  },
-  {
-    title: "Ubiquitous",
-    href: `${WEBFLOW}/research/research-ubi-gestures`,
-    tags: ["HCI", "VR", "Research", "Accessibility"],
-    description: "Cross-modality gestural commands for VR — hands, feet, head, and gaze for accessible interaction.",
-    timeframe: "Jun 2022 – Apr 2023 · UC San Diego",
-    image: "/assets/projects/ubi-gestures-carousel.png",
   },
 ];

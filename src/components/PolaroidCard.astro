@@ -51,14 +51,40 @@ const mobileLens = {
   <div class="polaroid-frame polaroid-frame--desktop">
     <svg
       class="polaroid-svg"
-      width={DESKTOP.w}
-      height={DESKTOP.h}
       viewBox={`0 0 ${DESKTOP.w} ${DESKTOP.h}`}
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
-      style="display:block;position:absolute;top:0;left:0;"
+      preserveAspectRatio="xMidYMid meet"
     >
       <defs>
+        <filter
+          id="polaroid-texture-desktop"
+          x="-8"
+          y="-8"
+          width={DESKTOP.w + 16}
+          height={DESKTOP.h + 16}
+          filterUnits="userSpaceOnUse"
+          color-interpolation-filters="sRGB"
+        >
+          <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.25 0.25"
+            numOctaves="3"
+            seed="6451"
+            result="noise"></feTurbulence>
+          <feDisplacementMap
+            in="shape"
+            in2="noise"
+            scale="8"
+            xChannelSelector="R"
+            yChannelSelector="G"
+            result="displacedImage"></feDisplacementMap>
+          <feMerge>
+            <feMergeNode in="displacedImage"></feMergeNode>
+          </feMerge>
+        </filter>
         <mask id="frame-mask-desktop">
           <rect width={DESKTOP.w} height={DESKTOP.h} fill="white" />
           <rect
@@ -71,27 +97,34 @@ const mobileLens = {
           />
         </mask>
       </defs>
-      <rect width={DESKTOP.w} height={DESKTOP.h} fill="#b8d432" mask="url(#frame-mask-desktop)" />
+      <g filter="url(#polaroid-texture-desktop)">
+        <rect
+          width={DESKTOP.w}
+          height={DESKTOP.h}
+          fill="var(--color-polaroid-frame)"
+          mask="url(#frame-mask-desktop)"
+        />
+      </g>
     </svg>
 
     <footer class="polaroid-footer polaroid-footer--desktop">
       <span class="polaroid-caption">{caption}</span>
       <div class="polaroid-actions" aria-label="Interaction icons">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+        <svg viewBox="0 0 24 24" fill="none"
              stroke="currentColor" stroke-width="2"
              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06
                    a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78
                    1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
         </svg>
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+        <svg viewBox="0 0 24 24" fill="none"
              stroke="currentColor" stroke-width="2"
              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0
                    2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/>
           <path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/>
         </svg>
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+        <svg viewBox="0 0 24 24" fill="none"
              stroke="currentColor" stroke-width="2"
              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <polyline points="17 1 21 5 17 9"/>
@@ -107,14 +140,40 @@ const mobileLens = {
   <div class="polaroid-frame polaroid-frame--mobile">
     <svg
       class="polaroid-svg"
-      width={MOBILE.w}
-      height={MOBILE.h}
       viewBox={`0 0 ${MOBILE.w} ${MOBILE.h}`}
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
-      style="display:block;position:absolute;top:0;left:0;"
+      preserveAspectRatio="xMidYMid meet"
     >
       <defs>
+        <filter
+          id="polaroid-texture-mobile"
+          x="-8"
+          y="-8"
+          width={MOBILE.w + 16}
+          height={MOBILE.h + 16}
+          filterUnits="userSpaceOnUse"
+          color-interpolation-filters="sRGB"
+        >
+          <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.25 0.25"
+            numOctaves="3"
+            seed="6451"
+            result="noise"></feTurbulence>
+          <feDisplacementMap
+            in="shape"
+            in2="noise"
+            scale="8"
+            xChannelSelector="R"
+            yChannelSelector="G"
+            result="displacedImage"></feDisplacementMap>
+          <feMerge>
+            <feMergeNode in="displacedImage"></feMergeNode>
+          </feMerge>
+        </filter>
         <mask id="frame-mask-mobile">
           <rect width={MOBILE.w} height={MOBILE.h} fill="white" />
           <rect
@@ -127,27 +186,34 @@ const mobileLens = {
           />
         </mask>
       </defs>
-      <rect width={MOBILE.w} height={MOBILE.h} fill="#b8d432" mask="url(#frame-mask-mobile)" />
+      <g filter="url(#polaroid-texture-mobile)">
+        <rect
+          width={MOBILE.w}
+          height={MOBILE.h}
+          fill="var(--color-polaroid-frame)"
+          mask="url(#frame-mask-mobile)"
+        />
+      </g>
     </svg>
 
     <footer class="polaroid-footer polaroid-footer--mobile">
       <span class="polaroid-caption">{caption}</span>
       <div class="polaroid-actions" aria-label="Interaction icons">
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"
+        <svg viewBox="0 0 24 24" fill="none"
              stroke="currentColor" stroke-width="2"
              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06
                    a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78
                    1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
         </svg>
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"
+        <svg viewBox="0 0 24 24" fill="none"
              stroke="currentColor" stroke-width="2"
              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0
                    2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/>
           <path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/>
         </svg>
-        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"
+        <svg viewBox="0 0 24 24" fill="none"
              stroke="currentColor" stroke-width="2"
              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <polyline points="17 1 21 5 17 9"/>
@@ -164,9 +230,9 @@ const mobileLens = {
 <style>
   .polaroid-wrap {
     flex-shrink: 0;
-    height: 791px;
+    height: var(--polaroid-height, 791px);
     position: relative;
-    width: 667px;
+    width: var(--polaroid-width, 667px);
   }
 
   .polaroid-frame {
@@ -180,9 +246,11 @@ const mobileLens = {
 
   .polaroid-svg {
     display: block;
+    height: 100%;
     left: 0;
     position: absolute;
     top: 0;
+    width: 100%;
   }
 
   .polaroid-footer {
@@ -195,8 +263,8 @@ const mobileLens = {
   }
 
   .polaroid-footer--desktop {
-    bottom: 60px;
-    font-size: 28px;
+    bottom: 84px;
+    font-size: 20px;
     height: 108px;
     left: 0;
     padding: 0 50px;
@@ -204,10 +272,10 @@ const mobileLens = {
   }
 
   .polaroid-footer--mobile {
-    bottom: 51px;
+    bottom: 56px;
     font-size: 20px;
     height: 93px;
-    left: 0;
+    left: 10px;
     padding: 0 36px;
     right: 0;
   }
@@ -230,8 +298,15 @@ const mobileLens = {
   .polaroid-actions svg {
     cursor: pointer;
     flex-shrink: 0;
+    height: 28px;
     opacity: 0.75;
     transition: opacity 200ms ease;
+    width: 28px;
+  }
+
+  .polaroid-footer--mobile .polaroid-actions svg {
+    height: 22px;
+    width: 22px;
   }
 
   .polaroid-actions svg:hover {
@@ -240,8 +315,8 @@ const mobileLens = {
 
   @media (max-width: 600px) {
     .polaroid-wrap {
-      height: 678px;
-      width: 482px;
+      height: var(--polaroid-height, 678px);
+      width: var(--polaroid-width, 482px);
     }
 
     .polaroid-frame--desktop {
@@ -250,10 +325,10 @@ const mobileLens = {
 
     .polaroid-frame--mobile {
       display: block;
-      height: 678px;
+      height: 100%;
       inset: auto;
       position: relative;
-      width: 482px;
+      width: 100%;
     }
   }
 </style>

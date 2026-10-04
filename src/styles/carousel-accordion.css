@@ -1,0 +1,222 @@
+/* Horizontal accordion — Figma CV frame 3191:1702 */
+
+.carousel-accordion-section {
+  background: #dbddd0;
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+  padding: var(--carousel-pad-v) var(--side-padding);
+  position: relative;
+  z-index: 1;
+}
+
+.carousel-accordion {
+  --accordion-width: min(592px, calc(100vw - 2 * var(--side-padding) - 80px));
+  --accordion-height: calc(var(--accordion-width) * 8 / 9);
+  --accordion-spine: 70px;
+
+  align-items: center;
+  display: flex;
+  gap: 8px;
+  justify-content: flex-start;
+  margin-inline: auto;
+  min-height: var(--accordion-height);
+  width: max-content;
+}
+
+.carousel-accordion__item {
+  display: flex;
+  flex-shrink: 0;
+  height: var(--accordion-height);
+  overflow: hidden;
+}
+
+.carousel-accordion__panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  transition:
+    width 420ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 320ms ease;
+  width: 0;
+}
+
+.carousel-accordion__item[data-state="active"] .carousel-accordion__panel {
+  filter: drop-shadow(0 0 2px rgb(0 0 0 / 12%));
+  opacity: 1;
+  width: var(--accordion-width);
+}
+
+.carousel-accordion__item[data-state="collapsed"] .carousel-accordion__panel {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.carousel-accordion__panel-link {
+  color: inherit;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+  text-decoration: none;
+}
+
+.carousel-accordion__header {
+  background: rgb(255 255 255 / 90%);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  gap: 0;
+}
+
+.carousel-accordion__title {
+  color: #6f7358;
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 3.2vw, 40px);
+  font-weight: 400;
+  letter-spacing: 0.005em;
+  line-height: 1.1;
+  margin: 0;
+  padding: 16px 24px 0px;
+}
+
+.carousel-accordion__meta {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  justify-content: space-between;
+  padding: 0px 24px 16px;
+}
+
+.carousel-accordion__studio {
+  color: #6f7358;
+  font-family: var(--font-serif);
+  font-size: clamp(16px, 1.4vw, 20px);
+  letter-spacing: 0.005em;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.carousel-accordion__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  justify-content: flex-end;
+}
+
+.carousel-accordion__tag {
+  background: rgb(118 118 118 / 7%);
+  border-radius: 6px;
+  color: #5a6c00;
+  font-family: var(--font-serif);
+  font-size: 16px;
+  line-height: 1;
+  padding: 6px 12px;
+  white-space: nowrap;
+}
+
+.carousel-accordion__media {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.carousel-accordion__media img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+}
+
+.carousel-accordion__spine {
+  align-items: center;
+  background: rgb(255 255 255 / 83%);
+  border: none;
+  color: #9fa67a;
+  cursor: pointer;
+  display: flex;
+  flex-shrink: 0;
+  font: inherit;
+  height: 100%;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0;
+  width: var(--accordion-spine);
+}
+
+/* Rotated label bar: length = accordion height, thickness = spine width */
+.carousel-accordion__spine-rotate {
+  display: block;
+  flex: none;
+  transform: rotate(90deg);
+}
+
+.carousel-accordion__spine-label {
+  align-items: flex-start;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-heading);
+  gap: 0;
+  height: var(--accordion-spine);
+  justify-content: center;
+  letter-spacing: 0.005em;
+  line-height: 1.1;
+  padding-inline: 20px;
+  text-align: left;
+  white-space: nowrap;
+  width: var(--accordion-height);
+}
+
+.carousel-accordion__spine-title {
+  font-size: clamp(22px, 2.2vw, 28px);
+}
+
+.carousel-accordion__spine-subtitle {
+  font-size: clamp(14px, 1.2vw, 16px);
+  font-family: var(--font-serif);
+}
+
+.carousel-accordion__item[data-state="active"] .carousel-accordion__spine {
+  background: #6f7358;
+  color: #dfea81;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .carousel-accordion__spine:hover {
+    background: #6f7358;
+    color: #dfea81;
+  }
+}
+
+@media (max-width: 900px) {
+  .carousel-accordion {
+    --accordion-width: min(480px, calc(100vw - var(--side-padding) - 64px));
+    --accordion-spine: 64px;
+  }
+}
+
+@media (max-width: 600px) {
+  .carousel-accordion-section {
+    padding-inline: var(--space-md);
+  }
+
+  .carousel-accordion {
+    --accordion-width: min(360px, calc(100vw - 3rem - 56px));
+    --accordion-spine: 56px;
+  }
+
+  .carousel-accordion__meta {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .carousel-accordion__tags {
+    justify-content: flex-start;
+  }
+}

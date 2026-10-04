@@ -1,0 +1,81 @@
+---
+import type { ProjectCard as ProjectCardData } from "../data/projects";
+
+type Props = ProjectCardData & {
+  /** Short heading in the card header (defaults to title). */
+  heading?: string;
+  maxVisibleTags?: number;
+};
+
+const {
+  title,
+  href,
+  tags,
+  description,
+  image,
+  heading,
+  maxVisibleTags = 3,
+} = Astro.props;
+
+const external = href.startsWith("http");
+const cardHeading = heading ?? title;
+const visibleTags = tags.slice(0, maxVisibleTags);
+const hiddenTagCount = Math.max(0, tags.length - maxVisibleTags);
+---
+
+<article class="project-card-v2">
+  <a
+    class="project-card-v2__link"
+    href={href}
+    target={external ? "_blank" : undefined}
+    rel={external ? "noopener noreferrer" : undefined}
+    aria-label={`Open ${title}`}
+  >
+    <div class="project-card-v2__frame">
+      <div class="project-card-v2__media-panel">
+        <div class="project-card-v2__thumbnail">
+          <img src={image} alt="" loading="lazy" />
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card-v2__body">
+      <div class="project-card-v2__title-row">
+        <div class="project-card-v2__title-group">
+          <span class="project-card-v2__grip" aria-hidden="true">
+            <svg
+              class="project-card-v2__grip-svg"
+              xmlns="http://www.w3.org/2000/svg"
+              width="21"
+              height="34"
+              viewBox="0 0 21 34"
+              fill="none"
+            >
+              <circle cx="4" cy="4" r="4" fill="currentColor"></circle>
+              <circle cx="17" cy="4" r="4" fill="currentColor"></circle>
+              <circle cx="4" cy="17" r="4" fill="currentColor"></circle>
+              <circle cx="17" cy="17" r="4" fill="currentColor"></circle>
+              <circle cx="4" cy="30" r="4" fill="currentColor"></circle>
+              <circle cx="17" cy="30" r="4" fill="currentColor"></circle>
+            </svg>
+          </span>
+          <h2 class="project-card-v2__heading">{cardHeading}</h2>
+        </div>
+      </div>
+      <p class="project-card-v2__description">{description}</p>
+    </div>
+
+    <div class="project-card-v2__tags" aria-label={`${title} tags`}>
+      {
+        visibleTags.map((tag) => (
+          <span class="project-card-v2__tag">{tag}</span>
+        ))
+      }
+      {
+        hiddenTagCount > 0 && (
+          <span class="project-card-v2__tag-overflow">+{hiddenTagCount}</span>
+        )
+      }
+    </div>
+  </a>
+</article>
