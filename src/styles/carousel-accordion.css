@@ -94,7 +94,7 @@
   color: #6f7358;
   font-family: var(--font-serif);
   font-size: clamp(16px, 1.4vw, 20px);
-  letter-spacing: 0.005em;
+  letter-spacing: var(--tracking);
   line-height: 1.2;
   margin: 0;
 }
@@ -112,6 +112,7 @@
   color: #5a6c00;
   font-family: var(--font-serif);
   font-size: 16px;
+  letter-spacing: var(--tracking);
   line-height: 1;
   padding: 6px 12px;
   white-space: nowrap;
@@ -180,6 +181,7 @@
 .carousel-accordion__spine-subtitle {
   font-size: clamp(14px, 1.2vw, 16px);
   font-family: var(--font-serif);
+  letter-spacing: var(--tracking);
 }
 
 .carousel-accordion__item[data-state="active"] .carousel-accordion__spine {

@@ -13,9 +13,9 @@ export type ProjectCard = {
 
 export const projects: ProjectCard[] = [
   {
-    title: "uServe POS",
+    title: "USERVE POS",
     heading: "USERVE",
-    href: `${WEBFLOW}/research/universal-processing`,
+    href: "/universal-processing",
     tags: ["UX Design", "Product", "Branding"],
     description: "End-to-end redesign of a cross-platform point-of-sale system for 35,000+ merchants nationwide.",
     timeframe: "Feb 2024 – Present · Universal Processing LLC",
@@ -66,7 +66,7 @@ export const carouselProjects: ProjectCard[] = [
   },
   {
     title: "Google Maps AVP",
-    href: "/research/google-maps",
+    href: "/google-maps",
     tags: ["UX", "Spatial", "Vision Pro", "Research"],
     description: "Reimagining Google Maps for spatial computing on Apple Vision Pro.",
     timeframe: "2024 · Spatial computing concept",

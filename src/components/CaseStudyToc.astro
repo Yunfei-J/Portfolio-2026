@@ -80,6 +80,19 @@ const { items } = Astro.props;
       moveIndicator(index);
     }
 
+    function syncRailTrack() {
+      var rail = toc.querySelector(".case-toc-rail");
+      var items = toc.querySelectorAll("[data-toc-item]");
+      if (!rail || !indicator || !items.length) return;
+      var indicatorH = indicator.offsetHeight;
+      var first = items[0];
+      var last = items[items.length - 1];
+      var topInset = Math.max(0, (first.offsetHeight - indicatorH) / 2);
+      var bottomInset = Math.max(0, (last.offsetHeight - indicatorH) / 2);
+      rail.style.setProperty("--toc-track-inset-top", topInset + "px");
+      rail.style.setProperty("--toc-track-inset-bottom", bottomInset + "px");
+    }
+
     function moveIndicator(index) {
       if (!indicator) return;
       var link = links[index];
@@ -224,15 +237,29 @@ const { items } = Astro.props;
     window.addEventListener(
       "resize",
       function () {
+        syncRailTrack();
         moveIndicator(activeIndex);
         queueScrollSync();
       },
       { signal: signal },
     );
 
+    var list = toc.querySelector(".case-toc-list");
+    if (list && "ResizeObserver" in window) {
+      var listResize = new ResizeObserver(function () {
+        syncRailTrack();
+        moveIndicator(activeIndex);
+      });
+      listResize.observe(list);
+      signal.addEventListener("abort", function () {
+        listResize.disconnect();
+      });
+    }
+
     activeIndex = -1;
     setActive(getActiveIndexFromScroll());
     requestAnimationFrame(function () {
+      syncRailTrack();
       moveIndicator(activeIndex);
     });
   }

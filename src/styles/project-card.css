@@ -117,11 +117,10 @@
 }
 
 .project-card-v2__description {
-  font-family: var(--font-libertinus-display, "Libertinus Serif Display", var(--font-serif));
+  font-family: var(--font-serif);
   font-size: clamp(16px, 1.8vw, 20px);
   font-synthesis: none;
-  font-weight: 400;
-  letter-spacing: 0.01em;
+  letter-spacing: var(--tracking);
   line-height: 1.25;
   margin: 0;
 }
@@ -140,7 +139,8 @@
   color: #9fa67a;
   font-family: var(--font-serif);
   font-size: clamp(12px, 1.4vw, 16px);
-  letter-spacing: 0.005em;
+  font-weight: 500;
+  letter-spacing: var(--tracking);
   line-height: 1;
   padding: 8px 12px;
   white-space: nowrap;
@@ -150,7 +150,7 @@
   color: #9fa67a;
   font-family: var(--font-serif);
   font-size: clamp(16px, 1.4vw, 22px);
-  letter-spacing: 0.005em;
+  letter-spacing: var(--tracking);
   padding-inline: 8px;
   white-space: nowrap;
 }

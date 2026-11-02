@@ -1,0 +1,152 @@
+---
+import type { CaseStudyBodyBlock } from "../../lib/case-study-v2-types";
+
+type FeaturesBlock = Extract<CaseStudyBodyBlock, { type: "features" }>;
+
+type Props = {
+  block: FeaturesBlock;
+};
+
+const { block } = Astro.props;
+---
+
+<section class="case-study-features" data-case-features>
+  {block.label ? (
+    <div class="case-study-features-header">
+      <p class="case-study-features-label">{block.label}</p>
+    </div>
+  ) : null}
+
+  {block.heading ? (
+    <h3 class="case-study-features-heading">{block.heading}</h3>
+  ) : null}
+  <div class="case-study-features-list-shell">
+    <ul class="case-study-features-list">
+    {
+      block.items.map((item) => (
+        <li class="case-study-feature">
+          <div class="case-study-feature-head">
+            <img
+              class="case-study-feature-icon"
+              src={item.icon ?? "/assets/case-study-ui/system-complexity-icon.svg"}
+              width="50"
+              height="50"
+              alt=""
+            />
+            <div class="case-study-feature-title-row">
+              <p class="case-study-feature-title">{item.title}</p>
+              {item.count ? (
+                <span class="case-study-feature-count">{item.count}</span>
+              ) : null}
+            </div>
+          </div>
+          <ul class="case-study-feature-points">
+            {item.points.map((point) => (
+              <li>{point}</li>
+            ))}
+          </ul>
+        </li>
+      ))
+    }
+    </ul>
+    {
+      block.figure ? (
+        <button
+          type="button"
+          class="case-study-features-expand"
+          data-features-expand
+          aria-expanded="false"
+          aria-label="Expand ecosystem diagram"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-maximize-2 preview-icon"
+            aria-hidden="true"
+          >
+            <path d="M15 3h6v6"></path>
+            <path d="m21 3-7 7"></path>
+            <path d="m3 21 7-7"></path>
+            <path d="M9 21H3v-6"></path>
+          </svg>
+        </button>
+      ) : null
+    }
+  </div>
+  {block.summary ? <p class="case-study-features-summary">{block.summary}</p> : null}
+  {
+    block.figure ? (
+      <figure
+        class="case-study-body-figure case-study-features-figure"
+        style="margin-top: var(--space-md);"
+        data-features-panel
+        hidden
+      >
+        <img
+          src={block.figure.image.src}
+          alt={block.figure.image.alt}
+          loading="lazy"
+          data-features-image
+        />
+        {block.figure.caption ? (
+          <figcaption data-features-caption>{block.figure.caption}</figcaption>
+        ) : null}
+      </figure>
+    ) : null
+  }
+</section>
+
+<script>
+  function initCaseStudyFeaturesExpand() {
+    document.querySelectorAll("[data-case-features]").forEach((root) => {
+      if (root._featuresAbort) root._featuresAbort.abort();
+      const ac = new AbortController();
+      root._featuresAbort = ac;
+      const signal = ac.signal;
+
+      const btn = root.querySelector("[data-features-expand]");
+      const panel = root.querySelector("[data-features-panel]");
+      if (!btn || !panel) return;
+
+      const img = panel.querySelector("[data-features-image]");
+      const caption = panel.querySelector("[data-features-caption]");
+
+      const revealCaption = () => {
+        if (caption) caption.classList.add("is-visible");
+      };
+
+      const syncCaption = () => {
+        if (!img || !caption || caption.classList.contains("is-visible")) return;
+        if (img.complete && img.naturalWidth > 0) revealCaption();
+      };
+
+      if (img && caption) {
+        img.addEventListener("load", revealCaption, { once: true, signal });
+        img.addEventListener("error", revealCaption, { once: true, signal });
+        syncCaption();
+      }
+
+      btn.addEventListener(
+        "click",
+        () => {
+          const open = btn.getAttribute("aria-expanded") === "true";
+          const next = !open;
+          btn.setAttribute("aria-expanded", next ? "true" : "false");
+          panel.hidden = !next;
+          if (next) syncCaption();
+        },
+        { signal },
+      );
+    });
+  }
+
+  initCaseStudyFeaturesExpand();
+  document.addEventListener("astro:page-load", initCaseStudyFeaturesExpand);
+</script>

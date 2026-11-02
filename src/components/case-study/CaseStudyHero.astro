@@ -1,0 +1,141 @@
+---
+import type { CaseStudyMeta } from "../../lib/case-study-v2-types";
+
+type Props = {
+  meta: CaseStudyMeta;
+};
+
+const { meta } = Astro.props;
+
+const backSrc = meta.heroCard === false ? null : (meta.heroCard ?? meta.heroImage);
+
+function metaValues(value: string | string[]): string[] {
+  return Array.isArray(value) ? value : [value];
+}
+---
+
+<header class="case-study-hero">
+  <div class="case-study-hero-overview" data-hero-overview>
+    <div class="case-study-hero-overview-inner" data-hero-overview-inner>
+      <div class="case-study-hero-heading">
+        <div class="case-study-hero-title-row">
+          <img
+            class="case-study-hero-grip"
+            src="/assets/case-study-ui/hero-grip-icon.svg"
+            width="16"
+            height="25"
+            alt=""
+          />
+          <h1 class="case-study-hero-title">{meta.title}</h1>
+        </div>
+        <p class="case-study-hero-intro">{meta.intro}</p>
+      </div>
+
+      <dl class="case-study-hero-meta">
+        {
+          meta.meta.map((line) => (
+            <div class="case-study-hero-meta-col">
+              <dt>{line.label}</dt>
+              <dd>
+                {metaValues(line.value).map((item) => (
+                  <span>{item}</span>
+                ))}
+              </dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+  </div>
+
+  <figure class="case-study-hero-media">
+    <div class="case-study-hero-media-stack">
+      {
+        backSrc ? (
+          <img
+            class="case-study-hero-card"
+            src={backSrc}
+            alt=""
+            aria-hidden="true"
+            loading="eager"
+          />
+        ) : null
+      }
+      <div class="case-study-hero-image-frame">
+        <img
+          class="case-study-hero-image"
+          src={meta.heroImage}
+          alt={meta.heroImageAlt ?? ""}
+          loading="eager"
+        />
+      </div>
+    </div>
+  </figure>
+</header>
+
+<script>
+  function initHeroOverviewScroll() {
+    const pin = document.querySelector<HTMLElement>("[data-hero-pin]");
+    const overview = document.querySelector<HTMLElement>("[data-hero-overview]");
+    const inner = document.querySelector<HTMLElement>("[data-hero-overview-inner]");
+    if (!pin || !overview || !inner) return;
+
+    const w = window as Window & {
+      _heroOverviewAbort?: AbortController;
+      _heroOverviewResize?: ResizeObserver;
+    };
+    w._heroOverviewAbort?.abort();
+    w._heroOverviewResize?.disconnect();
+    const ac = new AbortController();
+    w._heroOverviewAbort = ac;
+    const { signal } = ac;
+
+    const compact = window.matchMedia("(max-width: 600px)");
+    const heading = inner.querySelector<HTMLElement>(".case-study-hero-heading");
+    let innerTravel = 0;
+    let ticking = false;
+
+    const update = () => {
+      ticking = false;
+      if (compact.matches) {
+        inner.style.transform = "";
+        return;
+      }
+      const shift = Math.min(innerTravel, Math.max(0, -pin.getBoundingClientRect().top));
+      inner.style.transform = shift ? `translateY(${-shift}px)` : "";
+    };
+
+    const measure = () => {
+      if (compact.matches || !heading) {
+        pin.style.height = "";
+        overview.style.height = "";
+        innerTravel = 0;
+        inner.style.transform = "";
+        return;
+      }
+      overview.style.height = `${heading.offsetHeight}px`;
+      innerTravel = Math.max(0, inner.scrollHeight - heading.offsetHeight);
+      pin.style.height = `calc(100dvh + ${innerTravel}px + var(--hero-pin-buffer, 28vh))`;
+      update();
+    };
+
+    const queue = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(update);
+    };
+
+    const resize = new ResizeObserver(measure);
+    w._heroOverviewResize = resize;
+    resize.observe(inner);
+    resize.observe(overview);
+
+    compact.addEventListener("change", measure, { signal });
+    window.addEventListener("scroll", queue, { passive: true, signal });
+    window.addEventListener("resize", measure, { signal });
+    measure();
+  }
+
+  initHeroOverviewScroll();
+  document.addEventListener("astro:page-load", initHeroOverviewScroll);
+</script>

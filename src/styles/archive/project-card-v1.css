@@ -94,7 +94,6 @@
   display: inline-flex;
   font-family: var(--font-serif);
   font-size: var(--fs-tag-small);
-  font-weight: 400;
   color: var(--color-primary);
   justify-content: center;
   letter-spacing: var(--tracking);
@@ -117,7 +116,7 @@
 .project-description {
   font-family: var(--font-serif);
   font-size: calc(var(--fs-body) + var(--font-serif-size-bump));
-  font-weight: var(--font-serif-weight);
+  letter-spacing: var(--tracking);
   line-height: 1.4;
   margin: 0;
 }

@@ -2,7 +2,7 @@
   {
     "slug": "universal-processing",
     "title": "uServe POS",
-    "href": "https://yunfeis-portfolio.webflow.io/research/universal-processing",
+    "href": "/universal-processing",
     "tags": ["UX Design", "Product", "Branding", "POS", "B2B"],
     "thumbnail": "/assets/projects/universal-processing.png",
     "text": "uServe POS End-to-end redesign of a point-of-sale system UIUX. Timeframe Feb 2024 Present Company Universal Processing Role UIUX designer Product coverage 35000 merchants nationwide POS system POS backoffice CRM Food ordering platform waitstaff restaurant owners customers Mission rebrand modernize lower learning cost U Serve interface POS interfaces conventionally text-dense flat information architecture balance aesthetics functional efficiency smooth transition Stakeholder Research Solutions Rebrand Beyond Ugly Efficiency optimization Error prevention Final Prototype Desktop POS Backoffice Specs Dev Team Reflections responsive design breakpoints layout adjustments screen sizes technical feasibility edge cases multi-status elements layered levels independent affordances parallel sequential processes accounting information space efficiency"
@@ -66,7 +66,7 @@
   {
     "slug": "google-maps",
     "title": "Google Maps AVP",
-    "href": "/research/google-maps",
+    "href": "/google-maps",
     "tags": ["UX", "Spatial", "Vision Pro", "Research"],
     "thumbnail": "/assets/projects/google-maps.png",
     "text": "Google Maps Apple Vision Pro spatial computing redesign navigation maps immersive experience"

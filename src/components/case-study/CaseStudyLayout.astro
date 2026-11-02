@@ -1,0 +1,42 @@
+---
+import CaseStudyToc from "../CaseStudyToc.astro";
+import CaseStudyBackLink from "./CaseStudyBackLink.astro";
+import CaseStudyHero from "./CaseStudyHero.astro";
+import CaseStudySections from "./CaseStudySections.astro";
+import type { CaseStudySection, CaseStudyV2 } from "../../lib/case-study-v2-types";
+
+type Props = {
+  study: CaseStudyV2;
+};
+
+const { study } = Astro.props;
+
+function tocLabel(section: CaseStudySection): string {
+  if (section.eyebrow) {
+    const match = section.eyebrow.match(/^\d+\s*·\s*(.+)$/);
+    return match ? match[1].trim() : section.eyebrow;
+  }
+  return section.title ?? section.id;
+}
+
+const tocItems = study.sections.map((section) => ({
+  id: section.id,
+  title: tocLabel(section),
+}));
+---
+
+<main class="case-study-page--v2">
+  <div class="case-study-intro-pin" data-hero-pin>
+    <section class="case-study-intro" aria-label="Project introduction">
+      <CaseStudyBackLink class="case-study-intro-back" />
+      <CaseStudyHero meta={study.meta} />
+    </section>
+  </div>
+
+  <div class="case-study-with-toc">
+    <CaseStudyToc items={tocItems} />
+    <div class="case-study-main">
+      <CaseStudySections sections={study.sections} />
+    </div>
+  </div>
+</main>

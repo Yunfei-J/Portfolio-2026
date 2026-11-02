@@ -36,6 +36,7 @@
 
   /* ── Standard spacing scale (auto-scales at breakpoints below) ── */
   --space-micro: 4px;
+  --space-mini: 12px;
   --space-xxs: 16px;
   --space-xs: 20px;
   --space-sm: 24px;

@@ -1,22 +1,12 @@
-export type ForkItSlide = {
-  src: string;
-  alt: string;
-};
-
-export type ForkItSection = {
-  id: string;
-  title: string;
-  images: ForkItSlide[];
-};
-
-export type ForkItMetaLine = {
-  label: string;
-  value: string;
-};
+import type {
+  CaseStudyImage,
+  CaseStudyMetaLine,
+  CaseStudySection,
+} from "../lib/case-study-v2-types";
 
 const SLIDE_DIR = "/assets/case-studies/forkit maker day 3";
 
-const slide = (filename: string, alt: string): ForkItSlide => ({
+const slide = (filename: string, alt: string): CaseStudyImage => ({
   src: `${SLIDE_DIR}/${filename}`,
   alt,
 });
@@ -26,18 +16,16 @@ export const forkItMeta = {
   description:
     "Cross-platform app that transforms physical menus into interactive digital experiences using gen-AI and NLP.",
   intro:
-    "If you ask me what's the project that I'm most proud of, this is it! I'm building ForkIt, a tool designed for food lovers, frequent travelers, and anyone looking for a seamless, stress-free dining experience.",
+    "Ordering at a restaurant abroad is often a guessing game. ForkIt is an AI-native mobile app I built that helps diners understand foreign menus through the lens of their own food culture.",
   heroImage: `${SLIDE_DIR}/prototype.png`,
-  heroCard: "/assets/case-studies/dec-hero-card.png",
   meta: [
-    { label: "Timeline", value: "Sep 2024 – Jun 2026" },
-    { label: "Location", value: "Startup Studio project" },
+    { label: "Timeline", value: ["Sep 2024 – Jun 2026", "Startup Studio project"] },
     { label: "Achieved", value: "Cross-platform mobile app" },
     { label: "Tools", value: "Figma, Gen-AI, NLP, React Native" },
-  ] satisfies ForkItMetaLine[],
+  ] satisfies CaseStudyMetaLine[],
 };
 
-export const forkItSections: ForkItSection[] = [
+export const forkItSections: CaseStudySection[] = [
   {
     id: "the-problem",
     title: "The Problem",
@@ -65,7 +53,7 @@ export const forkItSections: ForkItSection[] = [
       slide(
         "ForkIt Maker Day3-images-6.jpg",
         "Solution: Scan the Menu and Get All Information In One Place",
-      ),      
+      ),
       slide("prototype.png", "Hi-fi Prototype"),
       slide("ForkIt Maker Day3-images-8.jpg", "AI Menu Consultant"),
       slide("ForkIt Maker Day3-images-7.jpg", "Preference Profile"),

@@ -1,0 +1,140 @@
+---
+import type { CaseStudyBodyBlock } from "../../lib/case-study-v2-types";
+
+type TabsBlock = Extract<CaseStudyBodyBlock, { type: "tabs" }>;
+
+type Props = {
+  block: TabsBlock;
+};
+
+const { block } = Astro.props;
+---
+
+<section
+  class="case-study-tabs"
+  style={`--tab-count: ${block.tabs.length}; --tab-index: 0;`}
+  data-case-tabs
+>
+  <div class="case-study-tabs-nav">
+    <div class="case-study-tabs-labels">
+      {
+        block.tabs.map((tab, i) => (
+          <button
+            type="button"
+            class="case-study-tabs-tab"
+            aria-current={i === 0 ? "true" : undefined}
+            data-tab-button
+          >
+            {tab.label}
+          </button>
+        ))
+      }
+    </div>
+    <div class="case-study-tabs-trail" aria-hidden="true">
+      <span class="case-study-tabs-indicator"></span>
+    </div>
+  </div>
+
+  <div class="case-study-tabs-track" data-tabs-track>
+    {
+      block.tabs.map((tab) => (
+        <div
+          class:list={[
+            "case-study-tabs-panel",
+            tab.rounded && "case-study-tabs-panel--rounded",
+          ]}
+          aria-label={tab.label}
+          data-tab-panel
+        >
+          {tab.images.map((image) => (
+            <div
+              class="case-study-tabs-frame"
+              style={`aspect-ratio: ${image.aspect}; height: ${image.height ?? "100%"};`}
+            >
+              <img
+                src={image.src}
+                alt={image.alt}
+                loading="lazy"
+                style={image.position ? `object-position: ${image.position};` : undefined}
+              />
+            </div>
+          ))}
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<script>
+  function initCaseStudyTabs() {
+    document.querySelectorAll<HTMLElement>("[data-case-tabs]").forEach((root) => {
+      const r = root as HTMLElement & { _tabsAbort?: AbortController };
+      r._tabsAbort?.abort();
+      const ac = new AbortController();
+      r._tabsAbort = ac;
+      const { signal } = ac;
+
+      const track = root.querySelector<HTMLElement>("[data-tabs-track]");
+      const buttons = Array.from(root.querySelectorAll<HTMLButtonElement>("[data-tab-button]"));
+      const panels = Array.from(root.querySelectorAll<HTMLElement>("[data-tab-panel]"));
+      if (!track || !buttons.length) return;
+
+      let lockedIndex = -1;
+      let ticking = false;
+
+      const setActive = (index: number) => {
+        root.style.setProperty("--tab-index", String(index));
+        buttons.forEach((button, i) => {
+          if (i === index) button.setAttribute("aria-current", "true");
+          else button.removeAttribute("aria-current");
+        });
+      };
+
+      const panelLeft = (panel: HTMLElement) => panel.offsetLeft - panels[0].offsetLeft;
+
+      const indexFromScroll = () => {
+        const max = track.scrollWidth - track.clientWidth;
+        if (track.scrollLeft >= max - 1) return panels.length - 1;
+        let index = 0;
+        panels.forEach((panel, i) => {
+          if (panelLeft(panel) <= track.scrollLeft + track.clientWidth * 0.33) index = i;
+        });
+        return index;
+      };
+
+      const sync = () => {
+        ticking = false;
+        if (lockedIndex >= 0) return;
+        setActive(indexFromScroll());
+      };
+
+      buttons.forEach((button, i) => {
+        button.addEventListener(
+          "click",
+          () => {
+            lockedIndex = i;
+            setActive(i);
+            track.scrollTo({ left: panelLeft(panels[i]), behavior: "smooth" });
+          },
+          { signal },
+        );
+      });
+
+      track.addEventListener(
+        "scroll",
+        () => {
+          if (ticking) return;
+          ticking = true;
+          requestAnimationFrame(sync);
+        },
+        { passive: true, signal },
+      );
+      track.addEventListener("scrollend", () => { lockedIndex = -1; }, { signal });
+      track.addEventListener("pointerdown", () => { lockedIndex = -1; }, { signal });
+      track.addEventListener("wheel", () => { lockedIndex = -1; }, { passive: true, signal });
+    });
+  }
+
+  initCaseStudyTabs();
+  document.addEventListener("astro:page-load", initCaseStudyTabs);
+</script>

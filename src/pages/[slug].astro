@@ -1,0 +1,48 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CaseStudyBackLink from "../components/case-study/CaseStudyBackLink.astro";
+import CaseStudyLayout from "../components/case-study/CaseStudyLayout.astro";
+import CaseStudyContent from "../components/CaseStudyContent.astro";
+import "../styles/tokens.css";
+import "../styles/global.css";
+import "../styles/case-study.css";
+import { CASE_STUDY_SLUGS, getCaseStudy } from "../lib/case-studies";
+import { CASE_STUDY_V2_SLUGS, getCaseStudyV2 } from "../lib/case-study-v2";
+
+export async function getStaticPaths() {
+  const slugs = [...new Set([...CASE_STUDY_V2_SLUGS, ...CASE_STUDY_SLUGS])];
+  return slugs.map((slug) => ({ params: { slug } }));
+}
+
+const { slug } = Astro.params;
+const v2 = slug ? getCaseStudyV2(slug) : null;
+const legacy = !v2 && slug ? await getCaseStudy(slug) : null;
+
+if (!v2 && !legacy) {
+  return Astro.redirect("/");
+}
+---
+
+{
+  v2 ? (
+    <BaseLayout
+      title={`${v2.meta.title} — Yunfei Jiao`}
+      description={v2.meta.description}
+    >
+      <CaseStudyLayout study={v2} />
+    </BaseLayout>
+  ) : legacy ? (
+    <BaseLayout
+      title={`${legacy.title} — Yunfei Jiao`}
+      description={legacy.description || `${legacy.title} case study`}
+    >
+      <main class="case-study-page">
+        <header class="case-study-header">
+          <CaseStudyBackLink />
+          <h1>{legacy.title}</h1>
+        </header>
+        <CaseStudyContent blocks={legacy.blocks} />
+      </main>
+    </BaseLayout>
+  ) : null
+}

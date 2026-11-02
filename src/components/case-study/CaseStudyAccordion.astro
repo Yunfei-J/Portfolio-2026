@@ -1,0 +1,132 @@
+---
+type AccordionItem = {
+  title: string;
+  body?: string;
+  image: { src: string; alt: string };
+};
+
+type Props = {
+  items: AccordionItem[];
+};
+
+const { items } = Astro.props;
+const panelImage = items[0]?.image;
+---
+
+<div class="cs-body-accordion" data-case-accordion>
+  <div class="cs-body-accordion-menu">
+    {
+      items.map((item, index) => (
+        <div
+          class:list={[
+            "cs-body-accordion-item",
+            index === 0 && "is-open",
+          ]}
+          data-accordion-item
+          data-index={index}
+        >
+          <button
+            type="button"
+            class="cs-body-accordion-trigger"
+            data-accordion-trigger
+            aria-expanded={index === 0 ? "true" : "false"}
+          >
+            <span class="cs-body-accordion-num">
+              {String(index + 1).padStart(2, "0")}
+            </span>
+            <span class="cs-body-accordion-title">{item.title}</span>
+            <span class="cs-body-accordion-icon" aria-hidden="true">
+              <img
+                class="cs-body-accordion-icon-open"
+                src="/assets/case-study-ui/chevron-expanded.svg"
+                alt=""
+                width="32"
+                height="32"
+              />
+              <img
+                class="cs-body-accordion-icon-closed"
+                src="/assets/case-study-ui/chevron-collapsed.svg"
+                alt=""
+                width="32"
+                height="32"
+              />
+            </span>
+          </button>
+          {
+            item.body ? (
+              <div class="cs-body-accordion-panel" data-accordion-panel>
+                <p>{item.body}</p>
+              </div>
+            ) : null
+          }
+        </div>
+      ))
+    }
+  </div>
+
+  {
+    panelImage ? (
+      <figure class="cs-body-accordion-media" data-accordion-media>
+        {
+          items.map((item, index) => (
+            <img
+              src={item.image.src}
+              alt={item.image.alt}
+              loading={index === 0 ? "eager" : "lazy"}
+              data-accordion-image
+              data-index={index}
+              hidden={index !== 0}
+            />
+          ))
+        }
+      </figure>
+    ) : null
+  }
+</div>
+
+<script>
+  function initCaseAccordions() {
+    document.querySelectorAll("[data-case-accordion]").forEach((root) => {
+      if (root._accordionAbort) root._accordionAbort.abort();
+      const ac = new AbortController();
+      root._accordionAbort = ac;
+      const signal = ac.signal;
+
+      const items = Array.from(root.querySelectorAll("[data-accordion-item]"));
+      const images = Array.from(root.querySelectorAll("[data-accordion-image]"));
+
+      function setOpen(index) {
+        items.forEach((item, i) => {
+          const open = i === index;
+          item.classList.toggle("is-open", open);
+          const trigger = item.querySelector("[data-accordion-trigger]");
+          if (trigger) trigger.setAttribute("aria-expanded", open ? "true" : "false");
+        });
+        images.forEach((img) => {
+          const match = Number(img.getAttribute("data-index")) === index;
+          img.hidden = !match;
+        });
+      }
+
+      items.forEach((item, index) => {
+        const trigger = item.querySelector("[data-accordion-trigger]");
+        if (!trigger) return;
+        trigger.addEventListener(
+          "click",
+          () => {
+            const isOpen = item.classList.contains("is-open");
+            setOpen(isOpen ? -1 : index);
+            if (isOpen) {
+              const fallback = images[0];
+              if (fallback) fallback.hidden = false;
+            }
+          },
+          { signal },
+        );
+      });
+    });
+  }
+
+  initCaseAccordions();
+  document.addEventListener("astro:page-load", initCaseAccordions);
+</script>

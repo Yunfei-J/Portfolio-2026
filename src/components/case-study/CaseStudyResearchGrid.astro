@@ -1,0 +1,123 @@
+---
+import type { CaseStudyBodyBlock } from "../../lib/case-study-v2-types";
+
+type ResearchGridBlock = Extract<CaseStudyBodyBlock, { type: "researchGrid" }>;
+
+type Props = {
+  block: ResearchGridBlock;
+};
+
+const { block } = Astro.props;
+---
+
+<section
+  class="case-study-research-grid"
+  aria-label="Research methods"
+  data-research-grid
+>
+  <div class="case-study-research-grid-track" data-research-track>
+    {
+      block.columns.map((column) => (
+        <figure
+          class:list={[
+            "case-study-research-grid-column",
+            column.inset && "case-study-research-grid-column--inset",
+          ]}
+        >
+          <figcaption class="case-study-research-grid-caption">
+            {column.caption}
+          </figcaption>
+          <div class="case-study-research-grid-frame">
+            <img
+              src={column.image.src}
+              alt={column.image.alt}
+              loading="lazy"
+            />
+          </div>
+        </figure>
+      ))
+    }
+  </div>
+
+  <button
+    type="button"
+    class="case-study-research-grid-arrow case-study-research-grid-arrow--prev"
+    aria-label="Scroll research left"
+    data-research-prev
+    hidden
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="m15 18-6-6 6-6"></path>
+    </svg>
+  </button>
+  <button
+    type="button"
+    class="case-study-research-grid-arrow case-study-research-grid-arrow--next"
+    aria-label="Scroll research right"
+    data-research-next
+    hidden
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="m9 18 6-6-6-6"></path>
+    </svg>
+  </button>
+</section>
+
+<script>
+  function initResearchGrids() {
+    document.querySelectorAll("[data-research-grid]").forEach((root) => {
+      if (root._researchAbort) root._researchAbort.abort();
+      const ac = new AbortController();
+      root._researchAbort = ac;
+      const { signal } = ac;
+
+      const track = root.querySelector("[data-research-track]");
+      const prev = root.querySelector("[data-research-prev]");
+      const next = root.querySelector("[data-research-next]");
+      if (!track || !prev || !next) return;
+
+      const step = () => {
+        const column = track.firstElementChild;
+        const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+        return column ? column.getBoundingClientRect().width + gap : track.clientWidth;
+      };
+
+      const update = () => {
+        const max = track.scrollWidth - track.clientWidth;
+        prev.hidden = track.scrollLeft <= 1;
+        next.hidden = track.scrollLeft >= max - 1;
+      };
+
+      prev.addEventListener("click", () => track.scrollBy({ left: -step(), behavior: "smooth" }), { signal });
+      next.addEventListener("click", () => track.scrollBy({ left: step(), behavior: "smooth" }), { signal });
+      track.addEventListener("scroll", update, { passive: true, signal });
+      window.addEventListener("resize", update, { signal });
+      update();
+    });
+  }
+
+  initResearchGrids();
+  document.addEventListener("astro:page-load", initResearchGrids);
+</script>

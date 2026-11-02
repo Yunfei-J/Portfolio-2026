@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Baskervville:ital,wght@0,400;1,400&family=Cal+Sans&family=Figtree:wght@300;400&family=Inter:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cal+Sans&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Figtree:wght@300;400&family=Inter:wght@300;400;500&display=swap");
 
 @font-face {
   font-display: swap;
@@ -8,25 +8,12 @@
   src: url("/fonts/Amsterdam.otf") format("opentype");
 }
 
-/* SIL Libertinus Serif Display — same family file Figma uses when installed locally */
-@font-face {
-  font-display: swap;
-  font-family: "Libertinus Serif Display";
-  font-style: normal;
-  font-weight: 400;
-  src:
-    url("/fonts/LibertinusSerifDisplay-Regular.woff2") format("woff2"),
-    url("/fonts/LibertinusSerifDisplay-Regular.otf") format("opentype");
-}
-
 :root {
   --font-heading: "Cal Sans", "Arial Black", system-ui, sans-serif;
-  --font-serif: "Baskervville", Georgia, serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
   --font-meta: "Figtree", system-ui, sans-serif;
   --font-serif-size-bump: 0px;
-  --font-serif-weight: 200;
   --font-amsterdam: "Amsterdam", cursive;
-  --font-libertinus-display: "Libertinus Serif Display", Georgia, serif;
   --ink: #000;
   --paper: #fff;
   --wash: rgba(217, 217, 217, 0.1);
@@ -45,6 +32,8 @@ html {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-serif);
+  font-synthesis: none;
+  letter-spacing: var(--tracking);
   scroll-behavior: smooth;
 }
 
@@ -255,25 +244,26 @@ button {
   align-items: center;
   color: #fff;
   display: flex;
-  font-family: var(--font-libertinus-display);
+  font-family: var(--font-serif);
   font-size: var(--fs-hero-sub-roll);
-  font-weight: 400;
   font-synthesis: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: var(--hero-slot-h);
   justify-content: center;
+  letter-spacing: var(--tracking);
   line-height: 1;
   white-space: nowrap;
   padding: 0 8px;
 }
 
 .hero-sub-role {
-  font-family: var(--font-libertinus-display);
+  font-family: var(--font-serif);
   font-size: var(--fs-hero-sub-roll);
   font-synthesis: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  letter-spacing: var(--tracking);
   line-height: 1.25;
   margin: 0;
   text-align: center;
@@ -331,10 +321,9 @@ h1 span {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-libertinus-display);
+  font-family: var(--font-serif);
   font-size: 48px;
   font-synthesis: none;
-  font-weight: 400;
   height: 75px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -566,11 +555,10 @@ h1 span {
   background: transparent;
   border: none;
   color: white;
-  font-family: var(--font-libertinus-display);
+  font-family: var(--font-serif);
   font-size: calc(var(--text-sm) + var(--font-serif-size-bump));
   font-synthesis: none;
-  font-weight: 400;
-  letter-spacing: 0.01em;
+  letter-spacing: var(--tracking);
   line-height: 1;
   outline: none;
   width: 100%;
@@ -599,11 +587,10 @@ h1 span {
   border: none;
   border-radius: 6px;
   color: var(--reading-search-card-accent);
-  font-family: var(--font-libertinus-display);
+  font-family: var(--font-serif);
   font-size: calc(var(--text-sm) + var(--font-serif-size-bump));
   font-synthesis: none;
-  font-weight: 400;
-  letter-spacing: 0.01em;
+  letter-spacing: var(--tracking);
   line-height: 1;
   padding: 8px 16px;
 }
@@ -618,7 +605,6 @@ h1 span {
   background-color: #D5DDAE;
   font-family: var(--font-serif);
   font-size: calc(var(--text-sm) + var(--font-serif-size-bump));
-  font-weight: var(--font-serif-weight);
   grid-template-columns: repeat(3, minmax(0, 28rem));
   justify-content: center;
   letter-spacing: var(--tracking);
@@ -735,7 +721,7 @@ h1 span {
 .search-result-title {
   font-family: var(--font-serif);
   font-size: var(--fs-tag-small);
-  font-weight: 600;
+  letter-spacing: var(--tracking);
   line-height: 1.25;
 }
 
@@ -750,7 +736,7 @@ h1 span {
   border-radius: 0.375rem;
   font-family: var(--font-serif);
   font-size: var(--fs-xs);
-  letter-spacing: 0.04em;
+  letter-spacing: var(--tracking);
   text-transform: uppercase;
 }
 

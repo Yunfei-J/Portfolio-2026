@@ -1,0 +1,175 @@
+---
+import CaseStudyFeatures from "./CaseStudyFeatures.astro";
+import CaseStudyMissionImpact from "./CaseStudyMissionImpact.astro";
+import CaseStudyResearchGrid from "./CaseStudyResearchGrid.astro";
+import CaseStudyTabs from "./CaseStudyTabs.astro";
+import CaseStudySolutionShowcase from "./CaseStudySolutionShowcase.astro";
+import type { CaseStudyBodyBlock } from "../../lib/case-study-v2-types";
+
+type Props = {
+  block: CaseStudyBodyBlock;
+};
+
+const { block } = Astro.props;
+---
+
+{block.type === "features" && <CaseStudyFeatures block={block} />}
+
+{(block.type === "mission" || block.type === "impact") && (
+  <CaseStudyMissionImpact block={block} />
+)}
+
+{block.type === "researchGrid" && <CaseStudyResearchGrid block={block} />}
+
+{block.type === "tabs" && <CaseStudyTabs block={block} />}
+
+{
+  block.type === "solutionShowcase" && (
+    <CaseStudySolutionShowcase block={block} />
+  )
+}
+
+{
+  block.type === "copy" && (
+    <div class="case-study-copy">
+      {block.heading ? <h3>{block.heading}</h3> : null}
+      {block.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+    </div>
+  )
+}
+
+{
+  block.type === "callout" && block.variant === "inline" && (
+    <div class="case-study-section-block">
+      <h2 class="case-study-section-heading">{block.heading}</h2>
+      <p class="case-study-callout-inline">
+      <span class="case-study-callout-inline-chunk">{block.preamble}</span>
+      {
+        block.highlights.map((word, index) => (
+          <>
+            {index > 0 ? (
+              <span class="case-study-callout-inline-chunk">
+                {index === block.highlights.length - 1 ? ", & " : ", "}
+              </span>
+            ) : null}
+            <span class="case-study-callout-inline-highlight">{word}</span>
+          </>
+        ))
+      }
+      <span class="case-study-callout-inline-chunk">.</span>
+      </p>
+    </div>
+  )
+}
+
+{
+  block.type === "callout" && block.variant !== "inline" && (
+    <aside class="case-study-callout">
+      {block.label ? <p class="case-study-callout-label">{block.label}</p> : null}
+      <p>{block.text}</p>
+    </aside>
+  )
+}
+
+{
+  block.type === "stats" && (
+    <dl class="case-study-stats">
+      {block.items.map((item) => (
+        <div class="case-study-stat">
+          <dt>{item.label}</dt>
+          <dd>{item.value}</dd>
+        </div>
+      ))}
+    </dl>
+  )
+}
+
+{
+  block.type === "bullets" && (
+    <div class="case-study-bullets">
+      {block.heading ? <h3>{block.heading}</h3> : null}
+      <ul>
+        {block.items.map((item) => (
+          <li>
+            <span class="case-study-bullets-icon" aria-hidden="true">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-arrow-up-right preview-icon"
+              >
+                <path d="M7 7h10v10"></path>
+                <path d="M7 17 17 7"></path>
+              </svg>
+            </span>
+            <span class="case-study-bullets-text">{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+{
+  block.type === "image" && (
+    <div class="case-study-section-block">
+      {block.heading ? (
+        <h2 class="case-study-section-heading">{block.heading}</h2>
+      ) : null}
+      {block.intro ? (
+        <p class="case-study-section-intro">{block.intro}</p>
+      ) : null}
+      {block.caption ? (
+        <figure class="case-study-body-figure">
+          <img src={block.image.src} alt={block.image.alt} loading="lazy" />
+          <figcaption>{block.caption}</figcaption>
+        </figure>
+      ) : (
+        <img
+          class="case-study-body-image"
+          src={block.image.src}
+          alt={block.image.alt}
+          loading="lazy"
+        />
+      )}
+    </div>
+  )
+}
+
+{
+  block.type === "gallery" && (
+    <div class="case-study-section-block">
+      {block.heading ? (
+        <h2 class="case-study-section-heading">{block.heading}</h2>
+      ) : null}
+      <div
+        class:list={[
+          "case-study-gallery",
+          `case-study-gallery--${block.columns ?? 2}`,
+        ]}
+      >
+        {block.images.map((image) =>
+          image.caption ? (
+            <figure class="case-study-gallery-captioned">
+              <img src={image.src} alt={image.alt} loading="lazy" />
+              <figcaption>
+                <span>{image.caption}</span>
+                {image.subcaption ? <span>{image.subcaption}</span> : null}
+              </figcaption>
+            </figure>
+          ) : (
+            <figure>
+              <img src={image.src} alt={image.alt} loading="lazy" />
+            </figure>
+          ),
+        )}
+      </div>
+    </div>
+  )
+}
