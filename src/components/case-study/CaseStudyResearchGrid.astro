@@ -1,10 +1,8 @@
 ---
-import type { CaseStudyBodyBlock } from "../../lib/case-study-v2-types";
-
-type ResearchGridBlock = Extract<CaseStudyBodyBlock, { type: "researchGrid" }>;
+import type { MediaCarouselBlock } from "../../lib/case-study-v2-types";
 
 type Props = {
-  block: ResearchGridBlock;
+  block: MediaCarouselBlock;
 };
 
 const { block } = Astro.props;
@@ -12,7 +10,7 @@ const { block } = Astro.props;
 
 <section
   class="case-study-research-grid"
-  aria-label="Research methods"
+  aria-label={block.label ?? "Media carousel"}
   data-research-grid
 >
   <div class="case-study-research-grid-track" data-research-track>
@@ -42,7 +40,7 @@ const { block } = Astro.props;
   <button
     type="button"
     class="case-study-research-grid-arrow case-study-research-grid-arrow--prev"
-    aria-label="Scroll research left"
+    aria-label="Scroll left"
     data-research-prev
     hidden
   >
@@ -64,7 +62,7 @@ const { block } = Astro.props;
   <button
     type="button"
     class="case-study-research-grid-arrow case-study-research-grid-arrow--next"
-    aria-label="Scroll research right"
+    aria-label="Scroll right"
     data-research-next
     hidden
   >

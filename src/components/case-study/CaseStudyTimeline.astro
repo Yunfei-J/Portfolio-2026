@@ -1,0 +1,57 @@
+---
+import type { TimelineBlock, TimelineImage } from "../../lib/case-study-v2-types";
+
+type Props = {
+  block: TimelineBlock;
+};
+
+const { block } = Astro.props;
+
+function groupImages(images: TimelineImage[]) {
+  const groups: Array<{ layout: "full" | "40-60"; images: TimelineImage[] }> = [];
+
+  for (const image of images) {
+    const last = groups.at(-1);
+    if (image.layout === "40-60" && last?.layout === "40-60") {
+      last.images.push(image);
+      continue;
+    }
+    groups.push({
+      layout: image.layout === "40-60" ? "40-60" : "full",
+      images: [image],
+    });
+  }
+
+  return groups;
+}
+---
+
+<ol class="case-study-timeline">
+  {
+    block.items.map((item) => (
+      <li class="case-study-timeline-step">
+        <h3 class="case-study-timeline-heading">{item.heading}</h3>
+        {item.paragraphs?.map((paragraph) => (
+          <p class="case-study-timeline-copy">{paragraph}</p>
+        ))}
+        {item.images.length ? (
+          <div class="case-study-timeline-media">
+            {groupImages(item.images).map((group) =>
+              group.layout === "40-60" ? (
+                <div class="case-study-timeline-media-40-60">
+                  {group.images.map((image) => (
+                    <img src={image.src} alt={image.alt} loading="lazy" />
+                  ))}
+                </div>
+              ) : (
+                group.images.map((image) => (
+                  <img src={image.src} alt={image.alt} loading="lazy" />
+                ))
+              ),
+            )}
+          </div>
+        ) : null}
+      </li>
+    ))
+  }
+</ol>

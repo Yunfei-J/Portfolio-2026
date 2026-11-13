@@ -1,4 +1,6 @@
 ---
+import CaseStudyBackLink from "./case-study/CaseStudyBackLink.astro";
+
 export type TocItem = {
   id: string;
   title: string;
@@ -16,6 +18,28 @@ const { items } = Astro.props;
   data-case-toc
   aria-label="Table of contents"
 >
+  <div class="case-toc-actions">
+    <CaseStudyBackLink class="case-toc-back" />
+    <button
+      type="button"
+      class="case-study-back case-toc-top"
+      aria-label="Back to top"
+    >
+      <svg
+        width="48"
+        height="48"
+        viewBox="0 0 64 64"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <rect width="64" height="64" rx="32" fill="black" fill-opacity="0.05"></rect>
+        <path
+          d="M24.832 35.096L21.856 33.464L31.168 24.792L33.28 27.032L24.832 35.096ZM41.824 35H24.224V31.896H41.824V35ZM31.264 42.072L21.856 33.464L24.8 31.8L33.344 39.8L31.264 42.072Z"
+          fill="#787878"></path>
+      </svg>
+    </button>
+  </div>
   <div class="case-toc-inner">
     <div class="case-toc-rail" aria-hidden="true">
       <div class="case-toc-rail-track"></div>
@@ -70,6 +94,12 @@ const { items } = Astro.props;
     var lockedIndex = -1;
     var scrollTicking = false;
     var markerRatio = 0.25;
+    var lastScrollY = window.scrollY;
+    var upTravel = 0;
+    var actionLinks = toc.querySelectorAll(".case-toc-actions a, .case-toc-actions button");
+    var topButton = toc.querySelector(".case-toc-top");
+    var SHOW_BACK_AFTER = 400;
+    var HIDE_BACK_NEAR_TOP = 80;
 
     function setActive(index) {
       if (index < 0 || index >= links.length || index === activeIndex) return;
@@ -122,8 +152,41 @@ const { items } = Astro.props;
       return next;
     }
 
+    function setBackVisible(visible) {
+      toc.classList.toggle("is-back-visible", visible);
+      actionLinks.forEach(function (el) {
+        el.setAttribute("aria-hidden", visible ? "false" : "true");
+        if (visible) el.removeAttribute("tabindex");
+        else el.setAttribute("tabindex", "-1");
+      });
+    }
+
+    function syncBackFromScroll() {
+      var y = window.scrollY;
+      var delta = y - lastScrollY;
+      lastScrollY = y;
+
+      if (y <= HIDE_BACK_NEAR_TOP) {
+        upTravel = 0;
+        setBackVisible(false);
+        return;
+      }
+
+      if (delta < 0) {
+        upTravel += -delta;
+        if (upTravel >= SHOW_BACK_AFTER) setBackVisible(true);
+        return;
+      }
+
+      if (delta > 0) {
+        upTravel = 0;
+        setBackVisible(false);
+      }
+    }
+
     function syncActiveFromScroll() {
       scrollTicking = false;
+      syncBackFromScroll();
       if (lockedIndex >= 0) return;
       setActive(getActiveIndexFromScroll());
     }
@@ -173,6 +236,16 @@ const { items } = Astro.props;
       }
 
       requestAnimationFrame(waitForScrollEnd);
+    }
+
+    if (topButton) {
+      topButton.addEventListener(
+        "click",
+        function () {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        },
+        { signal: signal },
+      );
     }
 
     links.forEach(function (link, index) {
@@ -257,6 +330,7 @@ const { items } = Astro.props;
     }
 
     activeIndex = -1;
+    setBackVisible(false);
     setActive(getActiveIndexFromScroll());
     requestAnimationFrame(function () {
       syncRailTrack();

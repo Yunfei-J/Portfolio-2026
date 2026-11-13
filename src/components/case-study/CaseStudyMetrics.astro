@@ -1,0 +1,50 @@
+---
+import type { MetricItem, MetricListBlock, MetricPillarsBlock } from "../../lib/case-study-v2-types";
+
+type Props = {
+  block: MetricPillarsBlock | MetricListBlock;
+};
+
+const { block } = Astro.props;
+---
+
+{
+  block.type === "metricPillars" && (
+    <div class="case-study-mission-pillars" style={`--columns: ${block.pillars.length};`}>
+      {block.pillars.map((pillar) => (
+        <article class="case-study-mission-pillar">
+          <h3 class="case-study-mission-pillar-title">{pillar.title}</h3>
+          <div class="case-study-mission-diamonds" aria-hidden="true">
+            <img src="/assets/case-study-ui/impact-diamond.svg" width="10" height="15" alt="" />
+            <img src="/assets/case-study-ui/impact-diamond.svg" width="10" height="15" alt="" />
+            <img src="/assets/case-study-ui/impact-diamond.svg" width="10" height="15" alt="" />
+          </div>
+          <dl class="case-study-mission-metrics">
+            {pillar.metrics.map((metric: MetricItem) => (
+              <div class="case-study-mission-metric">
+                <dt>{metric.label}</dt>
+                <dd>{metric.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </article>
+      ))}
+    </div>
+  )
+}
+
+{
+  block.type === "metricList" && (
+    <dl
+      class="case-study-mission-metrics case-study-metric-list"
+      style={`--columns: ${block.metrics.length};`}
+    >
+      {block.metrics.map((metric) => (
+        <div class="case-study-mission-metric">
+          <dt>{metric.label}</dt>
+          <dd>{metric.value}</dd>
+        </div>
+      ))}
+    </dl>
+  )
+}

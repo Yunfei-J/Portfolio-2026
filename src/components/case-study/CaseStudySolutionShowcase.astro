@@ -1,10 +1,9 @@
 ---
-import type { CaseStudyBodyBlock } from "../../lib/case-study-v2-types";
-
-type ShowcaseBlock = Extract<CaseStudyBodyBlock, { type: "solutionShowcase" }>;
+import CaseStudyMediaPanel from "./CaseStudyMediaPanel.astro";
+import type { CopyMediaRowsBlock } from "../../lib/case-study-v2-types";
 
 type Props = {
-  block: ShowcaseBlock;
+  block: CopyMediaRowsBlock;
 };
 
 const { block } = Astro.props;
@@ -14,7 +13,14 @@ const { block } = Astro.props;
   {
     block.groups.map((group) => (
       <section class="case-study-solution-group">
-        <h2 class="case-study-solution-group-heading">{group.heading}</h2>
+        {group.mediaHeading ? (
+          <div class="case-study-solution-row case-study-solution-columns-head">
+            <h2 class="case-study-solution-group-heading">{group.mediaHeading}</h2>
+            <h2 class="case-study-solution-group-heading">{group.heading}</h2>
+          </div>
+        ) : (
+          <h2 class="case-study-solution-group-heading">{group.heading}</h2>
+        )}
         {
           group.rows.map((row) => (
             <article class="case-study-solution-row">
@@ -22,92 +28,7 @@ const { block } = Astro.props;
                 <h3 class="case-study-solution-row-title">{row.title}</h3>
                 <p class="case-study-solution-row-desc">{row.description}</p>
               </div>
-              <div
-                class:list={[
-                  "case-study-solution-panel",
-                  `case-study-solution-panel--${row.panel.layout}`,
-                ]}
-              >
-                {
-                  row.panel.layout === "media" && (
-                    <div class="case-study-solution-panel-media">
-                      {
-                        row.panel.image ? (
-                          <img
-                            src={row.panel.image.src}
-                            alt={row.panel.image.alt}
-                            loading="lazy"
-                          />
-                        ) : (
-                          <div
-                            class="case-study-solution-panel-placeholder"
-                            aria-hidden="true"
-                          />
-                        )
-                      }
-                    </div>
-                  )
-                }
-                {
-                  row.panel.layout === "quad" && (
-                    <div class="case-study-solution-quad">
-                      {
-                        row.panel.tiles.map((tile) => (
-                          <div class="case-study-solution-tile">
-                            <p class="case-study-solution-tile-label">
-                              {tile.label}
-                            </p>
-                            <div class="case-study-solution-tile-media">
-                              {
-                                tile.image ? (
-                                  <img
-                                    src={tile.image.src}
-                                    alt={tile.image.alt}
-                                    loading="lazy"
-                                  />
-                                ) : (
-                                  <div
-                                    class="case-study-solution-panel-placeholder"
-                                    aria-hidden="true"
-                                  />
-                                )
-                              }
-                            </div>
-                          </div>
-                        ))
-                      }
-                    </div>
-                  )
-                }
-                {
-                  row.panel.layout === "metrics" && (
-                    <div class="case-study-solution-metrics">
-                      <p class="case-study-solution-metrics-note">
-                        {row.panel.note}
-                      </p>
-                      <div class="case-study-solution-metrics-cards">
-                        {
-                          row.panel.cards.map((card) => (
-                            <div class="case-study-solution-metric-card">
-                              <div class="case-study-solution-metric-head">
-                                <p class="case-study-solution-metric-title">
-                                  {card.title}
-                                </p>
-                                <p class="case-study-solution-metric-value">
-                                  {card.value}
-                                </p>
-                              </div>
-                              <p class="case-study-solution-metric-delta">
-                                {card.delta}
-                              </p>
-                            </div>
-                          ))
-                        }
-                      </div>
-                    </div>
-                  )
-                }
-              </div>
+              <CaseStudyMediaPanel panel={row.panel} />
             </article>
           ))
         }

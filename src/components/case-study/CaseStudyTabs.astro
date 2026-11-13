@@ -1,68 +1,118 @@
 ---
-import type { CaseStudyBodyBlock } from "../../lib/case-study-v2-types";
-
-type TabsBlock = Extract<CaseStudyBodyBlock, { type: "tabs" }>;
+import type { TabbedMediaBlock, TabbedMediaView } from "../../lib/case-study-v2-types";
 
 type Props = {
-  block: TabsBlock;
+  block: TabbedMediaBlock;
 };
 
 const { block } = Astro.props;
+const uid = `tabs-${Math.random().toString(36).slice(2, 8)}`;
+const views: TabbedMediaView[] = block.views?.length
+  ? block.views
+  : [{ label: "", tabs: block.tabs ?? [] }];
+const showSwitch = views.length > 1;
 ---
 
-<section
-  class="case-study-tabs"
-  style={`--tab-count: ${block.tabs.length}; --tab-index: 0;`}
-  data-case-tabs
->
-  <div class="case-study-tabs-nav">
-    <div class="case-study-tabs-labels">
-      {
-        block.tabs.map((tab, i) => (
+<section class="case-study-tabs" data-case-tabs>
+  {
+    showSwitch ? (
+      <div class="case-study-tabs-switch" role="group" aria-label="Prototype audience" data-tabs-switch>
+        {views.map((view, i) => (
           <button
             type="button"
-            class="case-study-tabs-tab"
-            aria-current={i === 0 ? "true" : undefined}
-            data-tab-button
+            class="case-study-tabs-switch-btn"
+            aria-pressed={i === 0 ? "true" : "false"}
+            data-tabs-switch-btn
           >
-            {tab.label}
+            {view.label}
           </button>
-        ))
-      }
-    </div>
-    <div class="case-study-tabs-trail" aria-hidden="true">
-      <span class="case-study-tabs-indicator"></span>
-    </div>
-  </div>
+        ))}
+      </div>
+    ) : null
+  }
 
-  <div class="case-study-tabs-track" data-tabs-track>
-    {
-      block.tabs.map((tab) => (
-        <div
-          class:list={[
-            "case-study-tabs-panel",
-            tab.rounded && "case-study-tabs-panel--rounded",
-          ]}
-          aria-label={tab.label}
-          data-tab-panel
-        >
-          {tab.images.map((image) => (
+  {
+    views.map((view, v) => (
+      <div
+        class="case-study-tabs-view"
+        data-tabs-view
+        hidden={v > 0 || undefined}
+      >
+        {view.tabs.length > 1 ? (
+          <div class="case-study-tabs-nav" data-tabs-nav>
+            <div class="case-study-tabs-labels" role="tablist" aria-orientation="horizontal">
+              {view.tabs.map((tab, i) => (
+                <button
+                  type="button"
+                  role="tab"
+                  class="case-study-tabs-tab"
+                  id={`${uid}-v${v}-tab-${i}`}
+                  aria-controls={`${uid}-v${v}-panel-${i}`}
+                  aria-selected={i === 0 ? "true" : "false"}
+                  tabindex={i === 0 ? undefined : -1}
+                  data-tab-button
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+            <div class="case-study-tabs-trail" aria-hidden="true">
+              <span class="case-study-tabs-indicator"></span>
+            </div>
+          </div>
+        ) : null}
+
+        <div class="case-study-tabs-track" data-tabs-track>
+          {view.tabs.map((tab, i) => (
             <div
-              class="case-study-tabs-frame"
-              style={`aspect-ratio: ${image.aspect}; height: ${image.height ?? "100%"};`}
+              class:list={[
+                "case-study-tabs-panel",
+                tab.rounded && "case-study-tabs-panel--rounded",
+              ]}
+              role="tabpanel"
+              id={`${uid}-v${v}-panel-${i}`}
+              aria-labelledby={
+                view.tabs.length > 1 ? `${uid}-v${v}-tab-${i}` : undefined
+              }
+              tabindex="0"
+              data-tab-panel
             >
-              <img
-                src={image.src}
-                alt={image.alt}
-                loading="lazy"
-                style={image.position ? `object-position: ${image.position};` : undefined}
-              />
+              {tab.images.map((image) => (
+                <div
+                  class="case-study-tabs-frame"
+                  style={`aspect-ratio: ${image.aspect}; height: ${image.height ?? "100%"};`}
+                >
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    loading="lazy"
+                    style={image.position ? `object-position: ${image.position};` : undefined}
+                  />
+                </div>
+              ))}
             </div>
           ))}
         </div>
-      ))
-    }
-  </div>
+
+        {view.notes?.length ? (
+          <div class="case-study-tabs-notes">
+            {view.notes.map((note) => (
+              <div class="case-study-section-block">
+                {note.heading ? (
+                  <h2 class="case-study-section-heading">{note.heading}</h2>
+                ) : null}
+                <div class="case-study-copy">
+                  {note.paragraphs.map((paragraph) => (
+                    <p>{paragraph}</p>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : null}
+      </div>
+    ))
+  }
 </section>
 
 <script>
@@ -74,64 +124,141 @@ const { block } = Astro.props;
       r._tabsAbort = ac;
       const { signal } = ac;
 
-      const track = root.querySelector<HTMLElement>("[data-tabs-track]");
-      const buttons = Array.from(root.querySelectorAll<HTMLButtonElement>("[data-tab-button]"));
-      const panels = Array.from(root.querySelectorAll<HTMLElement>("[data-tab-panel]"));
-      if (!track || !buttons.length) return;
+      const views = Array.from(root.querySelectorAll<HTMLElement>("[data-tabs-view]"));
+      const switchBtns = Array.from(
+        root.querySelectorAll<HTMLButtonElement>("[data-tabs-switch-btn]"),
+      );
 
-      let lockedIndex = -1;
-      let ticking = false;
+      const bindView = (view: HTMLElement) => {
+        const track = view.querySelector<HTMLElement>("[data-tabs-track]");
+        const nav = view.querySelector<HTMLElement>("[data-tabs-nav]");
+        const buttons = Array.from(view.querySelectorAll<HTMLButtonElement>("[data-tab-button]"));
+        const panels = Array.from(view.querySelectorAll<HTMLElement>("[data-tab-panel]"));
+        if (!track || !buttons.length) return { placeIndicator: () => {} };
 
-      const setActive = (index: number) => {
-        root.style.setProperty("--tab-index", String(index));
+        let lockedIndex = -1;
+        let activeIndex = 0;
+        let ticking = false;
+
+        const placeIndicator = () => {
+          if (!nav) return;
+          const button = buttons[activeIndex];
+          if (!button) return;
+          view.style.setProperty("--tab-x", `${button.offsetLeft}px`);
+          view.style.setProperty("--tab-w", `${button.offsetWidth}px`);
+          const left = button.offsetLeft;
+          const right = left + button.offsetWidth;
+          if (left < nav.scrollLeft) nav.scrollTo({ left, behavior: "smooth" });
+          else if (right > nav.scrollLeft + nav.clientWidth) {
+            nav.scrollTo({ left: right - nav.clientWidth, behavior: "smooth" });
+          }
+        };
+
+        const setActive = (index: number) => {
+          activeIndex = index;
+          placeIndicator();
+          buttons.forEach((button, i) => {
+            const selected = i === index;
+            button.setAttribute("aria-selected", String(selected));
+            if (selected) button.removeAttribute("tabindex");
+            else button.tabIndex = -1;
+          });
+        };
+
+        const panelLeft = (panel: HTMLElement) => panel.offsetLeft - panels[0].offsetLeft;
+
+        const select = (i: number) => {
+          lockedIndex = i;
+          setActive(i);
+          track.scrollTo({ left: panelLeft(panels[i]), behavior: "smooth" });
+        };
+
+        const indexFromScroll = () => {
+          const max = track.scrollWidth - track.clientWidth;
+          if (track.scrollLeft >= max - 1) return panels.length - 1;
+          let index = 0;
+          panels.forEach((panel, i) => {
+            if (panelLeft(panel) <= track.scrollLeft + track.clientWidth * 0.33) index = i;
+          });
+          return index;
+        };
+
+        const sync = () => {
+          ticking = false;
+          if (lockedIndex >= 0) return;
+          setActive(indexFromScroll());
+        };
+
         buttons.forEach((button, i) => {
-          if (i === index) button.setAttribute("aria-current", "true");
-          else button.removeAttribute("aria-current");
+          button.addEventListener("click", () => select(i), { signal });
+          button.addEventListener(
+            "keydown",
+            (event) => {
+              const last = buttons.length - 1;
+              const next =
+                event.key === "ArrowRight" ? (i === last ? 0 : i + 1)
+                : event.key === "ArrowLeft" ? (i === 0 ? last : i - 1)
+                : event.key === "Home" ? 0
+                : event.key === "End" ? last
+                : -1;
+              if (next < 0) return;
+              event.preventDefault();
+              select(next);
+              buttons[next].focus();
+            },
+            { signal },
+          );
         });
-      };
 
-      const panelLeft = (panel: HTMLElement) => panel.offsetLeft - panels[0].offsetLeft;
-
-      const indexFromScroll = () => {
-        const max = track.scrollWidth - track.clientWidth;
-        if (track.scrollLeft >= max - 1) return panels.length - 1;
-        let index = 0;
-        panels.forEach((panel, i) => {
-          if (panelLeft(panel) <= track.scrollLeft + track.clientWidth * 0.33) index = i;
-        });
-        return index;
-      };
-
-      const sync = () => {
-        ticking = false;
-        if (lockedIndex >= 0) return;
-        setActive(indexFromScroll());
-      };
-
-      buttons.forEach((button, i) => {
-        button.addEventListener(
-          "click",
+        track.addEventListener(
+          "scroll",
           () => {
-            lockedIndex = i;
-            setActive(i);
-            track.scrollTo({ left: panelLeft(panels[i]), behavior: "smooth" });
+            if (ticking) return;
+            ticking = true;
+            requestAnimationFrame(sync);
+          },
+          { passive: true, signal },
+        );
+        track.addEventListener("scrollend", () => { lockedIndex = -1; }, { signal });
+        track.addEventListener("pointerdown", () => { lockedIndex = -1; }, { signal });
+        track.addEventListener("wheel", () => { lockedIndex = -1; }, { passive: true, signal });
+        window.addEventListener("resize", placeIndicator, { signal });
+        document.fonts.ready.then(placeIndicator);
+        placeIndicator();
+
+        return { placeIndicator };
+      };
+
+      const bound = views.map(bindView);
+
+      const showView = (index: number) => {
+        views.forEach((view, i) => {
+          view.hidden = i !== index;
+        });
+        switchBtns.forEach((button, i) => {
+          button.setAttribute("aria-pressed", String(i === index));
+        });
+        requestAnimationFrame(() => bound[index]?.placeIndicator());
+      };
+
+      switchBtns.forEach((button, i) => {
+        button.addEventListener("click", () => showView(i), { signal });
+        button.addEventListener(
+          "keydown",
+          (event) => {
+            const last = switchBtns.length - 1;
+            const next =
+              event.key === "ArrowRight" ? (i === last ? 0 : i + 1)
+              : event.key === "ArrowLeft" ? (i === 0 ? last : i - 1)
+              : -1;
+            if (next < 0) return;
+            event.preventDefault();
+            showView(next);
+            switchBtns[next].focus();
           },
           { signal },
         );
       });
-
-      track.addEventListener(
-        "scroll",
-        () => {
-          if (ticking) return;
-          ticking = true;
-          requestAnimationFrame(sync);
-        },
-        { passive: true, signal },
-      );
-      track.addEventListener("scrollend", () => { lockedIndex = -1; }, { signal });
-      track.addEventListener("pointerdown", () => { lockedIndex = -1; }, { signal });
-      track.addEventListener("wheel", () => { lockedIndex = -1; }, { passive: true, signal });
     });
   }
 

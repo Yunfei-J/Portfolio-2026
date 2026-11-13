@@ -38,17 +38,13 @@ function projectSubtitle(timeframe: string) {
                 href={card.href}
                 target={external ? "_blank" : undefined}
                 rel={external ? "noopener noreferrer" : undefined}
-                aria-label={`Open ${card.title}`}
                 tabindex={state === "active" ? undefined : -1}
               >
                 <header class="carousel-accordion__header">
                   <h3 class="carousel-accordion__title">{card.title}</h3>
                   <div class="carousel-accordion__meta">
                     <p class="carousel-accordion__studio">{subtitle}</p>
-                    <div
-                      class="carousel-accordion__tags"
-                      aria-label={`${card.title} tags`}
-                    >
+                    <div class="carousel-accordion__tags">
                       {visibleTags.map((tag) => (
                         <span class="carousel-accordion__tag">{tag}</span>
                       ))}
@@ -58,6 +54,7 @@ function projectSubtitle(timeframe: string) {
                 <div class="carousel-accordion__media">
                   <img src={card.image} alt="" loading="lazy" />
                 </div>
+                {external && <span class="sr-only">(opens in new tab)</span>}
               </a>
             </div>
             <button

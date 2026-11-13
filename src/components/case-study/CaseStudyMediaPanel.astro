@@ -1,0 +1,72 @@
+---
+import type { MediaPanel } from "../../lib/case-study-v2-types";
+
+type Props = {
+  panel: MediaPanel;
+};
+
+const { panel } = Astro.props;
+---
+
+<div
+  class:list={[
+    "case-study-solution-panel",
+    `case-study-solution-panel--${panel.layout}`,
+  ]}
+>
+  {
+    panel.layout === "media" && (
+      <div class="case-study-solution-panel-media">
+        {
+          panel.image ? (
+            <img src={panel.image.src} alt={panel.image.alt} loading="lazy" />
+          ) : (
+            <div class="case-study-solution-panel-placeholder" aria-hidden="true" />
+          )
+        }
+      </div>
+    )
+  }
+  {
+    panel.layout === "quad" && (
+      <div class="case-study-solution-quad">
+        {
+          panel.tiles.map((tile) => (
+            <div class="case-study-solution-tile">
+              <p class="case-study-solution-tile-label">{tile.label}</p>
+              <div class="case-study-solution-tile-media">
+                {
+                  tile.image ? (
+                    <img src={tile.image.src} alt={tile.image.alt} loading="lazy" />
+                  ) : (
+                    <div class="case-study-solution-panel-placeholder" aria-hidden="true" />
+                  )
+                }
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    )
+  }
+  {
+    panel.layout === "metrics" && (
+      <div class="case-study-solution-metrics">
+        {panel.note ? <p class="case-study-solution-metrics-note">{panel.note}</p> : null}
+        <div class="case-study-solution-metrics-cards">
+          {
+            panel.cards.map((card) => (
+              <div class="case-study-solution-metric-card">
+                <div class="case-study-solution-metric-head">
+                  <p class="case-study-solution-metric-title">{card.title}</p>
+                  <p class="case-study-solution-metric-value">{card.value}</p>
+                </div>
+                <p class="case-study-solution-metric-delta">{card.delta}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    )
+  }
+</div>

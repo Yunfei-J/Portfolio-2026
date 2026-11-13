@@ -23,7 +23,7 @@ export const projects: ProjectCard[] = [
   },
   {
     title: "OOWLS",
-    href: `${WEBFLOW}/research/oowls`,
+    href: "/oowls",
     tags: ["UX", "Mobile", "Healthcare", "Seniors"],
     description: "Matching families with verified on-demand gig caregivers for personalized senior check-ins.",
     timeframe: "Apr 2023 – Oct 2023 · UC San Diego",

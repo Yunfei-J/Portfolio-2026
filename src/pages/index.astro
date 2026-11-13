@@ -22,12 +22,13 @@ const skills = [
 
 const years = ["2021", "2022", "2023", "2024", "2025", "2026"];
 const yearCount = years.length;
-const searchTags = ["UX Design", "Product", "Mobile", "Research", "Branding", "AI"];
+const searchTags = ["Accessibility", "Design System", "Mobile", "Research", "Branding", "AI"];
 const renderedCarousel = carouselProjects;
 ---
 
 <BaseLayout>
   <main class="portfolio-page">
+    <div class="home-sheet" data-home-sheet>
       <section class="hero-section" aria-labelledby="hero-name">
 
         <div class="hero-stage">
@@ -50,7 +51,7 @@ const renderedCarousel = carouselProjects;
           <div class="hero-subtitle">
             <span class="hero-sub-the">The</span>
             <div class="hero-sub-ticker" role="marquee" aria-label="Key qualities">
-              <div class="hero-sub-ticker-inner" aria-live="polite">
+              <div class="hero-sub-ticker-inner">
                 <span>PERCEPTIVE</span>
                 <span>PRACTICAL</span>
                 <span>PROACTIVE</span>
@@ -63,7 +64,12 @@ const renderedCarousel = carouselProjects;
           </div>
 
           <div class="hero-bottom-panel">
-            <div class="hero-year-bar" aria-label="Experience timeline">
+            <p class="sr-only">
+              Experience timeline:{" "}
+              {skills.map((skill) => `${skill.label} since ${skill.startYear}`).join(", ")}.
+            </p>
+
+            <div class="hero-year-bar" aria-hidden="true">
               <div class="timeline-grid">
                 {years.map((year) => <span class="timeline-year">{year}</span>)}
               </div>
@@ -72,7 +78,6 @@ const renderedCarousel = carouselProjects;
             <div class="hero-timelines" data-hero-timelines aria-hidden="true">
               <div
                 class="skill-map"
-                aria-label="Skills over time"
                 style={`--year-count: ${yearCount}`}
               >
                 <div class="skill-bars">
@@ -112,17 +117,24 @@ const renderedCarousel = carouselProjects;
         </div>
 
       </section>
+    </div>
 
+    <div class="home-sheet" data-home-sheet>
       <section class="project-list" aria-label="Featured projects">
         {projects.map((project) => <ProjectCard {...project} />)}
       </section>
+    </div>
 
+    <div class="home-sheet" data-home-sheet>
       <CarouselAccordion projects={renderedCarousel} />
+    </div>
 
+    <div class="home-sheet" data-home-sheet>
       <section class="reading-search" aria-labelledby="reading-title">
         <div class="reading-search-card">
           <h1 id="reading-title">Tired of reading?</h1>
-          <label class="search-pill" for="project-search">
+          <div class="search-pill" data-search-pill>
+            <label class="sr-only" for="project-search">Search projects</label>
             <input
               id="project-search"
               type="search"
@@ -131,8 +143,31 @@ const renderedCarousel = carouselProjects;
               autocomplete="off"
               spellcheck="false"
             />
-          </label>
-          <div class="large-tags" aria-label="Search suggestions">
+            <button
+              type="button"
+              class="search-clear"
+              aria-label="Clear search"
+              data-search-clear
+              hidden
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M18 6 6 18" />
+                <path d="m6 6 12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="large-tags" role="group" aria-label="Search suggestions">
             {searchTags.map((tag) => <button type="button" data-search-tag>{tag}</button>)}
           </div>
           <div class="search-results" aria-live="polite" data-search-results hidden></div>
@@ -150,15 +185,35 @@ const renderedCarousel = carouselProjects;
           <WaveDivider class="my-wave" />
         </div>
       </div>
+    </div>
     </main>
 
     <script>
       import { SEARCH_INDEX } from "../data/search-index";
       import { createSearchEngine, highlight, trackSearch } from "../scripts/search";
+      import { initStackedSheets, type StackedSheetsSettings } from "../scripts/stacked-sheets";
+
+      const HOME_SHEETS: StackedSheetsSettings = {
+        selector: "[data-home-sheet]",
+        fadeTo: 0.01,
+        fadeCurve: "smooth",
+        topOffset: 0,
+        holdDistance: "20vh",
+        minHoldTime: 100,
+        minWidth: 0,
+      };
+
+      initStackedSheets(HOME_SHEETS);
 
       const input = document.querySelector<HTMLInputElement>("[data-search]");
       const tagButtons = document.querySelectorAll<HTMLButtonElement>("[data-search-tag]");
       const container = document.querySelector<HTMLElement>("[data-search-results]");
+      const pill = document.querySelector<HTMLElement>("[data-search-pill]");
+      const clearButton = document.querySelector<HTMLButtonElement>("[data-search-clear]");
+
+      pill?.addEventListener("click", (event) => {
+        if (event.target === pill) input?.focus();
+      });
 
       async function initSearch() {
         let embeddings: { slug: string; vector: Record<string, number> }[] = [];
@@ -172,6 +227,7 @@ const renderedCarousel = carouselProjects;
         const search = createSearchEngine(SEARCH_INDEX, embeddings);
 
         function renderResults(query: string, skipTrack = false) {
+          if (clearButton) clearButton.hidden = !query;
           if (!container) return;
 
           if (!query.trim()) {
@@ -216,6 +272,13 @@ const renderedCarousel = carouselProjects;
         }
 
         input?.addEventListener("input", () => renderResults(input.value));
+
+        clearButton?.addEventListener("click", () => {
+          if (!input) return;
+          input.value = "";
+          renderResults("");
+          input.focus();
+        });
 
         input?.addEventListener("keydown", (event) => {
           if (event.key !== "Enter" || !input) return;

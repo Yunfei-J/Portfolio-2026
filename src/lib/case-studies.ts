@@ -29,7 +29,6 @@ export const CASE_STUDY_FILES: Record<string, string> = {
 };
 
 export const CASE_STUDY_SLUGS = [
-  "oowls",
   "green-it",
   "starward",
   "moneywise",

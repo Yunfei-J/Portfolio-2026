@@ -1,6 +1,7 @@
 ---
 import CaseStudyBodyBlock from "./CaseStudyBodyBlock.astro";
-import type { CaseStudySection } from "../../lib/case-study-v2-types";
+import { groupBlocks } from "../../lib/case-study-blocks";
+import type { CanonicalBlock, CaseStudySection } from "../../lib/case-study-v2-types";
 
 type Props = {
   sections: CaseStudySection[];
@@ -8,14 +9,25 @@ type Props = {
 
 const { sections } = Astro.props;
 
-/** Render inside the section title block with the section h2 (and intro). */
-const LEAD_BLOCK_TYPES = new Set([
-  "features",
-  "mission",
-  "researchGrid",
-  "tabs",
-  "solutionShowcase",
-]);
+/** Consecutive captioned galleries share a 2-column row (e.g. 50% + --2). */
+function withGalleryRows(blocks: CanonicalBlock[]) {
+  const rows: Array<CanonicalBlock | CanonicalBlock[]> = [];
+
+  for (const block of blocks) {
+    const prev = rows.at(-1);
+    if (
+      block.type === "captionedGallery" &&
+      Array.isArray(prev) &&
+      prev[0]?.type === "captionedGallery"
+    ) {
+      prev.push(block);
+      continue;
+    }
+    rows.push(block.type === "captionedGallery" ? [block] : block);
+  }
+
+  return rows.map((row) => (Array.isArray(row) && row.length === 1 ? row[0] : row));
+}
 ---
 
 {
@@ -46,27 +58,49 @@ const LEAD_BLOCK_TYPES = new Set([
                 {section.eyebrow}
               </p>
             ) : null}
-            <div class="case-study-section-block">
-              {section.title ? (
-                <h2 class="case-study-section-heading" id={`${section.id}-heading`}>
-                  {section.title}
-                </h2>
-              ) : null}
-              {section.intro ? (
-                <p class="case-study-section-intro">{section.intro}</p>
-              ) : null}
-              {section.blocks
-                .filter((block) => LEAD_BLOCK_TYPES.has(block.type))
-                .map((block) => (
-                  <CaseStudyBodyBlock block={block} />
-                ))}
-            </div>
-
-            {section.blocks
-              .filter((block) => !LEAD_BLOCK_TYPES.has(block.type))
-              .map((block) => (
-                <CaseStudyBodyBlock block={block} />
-              ))}
+            {groupBlocks(section.blocks, { heading: section.title, intro: section.intro }).map(
+              (group) =>
+                !group.isHead && !group.heading && !group.intro ? (
+                  withGalleryRows(group.blocks).map((item) =>
+                    Array.isArray(item) ? (
+                      <div class="case-study-gallery case-study-gallery--2">
+                        {item.map((block) => (
+                          <CaseStudyBodyBlock block={block} />
+                        ))}
+                      </div>
+                    ) : (
+                      <CaseStudyBodyBlock block={item} />
+                    ),
+                  )
+                ) : (
+                  <div class="case-study-section-block">
+                    {group.heading ? (
+                      <h2
+                        class="case-study-section-heading"
+                        id={group.isHead ? `${section.id}-heading` : undefined}
+                      >
+                        {group.heading}
+                      </h2>
+                    ) : null}
+                    {(Array.isArray(group.intro) ? group.intro : group.intro ? [group.intro] : []).map(
+                      (paragraph) => (
+                        <p class="case-study-section-intro">{paragraph}</p>
+                      ),
+                    )}
+                    {withGalleryRows(group.blocks).map((item) =>
+                      Array.isArray(item) ? (
+                        <div class="case-study-gallery case-study-gallery--2">
+                          {item.map((block) => (
+                            <CaseStudyBodyBlock block={block} />
+                          ))}
+                        </div>
+                      ) : (
+                        <CaseStudyBodyBlock block={item} />
+                      ),
+                    )}
+                  </div>
+                ),
+            )}
           </>
         ) : (
           <>
@@ -88,59 +122,19 @@ const LEAD_BLOCK_TYPES = new Set([
 }
 
 <script>
-  function initCaseStudySheets() {
-    const sheets = Array.from(document.querySelectorAll<HTMLElement>("[data-case-sheet]"));
-    if (!sheets.length) return;
+  import { initStackedSheets, type StackedSheetsSettings } from "../../scripts/stacked-sheets";
 
-    const w = window as Window & { _sheetsAbort?: AbortController; _sheetsResize?: ResizeObserver };
-    w._sheetsAbort?.abort();
-    w._sheetsResize?.disconnect();
-    const ac = new AbortController();
-    w._sheetsAbort = ac;
-    const { signal } = ac;
+  const CASE_STUDY_SHEETS: StackedSheetsSettings = {
+    selector: "[data-case-sheet]",
+    fadeTo: 0.01,
+    fadeCurve: "smooth",
+    topOffset: 0,
+    holdDistance: "0px",
+    minHoldTime: 0,
+    minWidth: 0,
+  };
 
-    let ticking = false;
-
-    const measure = () => {
-      const vh = window.innerHeight;
-      sheets.forEach((sheet) => {
-        sheet.style.setProperty("--sheet-top", `${Math.min(0, vh - sheet.offsetHeight)}px`);
-      });
-      update();
-    };
-
-    const update = () => {
-      ticking = false;
-      const vh = window.innerHeight;
-      sheets.forEach((sheet, i) => {
-        const next = sheets[i + 1];
-        if (!next) {
-          sheet.style.setProperty("--sheet-cover", "0");
-          return;
-        }
-        const rect = sheet.getBoundingClientRect();
-        const visible = Math.min(rect.bottom, vh) - Math.max(rect.top, 0);
-        const overlap = rect.bottom - next.getBoundingClientRect().top;
-        const cover = visible > 0 ? Math.min(1, Math.max(0, overlap / visible)) : 1;
-        sheet.style.setProperty("--sheet-cover", cover.toFixed(3));
-      });
-    };
-
-    const queue = () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(update);
-    };
-
-    const resize = new ResizeObserver(measure);
-    w._sheetsResize = resize;
-    sheets.forEach((sheet) => resize.observe(sheet));
-
-    window.addEventListener("scroll", queue, { passive: true, signal });
-    window.addEventListener("resize", measure, { signal });
-    measure();
-  }
-
+  const initCaseStudySheets = () => initStackedSheets(CASE_STUDY_SHEETS);
   initCaseStudySheets();
   document.addEventListener("astro:page-load", initCaseStudySheets);
 </script>

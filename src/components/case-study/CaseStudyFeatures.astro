@@ -1,10 +1,8 @@
 ---
-import type { CaseStudyBodyBlock } from "../../lib/case-study-v2-types";
-
-type FeaturesBlock = Extract<CaseStudyBodyBlock, { type: "features" }>;
+import type { CountCardsBlock } from "../../lib/case-study-v2-types";
 
 type Props = {
-  block: FeaturesBlock;
+  block: CountCardsBlock;
 };
 
 const { block } = Astro.props;
@@ -17,11 +15,8 @@ const { block } = Astro.props;
     </div>
   ) : null}
 
-  {block.heading ? (
-    <h3 class="case-study-features-heading">{block.heading}</h3>
-  ) : null}
   <div class="case-study-features-list-shell">
-    <ul class="case-study-features-list">
+    <ul class="case-study-features-list" style={`--columns: ${Math.min(block.items.length, 4)};`}>
     {
       block.items.map((item) => (
         <li class="case-study-feature">
@@ -56,7 +51,7 @@ const { block } = Astro.props;
           class="case-study-features-expand"
           data-features-expand
           aria-expanded="false"
-          aria-label="Expand ecosystem diagram"
+          aria-label={block.expandLabel ?? "Expand figure"}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

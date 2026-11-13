@@ -16,7 +16,7 @@ export const forkItMeta = {
   description:
     "Cross-platform app that transforms physical menus into interactive digital experiences using gen-AI and NLP.",
   intro:
-    "Ordering at a restaurant abroad is often a guessing game. ForkIt is an AI-native mobile app I built that helps diners understand foreign menus through the lens of their own food culture.",
+    "Ordering at a restaurant abroad is often a guessing game. ForkIt is an AI-native mobile app I built to help diners understand foreign menus through the lens of their own food culture.",
   heroImage: `${SLIDE_DIR}/prototype.png`,
   meta: [
     { label: "Timeline", value: ["Sep 2024 – Jun 2026", "Startup Studio project"] },

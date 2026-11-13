@@ -9,6 +9,14 @@ const { meta } = Astro.props;
 
 const backSrc = meta.heroCard === false ? null : (meta.heroCard ?? meta.heroImage);
 
+const heroFrameVars = [
+  meta.heroImageScale != null ? `--hero-image-scale: ${meta.heroImageScale}` : "",
+  meta.heroImageScale != null ? "--hero-image-fit: contain" : "",
+  meta.heroImageScale != null ? "--hero-image-position: top" : "",
+  meta.heroFrameBg ? `--hero-frame-bg: ${meta.heroFrameBg}` : "",
+].filter(Boolean);
+const heroFrameStyle = heroFrameVars.length ? heroFrameVars.join("; ") : undefined;
+
 function metaValues(value: string | string[]): string[] {
   return Array.isArray(value) ? value : [value];
 }
@@ -52,16 +60,20 @@ function metaValues(value: string | string[]): string[] {
     <div class="case-study-hero-media-stack">
       {
         backSrc ? (
-          <img
-            class="case-study-hero-card"
-            src={backSrc}
-            alt=""
-            aria-hidden="true"
-            loading="eager"
-          />
+          <div class="case-study-hero-card-plate" aria-hidden="true">
+            <img
+              class="case-study-hero-card"
+              src={backSrc}
+              alt=""
+              loading="eager"
+            />
+          </div>
         ) : null
       }
-      <div class="case-study-hero-image-frame">
+      <div
+        class="case-study-hero-image-frame"
+        style={heroFrameStyle}
+      >
         <img
           class="case-study-hero-image"
           src={meta.heroImage}

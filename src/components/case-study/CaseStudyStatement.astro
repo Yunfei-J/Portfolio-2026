@@ -1,0 +1,17 @@
+---
+import type { StatementBlock } from "../../lib/case-study-v2-types";
+
+type Props = {
+  block: StatementBlock;
+};
+
+const { block } = Astro.props;
+---
+
+<div class="case-study-mission">
+  <h2 class="case-study-mission-label">
+    {block.label}
+    <img src="/assets/case-study-ui/mission-grip-icon.svg" width="21" height="34" alt="" />
+  </h2>
+  <p class="case-study-mission-statement">{block.statement}</p>
+</div>

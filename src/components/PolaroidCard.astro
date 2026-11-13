@@ -109,14 +109,23 @@ const mobileLens = {
 
     <footer class="polaroid-footer polaroid-footer--desktop">
       <span class="polaroid-caption">{caption}</span>
-      <div class="polaroid-actions" aria-label="Interaction icons">
-        <svg viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="2"
-             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06
-                   a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78
-                   1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-        </svg>
+      <div class="polaroid-actions">
+        <button
+          type="button"
+          class="polaroid-like"
+          aria-label="Like"
+          aria-pressed="false"
+          data-polaroid-like
+        >
+          <svg class="polaroid-like-outline" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06
+                     a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78
+                     1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+          <span class="polaroid-like-anim" aria-hidden="true" data-like-anim></span>
+        </button>
         <svg viewBox="0 0 24 24" fill="none"
              stroke="currentColor" stroke-width="2"
              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -198,14 +207,23 @@ const mobileLens = {
 
     <footer class="polaroid-footer polaroid-footer--mobile">
       <span class="polaroid-caption">{caption}</span>
-      <div class="polaroid-actions" aria-label="Interaction icons">
-        <svg viewBox="0 0 24 24" fill="none"
-             stroke="currentColor" stroke-width="2"
-             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06
-                   a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78
-                   1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-        </svg>
+      <div class="polaroid-actions">
+        <button
+          type="button"
+          class="polaroid-like"
+          aria-label="Like"
+          aria-pressed="false"
+          data-polaroid-like
+        >
+          <svg class="polaroid-like-outline" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06
+                     a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78
+                     1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+          <span class="polaroid-like-anim" aria-hidden="true" data-like-anim></span>
+        </button>
         <svg viewBox="0 0 24 24" fill="none"
              stroke="currentColor" stroke-width="2"
              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -227,6 +245,58 @@ const mobileLens = {
 
 </div>
 
+<script>
+  import type { AnimationItem } from "lottie-web";
+
+  const HEART_SRC = "/assets/lottie/heart-fav.json";
+  let lottiePromise: Promise<typeof import("lottie-web/build/player/lottie_light").default> | null = null;
+  const loadLottie = () =>
+    (lottiePromise ??= import("lottie-web/build/player/lottie_light").then((m) => m.default));
+
+  function initPolaroidLikes() {
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    document.querySelectorAll<HTMLButtonElement>("[data-polaroid-like]").forEach((button) => {
+      if (button.dataset.likeReady) return;
+      button.dataset.likeReady = "true";
+
+      const container = button.querySelector<HTMLElement>("[data-like-anim]");
+      if (!container) return;
+
+      let anim: Promise<AnimationItem> | null = null;
+      const getAnim = () =>
+        (anim ??= loadLottie().then(
+          (lottie) =>
+            new Promise<AnimationItem>((resolve) => {
+              const item = lottie.loadAnimation({
+                container,
+                renderer: "svg",
+                loop: false,
+                autoplay: false,
+                path: HEART_SRC,
+              });
+              item.addEventListener("DOMLoaded", () => resolve(item));
+            }),
+        ));
+
+      button.addEventListener("pointerenter", () => void getAnim(), { once: true });
+      button.addEventListener("focus", () => void getAnim(), { once: true });
+
+      button.addEventListener("click", async () => {
+        const liked = button.getAttribute("aria-pressed") !== "true";
+        button.setAttribute("aria-pressed", String(liked));
+        const item = await getAnim();
+        if (!liked) item.goToAndStop(0, true);
+        else if (reducedMotion.matches) item.goToAndStop(item.totalFrames - 1, true);
+        else item.goToAndPlay(0, true);
+      });
+    });
+  }
+
+  initPolaroidLikes();
+  document.addEventListener("astro:page-load", initPolaroidLikes);
+</script>
+
 <style>
   .polaroid-wrap {
     flex-shrink: 0;
@@ -235,9 +305,27 @@ const mobileLens = {
     width: var(--polaroid-width, 667px);
   }
 
+  /* --s = px per SVG unit of the letterboxed frame, so the HTML footer scales with the artwork. */
   .polaroid-frame {
+    container-type: size;
     inset: 0;
     position: absolute;
+  }
+
+  .polaroid-frame--desktop {
+    --frame-w: 667;
+    --frame-h: 791;
+  }
+
+  .polaroid-frame--mobile {
+    --frame-w: 482;
+    --frame-h: 678;
+  }
+
+  .polaroid-footer {
+    --s: min(100cqw / var(--frame-w), 100cqh / var(--frame-h));
+    --frame-x: calc((100cqw - var(--frame-w) * var(--s)) / 2);
+    --frame-y: calc((100cqh - var(--frame-h) * var(--s)) / 2);
   }
 
   .polaroid-frame--mobile {
@@ -263,21 +351,21 @@ const mobileLens = {
   }
 
   .polaroid-footer--desktop {
-    bottom: 84px;
-    font-size: 20px;
-    height: 108px;
-    left: 0;
-    padding: 0 50px;
-    right: 0;
+    bottom: calc(var(--frame-y) + 40.7 * var(--s));
+    font-size: calc(26.7 * var(--s));
+    height: calc(144 * var(--s));
+    left: var(--frame-x);
+    padding: 0 calc(66.7 * var(--s));
+    right: var(--frame-x);
   }
 
   .polaroid-footer--mobile {
-    bottom: 56px;
-    font-size: 20px;
-    height: 93px;
-    left: 10px;
-    padding: 0 36px;
-    right: 0;
+    bottom: calc(var(--frame-y) + 70 * var(--s));
+    font-size: calc(25 * var(--s));
+    height: calc(116 * var(--s));
+    left: calc(var(--frame-x) + 12.5 * var(--s));
+    padding: 0 calc(45 * var(--s));
+    right: var(--frame-x);
   }
 
   .polaroid-caption {
@@ -288,29 +376,65 @@ const mobileLens = {
   .polaroid-actions {
     align-items: center;
     display: flex;
-    gap: 18px;
+    gap: calc(24 * var(--s));
   }
 
   .polaroid-footer--mobile .polaroid-actions {
-    gap: 14px;
+    gap: calc(17.5 * var(--s));
   }
 
   .polaroid-actions svg {
     cursor: pointer;
     flex-shrink: 0;
-    height: 28px;
+    height: calc(37.4 * var(--s));
     opacity: 0.75;
     transition: opacity 200ms ease;
-    width: 28px;
+    width: calc(37.4 * var(--s));
   }
 
   .polaroid-footer--mobile .polaroid-actions svg {
-    height: 22px;
-    width: 22px;
+    height: calc(27.5 * var(--s));
+    width: calc(27.5 * var(--s));
   }
 
   .polaroid-actions svg:hover {
     opacity: 1;
+  }
+
+  .polaroid-like {
+    background: none;
+    border: 0;
+    color: inherit;
+    cursor: pointer;
+    display: inline-flex;
+    padding: 0;
+    position: relative;
+  }
+
+  .polaroid-like:focus-visible {
+    border-radius: 4px;
+    outline: 2px solid #111;
+    outline-offset: 4px;
+  }
+
+  .polaroid-like[aria-pressed="true"] .polaroid-like-outline {
+    opacity: 0;
+  }
+
+  /* The heart fills ~22% of the 1080px Lottie canvas, slightly up-right of centre;
+     381% matches the outline icon's width and the 0.66% nudges re-centre it. */
+  .polaroid-like-anim {
+    aspect-ratio: 1;
+    left: 50%;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    transform: translate(calc(-50% - 0.66%), calc(-50% + 0.66%));
+    width: 440%;
+  }
+
+  .polaroid-like-anim :global(svg) {
+    display: block;
   }
 
   @media (max-width: 600px) {

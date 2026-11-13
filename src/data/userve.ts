@@ -99,8 +99,9 @@ export const userveSections: CaseStudySection[] = [
       },
       {
         type: "gallery",
-        heading: "Delievered design",
+        heading: "Delivered design",
         columns: 3,
+        surface: "paper",
         images: [
           {
             ...image(
@@ -159,7 +160,7 @@ export const userveSections: CaseStudySection[] = [
   },
   {
     id: "research",
-    eyebrow: "02 · Discovery",
+    eyebrow: "02 · Research",
     title: "Research",
     blocks: [
       {
@@ -361,16 +362,6 @@ export const userveSections: CaseStudySection[] = [
               },
             ],
           },
-        ],
-      },
-      {
-        type: "bullets",
-        heading: "Design principles",
-        items: [
-          "Create visual hierarchy within traditionally dense, flat POS screens.",
-          "Keep primary actions obvious while preserving expert-user efficiency.",
-          "Use consistent interaction patterns across light and dark environments.",
-          "Make the system responsive to the different tablet sizes used in the field.",
         ],
       },
     ],

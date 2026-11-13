@@ -29,7 +29,6 @@ const hiddenTagCount = Math.max(0, tags.length - maxVisibleTags);
     href={href}
     target={external ? "_blank" : undefined}
     rel={external ? "noopener noreferrer" : undefined}
-    aria-label={`Open ${title}`}
   >
     <div class="project-card-v2__frame">
       <div class="project-card-v2__media-panel">
@@ -65,7 +64,7 @@ const hiddenTagCount = Math.max(0, tags.length - maxVisibleTags);
       <p class="project-card-v2__description">{description}</p>
     </div>
 
-    <div class="project-card-v2__tags" aria-label={`${title} tags`}>
+    <div class="project-card-v2__tags">
       {
         visibleTags.map((tag) => (
           <span class="project-card-v2__tag">{tag}</span>
@@ -73,9 +72,13 @@ const hiddenTagCount = Math.max(0, tags.length - maxVisibleTags);
       }
       {
         hiddenTagCount > 0 && (
-          <span class="project-card-v2__tag-overflow">+{hiddenTagCount}</span>
+          <span class="project-card-v2__tag-overflow">
+            +{hiddenTagCount}
+            <span class="sr-only"> more {hiddenTagCount === 1 ? "tag" : "tags"}</span>
+          </span>
         )
       }
     </div>
+    {external && <span class="sr-only">(opens in new tab)</span>}
   </a>
 </article>

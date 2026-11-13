@@ -46,6 +46,14 @@
   --space-xxl: 56px;
   --space-xxxl: 64px;
 
+  /* ── Corner radius (auto-scales at breakpoints below) ── */
+  --radius-xs: 6px;
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-full: 999px;
+
   /* ── Spacing (element / layout) ── */
   --side-padding: 100px;          /* horizontal page gutter */
   --hero-inner-gap: 155px;        /* gap between h1 and skill-map */
@@ -63,9 +71,6 @@
   --reading-search-bg-size: min(1000px, 70vw);
   --reading-search-card-bg: #6f7358;
   --reading-search-card-accent: #dfea81;
-  --reading-search-card-gap: 40px;
-  --reading-search-card-pad: 60px;
-  --reading-search-card-radius: 26px;
   --fs-reading-search-body: 28px;
   --search-pill-min-h: 135px;     /* legacy; card pill uses padding */
   --large-tags-mt: var(--space-md);
@@ -114,6 +119,13 @@
     --space-xxl: 45px;
     --space-xxxl: 51px;
 
+    /* corner radius (1× × 0.8) */
+    --radius-xs: 5px;
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 17px;
+    --radius-xl: 22px;
+
     /* layout (1× × 0.8) */
     --side-padding: 80px;
     --hero-inner-gap: 124px;
@@ -125,8 +137,6 @@
     --carousel-pad-v: 64px;
     --reading-pad-top: 141px;
     --reading-search-bg-size: min(560px, 72vw);
-    --reading-search-card-gap: 48px;
-    --reading-search-card-pad: 48px;
     --fs-reading-search-body: 22px;
     --search-pill-min-h: 108px;
     --search-pill-pad-h: 42px;
@@ -141,8 +151,6 @@
    differ on phone — do not duplicate the full 0.8× scale here. */
 @media (max-width: 600px) {
   :root {
-    --reading-search-card-gap: 32px;
-    --reading-search-card-pad: 24px;
     --fs-reading-search-body: 18px;
     --side-padding: 1.5rem;
     /* Phone (≤600px viewport) */
@@ -150,5 +158,8 @@
     --hero-polaroid-height: 542px;
     --project-card-gap: 42px;
     --project-visual-min-h: 300px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
   }
 }

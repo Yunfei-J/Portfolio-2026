@@ -19,6 +19,7 @@
     "playwright": "^1.61.0"
   },
   "dependencies": {
-    "fuse.js": "^7.1.0"
+    "fuse.js": "^7.1.0",
+    "lottie-web": "^5.13.0"
   }
 }

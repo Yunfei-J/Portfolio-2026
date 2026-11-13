@@ -62,6 +62,20 @@ button {
   position: relative;
 }
 
+/* Home sections stack like sheets — settings live in HOME_SHEETS (index.astro).
+   Each sheet is its own stacking context so inner z-indexes (hero stage, polaroid)
+   stay beneath later sheets. */
+.home-sheet {
+  background: var(--paper);
+  isolation: isolate;
+  position: sticky;
+  top: var(--sheet-top, 0px);
+}
+
+.home-sheet > * {
+  opacity: var(--sheet-opacity, 1);
+}
+
 
 /* ── Hero section — scroll spacer + sticky stage ─────────────────────── */
 .hero-section {
@@ -516,14 +530,14 @@ h1 span {
 .reading-search-card {
   align-items: center;
   background-color: var(--reading-search-card-bg);
-  border-radius: var(--reading-search-card-radius);
+  border-radius: 24px;
   display: flex;
   flex-direction: column;
-  gap: var(--reading-search-card-gap);
+  gap: var(--space-md);
   max-width: 75rem;
   overflow: clip;
-  padding: var(--reading-search-card-pad);
-  width: 80%;
+  padding: var(--space-lg) var(--space-lg) var(--space-xxl);
+  width: 75%;
 }
 
 .reading-search-card h1 {
@@ -571,6 +585,37 @@ h1 span {
 
 .reading-search-card .search-pill input[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: none;
+}
+
+.reading-search-card .search-clear {
+  align-items: center;
+  background: none;
+  border: 0;
+  border-radius: 50%;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  flex-shrink: 0;
+  justify-content: center;
+  margin: -4px -8px -4px 8px;
+  opacity: 0.7;
+  padding: 4px;
+  transition: opacity 0.15s ease, background-color 0.15s ease;
+}
+
+.reading-search-card .search-clear[hidden] {
+  display: none;
+}
+
+.reading-search-card .search-clear:hover {
+  background: rgb(255 255 255 / 0.12);
+  opacity: 1;
+}
+
+.reading-search-card .search-clear:focus-visible {
+  opacity: 1;
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
 }
 
 .reading-search-card .large-tags {
@@ -666,7 +711,7 @@ h1 span {
 .search-results {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
   margin-top: var(--large-tags-mt);
   width: 100%;
 }
@@ -683,34 +728,35 @@ h1 span {
 
 .search-result-card {
   align-items: flex-start;
-  background: var(--panel);
+  background: rgb(255 255 255 / 0.1);
   border-radius: 1rem;
-  color: var(--text);
+  color: #ffffff;
   cursor: pointer;
   display: flex;
   gap: 1.5rem;
   overflow: hidden;
-  padding: 1.5rem;
+  padding: var(--space-xs);
   text-decoration: none;
   transition: background 0.2s;
 }
 
 .search-result-card:hover {
-  background: color-mix(in srgb, var(--panel) 80%, var(--text) 8%);
+  background: rgb(0 0 0 / 0.48);
 }
 
 .search-result-card img {
+  aspect-ratio: 4 / 3;
   border-radius: 0.5rem;
   flex-shrink: 0;
-  height: 5rem;
+  height: 5.5rem;
   object-fit: cover;
-  width: 7rem;
+  width: auto;
 }
 
 .search-result-body {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.35rem;
   min-width: 0;
 }
 
@@ -720,7 +766,7 @@ h1 span {
 
 .search-result-title {
   font-family: var(--font-serif);
-  font-size: var(--fs-tag-small);
+  font-size: var(--text-sm);
   letter-spacing: var(--tracking);
   line-height: 1.25;
 }
@@ -729,6 +775,7 @@ h1 span {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
+  margin-top: 0.5rem;
 }
 
 .search-result-tags span {

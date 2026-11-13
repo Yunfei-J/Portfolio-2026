@@ -1,4 +1,5 @@
 import { forkItMeta, forkItSections } from "../data/fork-it";
+import { oowlsMeta, oowlsSections } from "../data/oowls";
 import { userveMeta, userveSections } from "../data/userve";
 import type { CaseStudyV2 } from "./case-study-v2-types";
 
@@ -21,6 +22,11 @@ const V2_BY_SLUG: Record<string, CaseStudyV2> = {
     slug: "universal-processing",
     meta: userveMeta,
     sections: userveSections,
+  },
+  oowls: {
+    slug: "oowls",
+    meta: oowlsMeta,
+    sections: oowlsSections,
   },
 };
 
