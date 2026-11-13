@@ -309,8 +309,7 @@
   width: calc(var(--hero-image-scale, 1) * 100%);
 }
 
-/* Numbered sections stack like sheets — settings live in CASE_STUDY_SHEETS
-   (CaseStudySections.astro), which sets --sheet-top and --sheet-opacity. */
+/* Case-study sections stack like sheets — settings live in case-study-sheets.ts. */
 .case-study-sheet-anchor {
   height: 0;
   scroll-margin-top: var(--space-xl);
@@ -320,11 +319,11 @@
   background: var(--paper);
   padding: var(--space-xl) 0 clamp(80px, 10vw, 128px);
   position: sticky;
-  top: var(--sheet-top, 0px);
+  top: var(--case-sheet-top, 0px);
 }
 
 .case-study-section > * {
-  opacity: var(--sheet-opacity, 1);
+  opacity: var(--case-sheet-opacity, 1);
 }
 
 .case-study-section--editorial {

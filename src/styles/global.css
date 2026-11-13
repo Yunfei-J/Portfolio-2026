@@ -62,18 +62,18 @@ button {
   position: relative;
 }
 
-/* Home sections stack like sheets — settings live in HOME_SHEETS (index.astro).
+/* Home sections stack like sheets — settings live in home-sheets.ts.
    Each sheet is its own stacking context so inner z-indexes (hero stage, polaroid)
    stay beneath later sheets. */
 .home-sheet {
   background: var(--paper);
   isolation: isolate;
   position: sticky;
-  top: var(--sheet-top, 0px);
+  top: var(--home-sheet-top, 0px);
 }
 
 .home-sheet > * {
-  opacity: var(--sheet-opacity, 1);
+  opacity: var(--home-sheet-opacity, 1);
 }
 
 

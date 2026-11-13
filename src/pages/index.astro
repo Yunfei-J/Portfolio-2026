@@ -191,19 +191,9 @@ const renderedCarousel = carouselProjects;
     <script>
       import { SEARCH_INDEX } from "../data/search-index";
       import { createSearchEngine, highlight, trackSearch } from "../scripts/search";
-      import { initStackedSheets, type StackedSheetsSettings } from "../scripts/stacked-sheets";
+      import { initHomeSheets } from "../scripts/home-sheets";
 
-      const HOME_SHEETS: StackedSheetsSettings = {
-        selector: "[data-home-sheet]",
-        fadeTo: 0.01,
-        fadeCurve: "smooth",
-        topOffset: 0,
-        holdDistance: "20vh",
-        minHoldTime: 100,
-        minWidth: 0,
-      };
-
-      initStackedSheets(HOME_SHEETS);
+      initHomeSheets();
 
       const input = document.querySelector<HTMLInputElement>("[data-search]");
       const tagButtons = document.querySelectorAll<HTMLButtonElement>("[data-search-tag]");

@@ -122,19 +122,8 @@ function withGalleryRows(blocks: CanonicalBlock[]) {
 }
 
 <script>
-  import { initStackedSheets, type StackedSheetsSettings } from "../../scripts/stacked-sheets";
+  import { initCaseStudySheets } from "../../scripts/case-study-sheets";
 
-  const CASE_STUDY_SHEETS: StackedSheetsSettings = {
-    selector: "[data-case-sheet]",
-    fadeTo: 0.01,
-    fadeCurve: "smooth",
-    topOffset: 0,
-    holdDistance: "0px",
-    minHoldTime: 0,
-    minWidth: 0,
-  };
-
-  const initCaseStudySheets = () => initStackedSheets(CASE_STUDY_SHEETS);
   initCaseStudySheets();
   document.addEventListener("astro:page-load", initCaseStudySheets);
 </script>

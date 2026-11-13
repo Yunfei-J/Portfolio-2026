@@ -1,12 +1,19 @@
 /**
- * Stacked-sheet scrolling: each sheet pins once its bottom reaches the viewport
- * bottom (via --sheet-top) and the next one slides over it. Sheets must be
- * `position: sticky` with `top: var(--sheet-top)`, share a parent, and apply
- * `opacity: var(--sheet-opacity)` to whatever should fade as they're covered.
+ * Shared stacked-sheet engine. Tune homepage vs case-study independently in
+ * `home-sheets.ts` and `case-study-sheets.ts` (selectors, CSS vars, hold, fade).
+ *
+ * Each sheet pins once its bottom reaches the viewport bottom (via `topVar`)
+ * and the next one slides over it. Sheets must be `position: sticky` with
+ * `top: var(<topVar>)`, share a parent, and apply `opacity: var(<opacityVar>)`
+ * to whatever should fade as they're covered.
  */
 export type StackedSheetsSettings = {
   /** Elements to stack, in document order. */
   selector: string;
+  /** Custom property written with the sticky `top` offset. */
+  topVar: string;
+  /** Custom property written with the fade amount. */
+  opacityVar: string;
   /** Opacity a sheet's content fades to once fully covered (1 = no fade). */
   fadeTo: number;
   /** "smooth" eases in and out of the fade; "linear" tracks coverage exactly. */
@@ -33,7 +40,17 @@ const ease = {
 };
 
 export function initStackedSheets(settings: StackedSheetsSettings) {
-  const { selector, fadeTo, fadeCurve, topOffset, holdDistance, minHoldTime, minWidth } = settings;
+  const {
+    selector,
+    topVar,
+    opacityVar,
+    fadeTo,
+    fadeCurve,
+    topOffset,
+    holdDistance,
+    minHoldTime,
+    minWidth,
+  } = settings;
   controllers.get(selector)?.abort.abort();
   controllers.get(selector)?.resize.disconnect();
   controllers.delete(selector);
@@ -47,7 +64,7 @@ export function initStackedSheets(settings: StackedSheetsSettings) {
   let ticking = false;
 
   const setCover = (sheet: HTMLElement, cover: number) => {
-    sheet.style.setProperty("--sheet-opacity", (1 - ease[fadeCurve](cover) * (1 - fadeTo)).toFixed(3));
+    sheet.style.setProperty(opacityVar, (1 - ease[fadeCurve](cover) * (1 - fadeTo)).toFixed(3));
   };
 
   const update = () => {
@@ -71,7 +88,7 @@ export function initStackedSheets(settings: StackedSheetsSettings) {
     sheets.forEach((sheet, i) => {
       if (wide.matches) {
         sheet.style.removeProperty("position");
-        sheet.style.setProperty("--sheet-top", `${Math.min(topOffset, vh - sheet.offsetHeight)}px`);
+        sheet.style.setProperty(topVar, `${Math.min(topOffset, vh - sheet.offsetHeight)}px`);
         if (i > 0) sheet.style.marginTop = holdDistance;
       } else {
         sheet.style.position = "relative";
@@ -104,7 +121,7 @@ export function initStackedSheets(settings: StackedSheetsSettings) {
     const vh = window.innerHeight;
     const now = performance.now();
     for (let i = 0; i < sheets.length - 1; i++) {
-      const stuckTop = parseFloat(sheets[i].style.getPropertyValue("--sheet-top")) || 0;
+      const stuckTop = parseFloat(sheets[i].style.getPropertyValue(topVar)) || 0;
       const pinned = sheets[i].getBoundingClientRect().top <= stuckTop + 1;
       const remaining = sheets[i + 1].getBoundingClientRect().top - vh;
       if (!pinned) {
