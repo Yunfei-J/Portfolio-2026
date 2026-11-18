@@ -7,6 +7,7 @@ export type SearchEntry = {
   tags: string[];
   thumbnail: string;
   text: string;
+  lightbox?: boolean;
 };
 
 export const SEARCH_INDEX: SearchEntry[] = rawIndex;

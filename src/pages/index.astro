@@ -127,9 +127,6 @@ const renderedCarousel = carouselProjects;
 
     <div class="home-sheet" data-home-sheet>
       <CarouselAccordion projects={renderedCarousel} />
-    </div>
-
-    <div class="home-sheet" data-home-sheet>
       <section class="reading-search" aria-labelledby="reading-title">
         <div class="reading-search-card">
           <h1 id="reading-title">Tired of reading?</h1>
@@ -241,9 +238,12 @@ const renderedCarousel = carouselProjects;
             .map(
               ({ project, snippet }) => {
                 const external = project.href.startsWith("http");
-                const linkAttrs = external
-                  ? ' target="_blank" rel="noopener noreferrer"'
-                  : "";
+                const linkAttrs = [
+                  external ? ' target="_blank" rel="noopener noreferrer"' : "",
+                  project.lightbox
+                    ? ` data-cover-preview="${project.thumbnail}" data-cover-alt="${project.title} cover"`
+                    : "",
+                ].join("");
                 return `
               <a class="search-result-card" href="${project.href}"${linkAttrs}>
                 <img src="${project.thumbnail}" alt="${project.title}" loading="lazy" />

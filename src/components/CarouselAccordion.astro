@@ -21,10 +21,37 @@ function projectSubtitle(timeframe: string) {
   <div class="carousel-accordion">
     {
       projects.map((card, i) => {
-        const external = card.href.startsWith("http");
+        const previewOnly = !card.href;
+        const external = Boolean(card.href?.startsWith("http"));
         const subtitle = projectSubtitle(card.timeframe);
         const visibleTags = card.tags.slice(0, 3);
         const state = i === 0 ? "active" : "collapsed";
+        const panelClass = previewOnly
+          ? "carousel-accordion__panel-link carousel-accordion__panel-link--preview"
+          : "carousel-accordion__panel-link";
+
+        const panelInner = (
+          <>
+            <header class="carousel-accordion__header">
+              <h3 class="carousel-accordion__title">{card.title}</h3>
+              <div class="carousel-accordion__meta">
+                <p class="carousel-accordion__studio">{subtitle}</p>
+                <div class="carousel-accordion__tags">
+                  {visibleTags.map((tag) => (
+                    <span class="carousel-accordion__tag">{tag}</span>
+                  ))}
+                </div>
+              </div>
+            </header>
+            <div class="carousel-accordion__media">
+              <img src={card.image} alt="" loading="lazy" />
+            </div>
+            {external && <span class="sr-only">(opens in new tab)</span>}
+            {previewOnly && (
+              <span class="sr-only">(opens cover image)</span>
+            )}
+          </>
+        );
 
         return (
           <article
@@ -33,29 +60,27 @@ function projectSubtitle(timeframe: string) {
             data-state={state}
           >
             <div class="carousel-accordion__panel" id={`carousel-panel-${i}`}>
-              <a
-                class="carousel-accordion__panel-link"
-                href={card.href}
-                target={external ? "_blank" : undefined}
-                rel={external ? "noopener noreferrer" : undefined}
-                tabindex={state === "active" ? undefined : -1}
-              >
-                <header class="carousel-accordion__header">
-                  <h3 class="carousel-accordion__title">{card.title}</h3>
-                  <div class="carousel-accordion__meta">
-                    <p class="carousel-accordion__studio">{subtitle}</p>
-                    <div class="carousel-accordion__tags">
-                      {visibleTags.map((tag) => (
-                        <span class="carousel-accordion__tag">{tag}</span>
-                      ))}
-                    </div>
-                  </div>
-                </header>
-                <div class="carousel-accordion__media">
-                  <img src={card.image} alt="" loading="lazy" />
-                </div>
-                {external && <span class="sr-only">(opens in new tab)</span>}
-              </a>
+              {previewOnly ? (
+                <button
+                  type="button"
+                  class={panelClass}
+                  data-cover-preview={card.image}
+                  data-cover-alt={`${card.title} cover`}
+                  tabindex={state === "active" ? undefined : -1}
+                >
+                  {panelInner}
+                </button>
+              ) : (
+                <a
+                  class={panelClass}
+                  href={card.href}
+                  target={external ? "_blank" : undefined}
+                  rel={external ? "noopener noreferrer" : undefined}
+                  tabindex={state === "active" ? undefined : -1}
+                >
+                  {panelInner}
+                </a>
+              )}
             </div>
             <button
               type="button"
@@ -76,3 +101,46 @@ function projectSubtitle(timeframe: string) {
     }
   </div>
 </section>
+
+<dialog class="cover-lightbox" data-cover-lightbox aria-label="Cover image">
+  <div class="cover-lightbox__stage">
+    <button type="button" class="cover-lightbox__close" data-cover-lightbox-close aria-label="Close">
+      <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M5 5l14 14M19 5L5 19" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
+      </svg>
+    </button>
+    <img data-cover-lightbox-image alt="" />
+  </div>
+</dialog>
+
+<script>
+  const lightbox = document.querySelector<HTMLDialogElement>("[data-cover-lightbox]");
+  const lightboxImage = document.querySelector<HTMLImageElement>("[data-cover-lightbox-image]");
+  const closeBtn = document.querySelector<HTMLButtonElement>("[data-cover-lightbox-close]");
+
+  function closeCover() {
+    lightbox?.close();
+  }
+
+  function openCover(src: string, alt: string) {
+    if (!lightbox || !lightboxImage) return;
+    lightboxImage.src = src;
+    lightboxImage.alt = alt;
+    if (!lightbox.open) lightbox.showModal();
+  }
+
+  document.addEventListener("click", (event) => {
+    const trigger = (event.target as Element | null)?.closest<HTMLElement>("[data-cover-preview]");
+    if (!trigger) return;
+    event.preventDefault();
+    openCover(
+      trigger.getAttribute("data-cover-preview") ?? "",
+      trigger.getAttribute("data-cover-alt") ?? "",
+    );
+  });
+
+  closeBtn?.addEventListener("click", closeCover);
+  lightbox?.addEventListener("click", (event) => {
+    if (event.target === lightbox) closeCover();
+  });
+</script>

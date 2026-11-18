@@ -2,7 +2,7 @@ export const WEBFLOW = "https://yunfeis-portfolio.webflow.io";
 
 export type ProjectCard = {
   title: string;
-  href: string;
+  href?: string;
   tags: string[];
   description: string;
   timeframe: string;
@@ -57,21 +57,20 @@ export const carouselProjects: ProjectCard[] = [
     image: "/assets/projects/green-it.png",
   },
   {
+    title: "Halfsies",
+    tags: ["Mobile", "Maps", "Social"],
+    description:
+      "A group meetup app that finds a fair place to meet so travel time is shared, not one-sided.",
+    timeframe: "Vibe coded app",
+    image: "/assets/projects/halfsies-cover.png",
+  },
+  {
     title: "Cyber Imposter",
     href: `${WEBFLOW}/research/starward`,
     tags: ["Game UX", "Mobile", "AI", "Multiplayer"],
     description: "Multiplayer mobile strategy game where players cover their AI teammate and identify the AI opponent.",
     timeframe: "Sep 2024 – Feb 2025 · Starward Game Studios",
     image: "/assets/case-studies/Cyber-imposter-cover.png",
-  },
-  {
-    title: "Halfsies",
-    href: "/halfsies",
-    tags: ["Mobile", "Maps", "Social"],
-    description:
-      "A group meetup app that finds a fair place to meet so travel time is shared, not one-sided.",
-    timeframe: "Vibe coded app",
-    image: "/assets/projects/halfsies-cover.png",
   },
   {
     title: "Money wise",

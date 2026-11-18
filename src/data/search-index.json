@@ -66,7 +66,8 @@
   {
     "slug": "halfsies",
     "title": "Halfsies",
-    "href": "/halfsies",
+    "href": "/assets/projects/halfsies-cover.png",
+    "lightbox": true,
     "tags": ["Mobile", "Maps", "Social"],
     "thumbnail": "/assets/projects/halfsies-cover.png",
     "text": "Halfsies group meetup app fair place to meet travel time maps coffee spots share link"

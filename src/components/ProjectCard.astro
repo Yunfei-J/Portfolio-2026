@@ -17,7 +17,7 @@ const {
   maxVisibleTags = 3,
 } = Astro.props;
 
-const external = href.startsWith("http");
+const external = Boolean(href?.startsWith("http"));
 const cardHeading = heading ?? title;
 const visibleTags = tags.slice(0, maxVisibleTags);
 const hiddenTagCount = Math.max(0, tags.length - maxVisibleTags);

@@ -1,9 +1,12 @@
 /* Horizontal accordion — Figma CV frame 3191:1702 */
 
 .carousel-accordion-section {
+  align-items: center;
   background: #dbddd0;
   display: flex;
   justify-content: center;
+  min-height: 100vh;
+  min-height: 100dvh;
   overflow-x: auto;
   padding: var(--carousel-pad-v) var(--side-padding);
   position: relative;
@@ -54,14 +57,25 @@
 }
 
 .carousel-accordion__panel-link {
+  appearance: none;
+  background: none;
+  border: 0;
   color: inherit;
+  cursor: pointer;
   display: flex;
   flex: 1;
   flex-direction: column;
+  font: inherit;
   min-height: 0;
   min-width: var(--accordion-width);
+  padding: 0;
+  text-align: inherit;
   text-decoration: none;
   width: var(--accordion-width);
+}
+
+.carousel-accordion__panel-link--preview {
+  cursor: zoom-in;
 }
 
 .carousel-accordion__header {
@@ -200,6 +214,68 @@
     background: #6f7358;
     color: #dfea81;
   }
+}
+
+.cover-lightbox {
+  background: transparent;
+  border: 0;
+  box-sizing: border-box;
+  height: 100%;
+  inset: 0;
+  margin: 0;
+  max-height: 100%;
+  max-width: 100%;
+  padding: 0;
+  position: fixed;
+  width: 100%;
+}
+
+.cover-lightbox::backdrop {
+  background: rgb(18 18 16 / 82%);
+}
+
+.cover-lightbox[open] {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.cover-lightbox__stage {
+  position: relative;
+  width: fit-content;
+}
+
+.cover-lightbox img {
+  border-radius: 12px;
+  display: block;
+  height: auto;
+  max-height: 88vh;
+  max-width: 88vw;
+  object-fit: contain;
+  width: auto;
+}
+
+.cover-lightbox__close {
+  align-items: center;
+  background: rgb(255 255 255 / 92%);
+  border: 0;
+  border-radius: 999px;
+  box-shadow: 0 1px 6px rgb(0 0 0 / 22%);
+  color: #2b2b2b;
+  cursor: pointer;
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  padding: 0;
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  width: 40px;
+  z-index: 2;
+}
+
+.cover-lightbox__close:hover {
+  background: #fff;
 }
 
 @media (max-width: 900px) {

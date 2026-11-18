@@ -34,7 +34,6 @@ export const CASE_STUDY_SLUGS = [
   "moneywise",
   "cruz-roja",
   "research-ubi-gestures",
-  "halfsies",
 ];
 
 export function localizeCdnUrl(src: string): string {
@@ -44,28 +43,6 @@ export function localizeCdnUrl(src: string): string {
 }
 
 export async function getCaseStudy(slug: string): Promise<CaseStudy | null> {
-  if (slug === "halfsies") {
-    return {
-      slug,
-      title: "Halfsies",
-      description:
-        "A group meetup app that finds a fair place to meet so travel time is shared, not one-sided.",
-      h1: "Overview",
-      blocks: [
-        {
-          type: "image",
-          src: "/assets/projects/halfsies-cover.png",
-          alt: "Halfsies app screens: picking a meetup spot, comparing travel times, and sharing a group link",
-        },
-        {
-          type: "text",
-          tag: "p",
-          text: "Halfsies plans group meetups around fairness: compare everyone's travel time, lock in a spot that isn't too far for anyone, and share one link with the group.",
-        },
-      ],
-    };
-  }
-
   const fileKey = CASE_STUDY_FILES[slug];
   if (!fileKey) return null;
 
