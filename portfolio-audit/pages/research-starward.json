@@ -12,7 +12,7 @@
   "blocks": [
     {
       "type": "image",
-      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/670abb1a67f337fb7b490f02_cyber%20imposter%20home.png",
+      "src": "/assets/case-studies/Cyber-imposter-cover.png",
       "alt": ""
     },
     {
@@ -282,7 +282,7 @@
   "images": [
     {
       "type": "image",
-      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/670abb1a67f337fb7b490f02_cyber%20imposter%20home.png",
+      "src": "/assets/case-studies/Cyber-imposter-cover.png",
       "alt": ""
     },
     {
@@ -334,7 +334,7 @@
   "media": [
     {
       "type": "image",
-      "src": "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/670abb1a67f337fb7b490f02_cyber%20imposter%20home.png",
+      "src": "/assets/case-studies/Cyber-imposter-cover.png",
       "alt": ""
     },
     {

@@ -59,7 +59,9 @@
   flex: 1;
   flex-direction: column;
   min-height: 0;
+  min-width: var(--accordion-width);
   text-decoration: none;
+  width: var(--accordion-width);
 }
 
 .carousel-accordion__header {
@@ -129,8 +131,12 @@
 .carousel-accordion__media img {
   display: block;
   height: 100%;
+  left: 0;
+  max-width: none;
   object-fit: cover;
   object-position: center;
+  position: absolute;
+  top: 0;
   width: 100%;
 }
 

@@ -62,15 +62,16 @@ export const carouselProjects: ProjectCard[] = [
     tags: ["Game UX", "Mobile", "AI", "Multiplayer"],
     description: "Multiplayer mobile strategy game where players cover their AI teammate and identify the AI opponent.",
     timeframe: "Sep 2024 – Feb 2025 · Starward Game Studios",
-    image: "/assets/projects/starward.png",
+    image: "/assets/case-studies/Cyber-imposter-cover.png",
   },
   {
-    title: "Google Maps AVP",
-    href: "/google-maps",
-    tags: ["UX", "Spatial", "Vision Pro", "Research"],
-    description: "Reimagining Google Maps for spatial computing on Apple Vision Pro.",
-    timeframe: "2024 · Spatial computing concept",
-    image: "/assets/projects/google-maps.png",
+    title: "Halfsies",
+    href: "/halfsies",
+    tags: ["Mobile", "Maps", "Social"],
+    description:
+      "A group meetup app that finds a fair place to meet so travel time is shared, not one-sided.",
+    timeframe: "Vibe coded app",
+    image: "/assets/projects/halfsies-cover.png",
   },
   {
     title: "Money wise",

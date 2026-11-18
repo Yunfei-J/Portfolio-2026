@@ -27,8 +27,6 @@ const PROJECT_ASSETS = {
     "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/6590e1e2322c326ec8813622_green%20it_cover.png",
   "starward.png":
     "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/670abb1a67f337fb7b490f02_cyber%20imposter%20home.png",
-  "google-maps.png":
-    "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/66c2704828e6153e8e0f87ee_Google%20Maps%20Redesign-p-1600.png",
   "moneywise.png":
     "https://cdn.prod.website-files.com/63a0d533a7afeac89489815e/67c3b4c870acacede42e809a_Frame%202145.png",
   "ubi-gestures-carousel.png":

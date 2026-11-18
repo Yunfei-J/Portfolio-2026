@@ -44,7 +44,7 @@
     "title": "Cyber Imposter",
     "href": "https://yunfeis-portfolio.webflow.io/research/starward",
     "tags": ["Game UX", "Mobile", "AI", "Multiplayer"],
-    "thumbnail": "/assets/projects/starward.png",
+    "thumbnail": "/assets/case-studies/Cyber-imposter-cover.png",
     "text": "Cyber Imposter multiplayer mobile strategy game AI teammate identify AI opponent players cover Starward Game Studios UX Designer Intern lobby room ask answer vote language genre preference"
   },
   {
@@ -64,11 +64,11 @@
     "text": "Ubiquitous Gestures VR AR cross-modality gestural commands hands feet head eye gaze disabilities permanent temporary vocabulary inter-translation body parts UC San Diego database 2000 photos human behaviors encoding framework AUI templates gesture vocabulary Unity React Firebase image annotation user elicitation Wizard of Oz adaptive UI"
   },
   {
-    "slug": "google-maps",
-    "title": "Google Maps AVP",
-    "href": "/google-maps",
-    "tags": ["UX", "Spatial", "Vision Pro", "Research"],
-    "thumbnail": "/assets/projects/google-maps.png",
-    "text": "Google Maps Apple Vision Pro spatial computing redesign navigation maps immersive experience"
+    "slug": "halfsies",
+    "title": "Halfsies",
+    "href": "/halfsies",
+    "tags": ["Mobile", "Maps", "Social"],
+    "thumbnail": "/assets/projects/halfsies-cover.png",
+    "text": "Halfsies group meetup app fair place to meet travel time maps coffee spots share link"
   }
 ]
