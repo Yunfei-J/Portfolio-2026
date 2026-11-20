@@ -32,7 +32,6 @@ export const CASE_STUDY_SLUGS = [
   "green-it",
   "starward",
   "moneywise",
-  "cruz-roja",
   "research-ubi-gestures",
 ];
 

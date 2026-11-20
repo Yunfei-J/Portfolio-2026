@@ -5,10 +5,11 @@
   background: #dbddd0;
   display: flex;
   justify-content: center;
-  min-height: 100vh;
-  min-height: 100dvh;
+  min-height: 110vh;
+  min-height: 110dvh;
   overflow-x: auto;
   padding: var(--carousel-pad-v) var(--side-padding);
+  padding-bottom: 10vh;
   position: relative;
   z-index: 1;
 }
