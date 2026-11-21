@@ -85,6 +85,37 @@
   --color-polaroid-frame: #d7e843;
   /* WaveDivider viewBox height 96; 48 = top half of stripe */
   --wave-strip-visible-height: 48;
+
+  /* ── Hero polaroid holo card (tune live with the dev-only panel) ── */
+  --polaroid-tilt-max: 8;               /* degrees at the card edge */
+  --polaroid-perspective: 1400px;       /* smaller = deeper 3D */
+  --polaroid-spring-stiffness: 0.09;    /* follow speed while hovering */
+  --polaroid-spring-damping: 0.24;      /* lower = more wobble */
+  --polaroid-return-stiffness: 0.015;   /* ease-back speed after leaving */
+  --polaroid-return-damping: 0.14;
+  --polaroid-flip-ms: 800;            /* time to spin, before the extra slowdown */
+  --polaroid-flip-hold: 500;           /* extra time spent gliding while the back faces you, ms */
+  --polaroid-flip-turns: 1;
+  --polaroid-flip-scale: 0.84;          /* smallest size while the back faces you */
+  --polaroid-idle-shine: 0;             /* shine shown before hover, 0–1 */
+  --polaroid-foil-opacity: 0.65;
+  --polaroid-foil-brightness: 1.05;
+  --polaroid-foil-contrast: 1.5;
+  --polaroid-foil-saturate: 0.4;
+  --polaroid-foil-blend: hue;
+  --polaroid-foil-angle: 122deg;
+  --polaroid-foil-band: 3%;             /* width of each colour band */
+  --polaroid-foil-travel: 0.1;          /* how far the rainbow slides */
+  --polaroid-foil-1: #adb0ff;
+  --polaroid-foil-2: #d875ff;
+  --polaroid-foil-3: #916e21;
+  --polaroid-foil-4: #454941;
+  --polaroid-foil-5: #2ec0ff;
+  --polaroid-foil-6: #3f4b40;
+  --polaroid-glare-opacity: 0.7;
+  --polaroid-glare-size: 1;             /* highlight radius multiplier */
+  --polaroid-glare-shade: 0.3;          /* far-edge darkening, 0–1 */
+  --polaroid-back-color: var(--color-polaroid-frame);
 }
 
 /* ── 0.8× at ≤1000px (tablet + mobile) ───────────────────────────────── */

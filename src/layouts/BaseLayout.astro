@@ -12,6 +12,27 @@ const {
 const gtmId = import.meta.env.PUBLIC_GTM_ID;
 const gaId = import.meta.env.PUBLIC_GA_ID;
 const favicon = `/assets/${encodeURIComponent("菲.png")}`;
+
+/** Skip GTM/gtag on localhost, or after visiting ?internal=1 (cleared with ?internal=0). */
+const excludeOwnerScript = `(function(){
+  var KEY='ga_exclude';
+  try {
+    var params=new URLSearchParams(location.search);
+    var q=params.get('internal');
+    if(q==='1'){localStorage.setItem(KEY,'1');document.cookie=KEY+'=1;path=/;max-age=31536000;SameSite=Lax';}
+    if(q==='0'){localStorage.removeItem(KEY);document.cookie=KEY+'=;path=/;max-age=0';}
+    if(q==='1'||q==='0'){
+      params.delete('internal');
+      var next=location.pathname+(params.toString()?'?'+params:'')+location.hash;
+      history.replaceState(null,'',next);
+    }
+  } catch(e) {}
+  var skip=false;
+  try { skip=localStorage.getItem(KEY)==='1'||document.cookie.indexOf(KEY+'=1')!==-1; } catch(e) {}
+  var h=location.hostname;
+  if(h==='localhost'||h==='127.0.0.1') skip=true;
+  return skip;
+})()`;
 ---
 
 <!doctype html>
@@ -21,11 +42,11 @@ const favicon = `/assets/${encodeURIComponent("菲.png")}`;
       gtmId && (
         <script
           is:inline
-          set:html={`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          set:html={`if(!(${excludeOwnerScript})){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','${gtmId}');`}
+})(window,document,'script','dataLayer','${gtmId}');}`}
         />
       )
     }
@@ -41,10 +62,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} />
             <script
               is:inline
-              set:html={`window.dataLayer = window.dataLayer || [];
+              set:html={`if(!(${excludeOwnerScript})){window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', '${gaId}');`}
+gtag('config', '${gaId}');}`}
             />
           </>
         )

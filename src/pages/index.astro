@@ -10,6 +10,7 @@ import PolaroidCard from "../components/PolaroidCard.astro";
 import CarouselAccordion from "../components/CarouselAccordion.astro";
 import ProjectCard from "../components/ProjectCard.astro";
 import ScrollingText from "../components/ScrollingText.astro";
+import PolaroidTuner from "../components/dev/PolaroidTuner.astro";
 import { projects, carouselProjects } from "../data/projects";
 
 const skills = [
@@ -187,6 +188,8 @@ const renderedCarousel = carouselProjects;
       </div>
     </div>
     </main>
+
+    {import.meta.env.DEV && <PolaroidTuner />}
 
     <script>
       import { SEARCH_INDEX } from "../data/search-index";

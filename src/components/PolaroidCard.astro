@@ -45,7 +45,8 @@ const mobileLens = {
 };
 ---
 
-<div class:list={["polaroid-wrap", className]}>
+<div class:list={["polaroid-wrap", className]} data-polaroid>
+ <div class="polaroid-tilt" data-polaroid-tilt>
 
   <!-- ── Desktop frame ─────────────────────────────────────────────── -->
   <div class="polaroid-frame polaroid-frame--desktop">
@@ -143,6 +144,10 @@ const mobileLens = {
         </svg>
       </div>
     </footer>
+    <div class="polaroid-holo" aria-hidden="true">
+      <span class="polaroid-holo-foil"></span>
+      <span class="polaroid-holo-glare"></span>
+    </div>
   </div>
 
   <!-- ── Mobile frame (482 × 678) ─────────────────────────────────── -->
@@ -241,8 +246,178 @@ const mobileLens = {
         </svg>
       </div>
     </footer>
+    <div class="polaroid-holo" aria-hidden="true">
+      <span class="polaroid-holo-foil"></span>
+      <span class="polaroid-holo-glare"></span>
+    </div>
   </div>
 
+  <div class="polaroid-back" aria-hidden="true">
+    <div class="polaroid-back-clip polaroid-back-clip--desktop">
+    <svg
+      class="polaroid-svg polaroid-back-svg polaroid-back-svg--desktop"
+      viewBox={`0 0 ${DESKTOP.w} ${DESKTOP.h}`}
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      preserveAspectRatio="xMidYMid meet"
+    >
+      <defs>
+        <filter
+          id="polaroid-back-texture-desktop"
+          x="0"
+          y="0"
+          width={DESKTOP.w}
+          height={DESKTOP.h}
+          filterUnits="userSpaceOnUse"
+          color-interpolation-filters="sRGB"
+        >
+          <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.25 0.25"
+            numOctaves="3"
+            seed="6451"
+            result="noise"></feTurbulence>
+          <feDisplacementMap
+            in="shape"
+            in2="noise"
+            scale="8"
+            xChannelSelector="R"
+            yChannelSelector="G"
+            result="displacedImage"></feDisplacementMap>
+          <feMerge>
+            <feMergeNode in="displacedImage"></feMergeNode>
+          </feMerge>
+        </filter>
+        <mask id="polaroid-back-mask-desktop">
+          <rect width={DESKTOP.w} height={DESKTOP.h} fill="white" />
+          <rect
+            x={desktopLens.x}
+            y={desktopLens.y}
+            width={desktopLens.w}
+            height={desktopLens.h}
+            rx="4"
+            fill="black"
+          />
+        </mask>
+      </defs>
+      <image
+        href="/assets/hero/polaroid-back.jpg"
+        x={desktopLens.x - 12}
+        y={desktopLens.y - 12}
+        width={desktopLens.w + 24}
+        height={desktopLens.h + 24}
+        preserveAspectRatio="xMidYMid slice"
+      />
+      <g class="polaroid-back-torn" filter="url(#polaroid-back-texture-desktop)">
+        <rect
+          x="12"
+          y="12"
+          width={DESKTOP.w - 24}
+          height={DESKTOP.h - 24}
+          fill="var(--polaroid-back-color)"
+          mask="url(#polaroid-back-mask-desktop)"
+        />
+      </g>
+      <g class="polaroid-back-flat">
+        <rect
+          width={DESKTOP.w}
+          height={DESKTOP.h}
+          fill="var(--polaroid-back-color)"
+          mask="url(#polaroid-back-mask-desktop)"
+        />
+      </g>
+    </svg>
+    </div>
+    <div class="polaroid-back-clip polaroid-back-clip--mobile">
+    <svg
+      class="polaroid-svg polaroid-back-svg polaroid-back-svg--mobile"
+      viewBox={`0 0 ${MOBILE.w} ${MOBILE.h}`}
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      preserveAspectRatio="xMidYMid meet"
+    >
+      <defs>
+        <filter
+          id="polaroid-back-texture-mobile"
+          x="0"
+          y="0"
+          width={MOBILE.w}
+          height={MOBILE.h}
+          filterUnits="userSpaceOnUse"
+          color-interpolation-filters="sRGB"
+        >
+          <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+          <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.25 0.25"
+            numOctaves="3"
+            seed="6451"
+            result="noise"></feTurbulence>
+          <feDisplacementMap
+            in="shape"
+            in2="noise"
+            scale="8"
+            xChannelSelector="R"
+            yChannelSelector="G"
+            result="displacedImage"></feDisplacementMap>
+          <feMerge>
+            <feMergeNode in="displacedImage"></feMergeNode>
+          </feMerge>
+        </filter>
+        <mask id="polaroid-back-mask-mobile">
+          <rect width={MOBILE.w} height={MOBILE.h} fill="white" />
+          <rect
+            x={mobileLens.x}
+            y={mobileLens.y}
+            width={mobileLens.w}
+            height={mobileLens.h}
+            rx="4"
+            fill="black"
+          />
+        </mask>
+      </defs>
+      <image
+        href="/assets/hero/polaroid-back.jpg"
+        x={mobileLens.x - 12}
+        y={mobileLens.y - 12}
+        width={mobileLens.w + 24}
+        height={mobileLens.h + 24}
+        preserveAspectRatio="xMidYMid slice"
+      />
+      <g class="polaroid-back-torn" filter="url(#polaroid-back-texture-mobile)">
+        <rect
+          x="12"
+          y="12"
+          width={MOBILE.w - 24}
+          height={MOBILE.h - 24}
+          fill="var(--polaroid-back-color)"
+          mask="url(#polaroid-back-mask-mobile)"
+        />
+      </g>
+      <g class="polaroid-back-flat">
+        <rect
+          width={MOBILE.w}
+          height={MOBILE.h}
+          fill="var(--polaroid-back-color)"
+          mask="url(#polaroid-back-mask-mobile)"
+        />
+      </g>
+    </svg>
+    </div>
+    <div class="polaroid-holo polaroid-holo--desktop" aria-hidden="true">
+      <span class="polaroid-holo-foil"></span>
+      <span class="polaroid-holo-glare"></span>
+    </div>
+    <div class="polaroid-holo polaroid-holo--mobile" aria-hidden="true">
+      <span class="polaroid-holo-foil"></span>
+      <span class="polaroid-holo-glare"></span>
+    </div>
+  </div>
+
+ </div>
 </div>
 
 <script>
@@ -293,8 +468,279 @@ const mobileLens = {
     });
   }
 
+  type Spring = { x: number; v: number; t: number };
+
+  /** Motion settings live in tokens.css as --polaroid-* so the tuner panel can edit them live. */
+  function readMotion(el: HTMLElement) {
+    const style = getComputedStyle(el);
+    const num = (name: string, fallback: number) => {
+      const value = parseFloat(style.getPropertyValue(name));
+      return Number.isFinite(value) ? value : fallback;
+    };
+    return {
+      tiltMax: num("--polaroid-tilt-max", 14),
+      stiffness: num("--polaroid-spring-stiffness", 0.09),
+      damping: num("--polaroid-spring-damping", 0.25),
+      returnStiffness: num("--polaroid-return-stiffness", 0.03),
+      returnDamping: num("--polaroid-return-damping", 0.14),
+      flipMs: num("--polaroid-flip-ms", 1000),
+      flipHold: num("--polaroid-flip-hold", 1500),
+      flipTurns: num("--polaroid-flip-turns", 1),
+      flipScale: num("--polaroid-flip-scale", 0.84),
+      idleShine: num("--polaroid-idle-shine", 0),
+    };
+  }
+
+  /** Sum of 2D rotations on ancestors, so pointer math runs in the card's own axes. */
+  function ancestorRotation(el: HTMLElement) {
+    let angle = 0;
+    for (let node = el.parentElement; node && node !== document.body; node = node.parentElement) {
+      const t = getComputedStyle(node).transform;
+      if (t && t !== "none") {
+        const m = new DOMMatrixReadOnly(t);
+        angle += Math.atan2(m.b, m.a);
+      }
+    }
+    return angle;
+  }
+
+  const clamp = (n: number) => Math.max(-1, Math.min(1, n));
+  const easeInOutCubic = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - (-2 * t + 2) ** 3 / 2);
+
+  function initPolaroidTilt() {
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
+
+    document.querySelectorAll<HTMLElement>("[data-polaroid]").forEach((wrap) => {
+      if (wrap.dataset.tiltReady) return;
+      wrap.dataset.tiltReady = "true";
+
+      const tilt = wrap.querySelector<HTMLElement>("[data-polaroid-tilt]");
+      const layer = wrap.closest<HTMLElement>(".hero-polaroid-wrap") ?? wrap;
+      if (!tilt) return;
+
+      let motion = readMotion(wrap);
+      const rest = { rx: 0, ry: 0, px: 50, py: 50, o: motion.idleShine };
+      const springs = Object.fromEntries(
+        Object.entries(rest).map(([key, value]) => [key, { x: value, v: 0, t: value }]),
+      ) as Record<keyof typeof rest, Spring>;
+
+      let flip = 0;
+      let pop = 1;
+      let flipping = false;
+      let settling = false;
+      let hovering = false;
+      let raf = 0;
+      let angle = 0;
+      let pointerX = Number.NaN;
+      let pointerY = Number.NaN;
+      let travelFrom: { px: number; py: number } | null = null;
+      let onBack = false;
+      let holdLime = false;
+
+      const write = () => {
+        const s = tilt.style;
+        s.setProperty("--rx", springs.rx.x.toFixed(2));
+        s.setProperty("--ry", springs.ry.x.toFixed(2));
+        s.setProperty("--px", springs.px.x.toFixed(2));
+        s.setProperty("--py", springs.py.x.toFixed(2));
+        s.setProperty("--o", springs.o.x.toFixed(3));
+        tilt.classList.toggle("is-shining", springs.o.x > 0.04);
+        s.setProperty("--flip", flip.toFixed(2));
+        s.setProperty("--pop", pop.toFixed(4));
+      };
+
+      const step = () => {
+        const stiffness = settling ? motion.returnStiffness : motion.stiffness;
+        const damping = settling ? motion.returnDamping : motion.damping;
+        let moving = false;
+        for (const spring of Object.values(springs)) {
+          spring.v = (spring.v + (spring.t - spring.x) * stiffness) * (1 - damping);
+          spring.x += spring.v;
+          if (Math.abs(spring.v) > 0.005 || Math.abs(spring.t - spring.x) > 0.005) moving = true;
+          else spring.x = spring.t;
+        }
+        write();
+        raf = moving ? requestAnimationFrame(step) : 0;
+      };
+
+      const kick = () => {
+        if (!raf) raf = requestAnimationFrame(step);
+      };
+
+      const canTilt = () => finePointer.matches && !reducedMotion.matches;
+
+      wrap.addEventListener("pointerenter", () => {
+        hovering = true;
+        if (canTilt()) angle = ancestorRotation(wrap);
+      });
+
+      document.addEventListener("polaroid:tune", () => {
+        motion = readMotion(wrap);
+        rest.o = motion.idleShine;
+        if (!hovering && !flipping) {
+          springs.o.t = rest.o;
+          kick();
+        }
+      });
+
+      write();
+
+      wrap.addEventListener("pointermove", (event) => {
+        const moved = Math.hypot(event.clientX - pointerX, event.clientY - pointerY);
+        pointerX = event.clientX;
+        pointerY = event.clientY;
+        if (flipping) return;
+        if (holdLime) {
+          if (!(moved > 3)) return;
+          holdLime = false;
+        }
+        if (!canTilt()) return;
+        const rect = wrap.getBoundingClientRect();
+        const dx = event.clientX - (rect.left + rect.width / 2);
+        const dy = event.clientY - (rect.top + rect.height / 2);
+        const cos = Math.cos(-angle);
+        const sin = Math.sin(-angle);
+        const nx = clamp((dx * cos - dy * sin) / (wrap.offsetWidth / 2));
+        const ny = clamp((dx * sin + dy * cos) / (wrap.offsetHeight / 2));
+
+        settling = false;
+        springs.ry.t = nx * motion.tiltMax;
+        springs.rx.t = -ny * motion.tiltMax;
+        springs.px.t = 50 + nx * 50;
+        springs.py.t = 50 + ny * 50;
+        springs.o.t = 1;
+        kick();
+      });
+
+      wrap.addEventListener("pointerleave", () => {
+        if (flipping) return;
+        holdLime = false;
+        hovering = false;
+        settling = true;
+        for (const [key, value] of Object.entries(rest)) springs[key as keyof typeof rest].t = value;
+        kick();
+      });
+
+      /** Progress 0–1 for a spin that keeps moving, slowest while the back faces the camera. */
+      const slowedProgress = (elapsed: number, spinMs: number, holdMs: number, turns: number) => {
+        const n = Math.max(turns, 1);
+        const a = holdMs / spinMs;
+        const b = a * (8 / 3);
+        const target = Math.min(1 + a, elapsed / spinMs);
+        let p = Math.min(1, elapsed / (spinMs + holdMs));
+        for (let i = 0; i < 5; i++) {
+          const psi = Math.PI * n * p;
+          const s = Math.sin(psi);
+          const s4 = s * s * s * s;
+          const bump =
+            (3 * psi) / 8 - Math.sin(2 * psi) / 4 + Math.sin(4 * psi) / 32;
+          const Cp = p + (b * bump) / (Math.PI * n);
+          const dC = 1 + b * s4;
+          p = Math.min(1, Math.max(0, p - (Cp - target) / dC));
+        }
+        return p;
+      };
+
+      /** 0–1 while the back faces the camera, otherwise null. One pass per turn. */
+      const backTravel = (p: number, turns: number) => {
+        if (turns <= 0) return null;
+        const frac = (p * turns) % 1;
+        if (frac <= 0.25 || frac >= 0.75) return null;
+        return (frac - 0.25) / 0.5;
+      };
+
+      const startFlip = () => {
+        if (flipping || reducedMotion.matches) return;
+        flipping = true;
+        settling = false;
+        onBack = false;
+        travelFrom = null;
+        layer.classList.add("is-flipped");
+        springs.o.x = 1;
+        springs.o.t = 1;
+        springs.o.v = 0;
+        springs.px.t = springs.px.x;
+        springs.py.t = springs.py.x;
+        springs.px.v = 0;
+        springs.py.v = 0;
+        const start = performance.now();
+        const spinMs = Math.max(1, motion.flipMs);
+        const holdMs = Math.max(0, motion.flipHold);
+        const turns = motion.flipTurns;
+        const totalDeg = 360 * turns;
+        const glides = holdMs > 0 && totalDeg >= 180;
+
+        const frame = (now: number) => {
+          const elapsed = now - start;
+          let p = 1;
+          let done = false;
+          if (!glides) {
+            const t = Math.min(1, elapsed / spinMs);
+            p = easeInOutCubic(t);
+            done = t >= 1;
+          } else {
+            p = slowedProgress(elapsed, spinMs, holdMs, turns);
+            done = elapsed >= spinMs + holdMs;
+          }
+          flip = -p * totalDeg;
+          const facing = turns > 0 ? Math.abs(Math.sin(Math.PI * turns * p)) : 0;
+          pop = 1 - (1 - motion.flipScale) * facing;
+          springs.o.x = 1;
+          springs.o.t = 1;
+          springs.o.v = 0;
+          const u = backTravel(p, turns);
+          if (u == null) {
+            onBack = false;
+          } else {
+            if (!onBack || !travelFrom) {
+              onBack = true;
+              travelFrom = { px: springs.px.x, py: springs.py.x };
+            }
+            const s = u * u * (3 - 2 * u);
+            const endPx = travelFrom.px > 50 ? 16 : 84;
+            const endPy = travelFrom.py > 50 ? 18 : 82;
+            const px = travelFrom.px + (endPx - travelFrom.px) * s;
+            const py = travelFrom.py + (endPy - travelFrom.py) * s;
+            springs.px.x = springs.px.t = px;
+            springs.py.x = springs.py.t = py;
+            springs.px.v = springs.py.v = 0;
+          }
+          write();
+          if (!done) {
+            requestAnimationFrame(frame);
+            return;
+          }
+          flip = 0;
+          pop = 1;
+          flipping = false;
+          onBack = false;
+          travelFrom = null;
+          holdLime = true;
+          hovering = false;
+          layer.classList.remove("is-flipped");
+          settling = true;
+          for (const [key, value] of Object.entries(rest)) springs[key as keyof typeof rest].t = value;
+          kick();
+          write();
+        };
+        requestAnimationFrame(frame);
+      };
+
+      wrap.addEventListener("click", (event) => {
+        if ((event.target as Element).closest("button, a")) return;
+        pointerX = event.clientX;
+        pointerY = event.clientY;
+        startFlip();
+      });
+      document.addEventListener("polaroid:flip", startFlip);
+    });
+  }
+
   initPolaroidLikes();
+  initPolaroidTilt();
   document.addEventListener("astro:page-load", initPolaroidLikes);
+  document.addEventListener("astro:page-load", initPolaroidTilt);
 </script>
 
 <style>
@@ -305,27 +751,181 @@ const mobileLens = {
     width: var(--polaroid-width, 667px);
   }
 
-  /* --s = px per SVG unit of the letterboxed frame, so the HTML footer scales with the artwork. */
-  .polaroid-frame {
-    container-type: size;
+  /* --rx/--ry/--flip are degrees, --px/--py are 0–100 pointer position, --o is shine strength. */
+  .polaroid-tilt {
+    --rx: 0;
+    --ry: 0;
+    --px: 50;
+    --py: 50;
+    --o: 0;
+    --flip: 0;
+    --pop: 1;
+
+    cursor: pointer;
     inset: 0;
     position: absolute;
+    transform:
+      perspective(var(--polaroid-perspective, 1400px))
+      rotateY(calc((var(--ry) + var(--flip)) * 1deg))
+      rotateX(calc(var(--rx) * 1deg))
+      scale(var(--pop));
+    transform-style: preserve-3d;
+    will-change: transform;
+  }
+
+  /* --s = px per SVG unit of the letterboxed frame, so the HTML footer scales with the artwork. */
+  .polaroid-frame {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    container-type: size;
+    inset: 0;
+    isolation: isolate;
+    position: absolute;
+    transform: rotateY(0deg);
   }
 
   .polaroid-frame--desktop {
     --frame-w: 667;
     --frame-h: 791;
+    --lens-x: 48;
+    --lens-y: 48;
+    --lens-w: 571;
+    --lens-h: 579;
   }
 
   .polaroid-frame--mobile {
     --frame-w: 482;
     --frame-h: 678;
+    --lens-x: 35;
+    --lens-y: 35;
+    --lens-w: 412;
+    --lens-h: 502;
   }
 
-  .polaroid-footer {
+  .polaroid-footer,
+  .polaroid-holo {
     --s: min(100cqw / var(--frame-w), 100cqh / var(--frame-h));
     --frame-x: calc((100cqw - var(--frame-w) * var(--s)) / 2);
     --frame-y: calc((100cqh - var(--frame-h) * var(--s)) / 2);
+  }
+
+  .polaroid-holo {
+    height: calc(var(--frame-h) * var(--s));
+    left: var(--frame-x);
+    position: absolute;
+    top: var(--frame-y);
+    width: calc(var(--frame-w) * var(--s));
+  }
+
+  .polaroid-holo {
+    pointer-events: none;
+  }
+
+  /* Each layer carries its own mask + blend so it mixes with the frame, not with a group. */
+  .polaroid-holo > span {
+    inset: 0;
+    -webkit-mask:
+      linear-gradient(#000 0 0) 0 0 / 100% 100% no-repeat,
+      linear-gradient(#000 0 0)
+        calc(var(--lens-x) * var(--s)) calc(var(--lens-y) * var(--s)) /
+        calc(var(--lens-w) * var(--s)) calc(var(--lens-h) * var(--s)) no-repeat;
+    -webkit-mask-composite: xor;
+    mask:
+      linear-gradient(#000 0 0) 0 0 / 100% 100% no-repeat,
+      linear-gradient(#000 0 0)
+        calc(var(--lens-x) * var(--s)) calc(var(--lens-y) * var(--s)) /
+        calc(var(--lens-w) * var(--s)) calc(var(--lens-h) * var(--s)) no-repeat;
+    mask-composite: exclude;
+    position: absolute;
+  }
+
+  .polaroid-holo-foil {
+    background-blend-mode: overlay;
+    background-image:
+      repeating-linear-gradient(
+        var(--polaroid-foil-angle),
+        var(--polaroid-foil-1) 0%,
+        var(--polaroid-foil-2) calc(var(--polaroid-foil-band) * 1),
+        var(--polaroid-foil-3) calc(var(--polaroid-foil-band) * 2),
+        var(--polaroid-foil-4) calc(var(--polaroid-foil-band) * 3),
+        var(--polaroid-foil-5) calc(var(--polaroid-foil-band) * 4),
+        var(--polaroid-foil-6) calc(var(--polaroid-foil-band) * 5),
+        var(--polaroid-foil-1) calc(var(--polaroid-foil-band) * 6)
+      ),
+      repeating-linear-gradient(
+        133deg,
+        rgb(14 21 46 / 50%) 0%,
+        hsl(180 10% 60%) 3.8%,
+        hsl(180 29% 66%) 4.5%,
+        hsl(180 10% 60%) 5.2%,
+        rgb(14 21 46 / 50%) 10%,
+        rgb(14 21 46 / 50%) 12%
+      );
+    background-position:
+      calc(50% + (var(--px) - 50) * 2.6% * var(--polaroid-foil-travel))
+        calc(50% + (var(--py) - 50) * 3.5% * var(--polaroid-foil-travel)),
+      calc(50% - (var(--px) - 50) * 1.5% * var(--polaroid-foil-travel))
+        calc(50% - (var(--py) - 50) * 1.5% * var(--polaroid-foil-travel));
+    background-size: 400% 400%, 300% 300%;
+    filter:
+      brightness(var(--polaroid-foil-brightness))
+      contrast(var(--polaroid-foil-contrast))
+      saturate(var(--polaroid-foil-saturate));
+    mix-blend-mode: var(--polaroid-foil-blend);
+    opacity: calc(var(--o) * var(--polaroid-foil-opacity));
+  }
+
+  .polaroid-holo-glare {
+    background-image: radial-gradient(
+      farthest-corner circle at calc(var(--px) * 1%) calc(var(--py) * 1%),
+      rgb(255 255 255 / 65%) calc(8% * var(--polaroid-glare-size)),
+      rgb(255 255 255 / 30%) calc(22% * var(--polaroid-glare-size)),
+      rgb(0 0 0 / var(--polaroid-glare-shade)) 90%
+    );
+    mix-blend-mode: overlay;
+    opacity: calc(var(--o) * var(--polaroid-glare-opacity));
+  }
+
+  .polaroid-back-flat {
+    display: none;
+  }
+
+  .polaroid-tilt.is-shining .polaroid-back-torn {
+    display: none;
+  }
+
+  .polaroid-tilt.is-shining .polaroid-back-flat {
+    display: inline;
+  }
+
+  .polaroid-back {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    container-type: size;
+    inset: 0;
+    isolation: isolate;
+    pointer-events: none;
+    position: absolute;
+    transform: rotateY(180deg);
+  }
+
+  .polaroid-holo--desktop {
+    --frame-w: 667;
+    --frame-h: 791;
+    --lens-x: 48;
+    --lens-y: 48;
+    --lens-w: 571;
+    --lens-h: 579;
+  }
+
+  .polaroid-holo--mobile {
+    --frame-w: 482;
+    --frame-h: 678;
+    --lens-x: 35;
+    --lens-y: 35;
+    --lens-w: 412;
+    --lens-h: 502;
+    display: none;
   }
 
   .polaroid-frame--mobile {
@@ -337,6 +937,38 @@ const mobileLens = {
     height: 100%;
     left: 0;
     position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  /* Parent clip, because an SVG filter paints outside the SVG's own overflow. */
+  .polaroid-back-clip {
+    --s: min(100cqw / var(--frame-w), 100cqh / var(--frame-h));
+    --frame-x: calc((100cqw - var(--frame-w) * var(--s)) / 2);
+    --frame-y: calc((100cqh - var(--frame-h) * var(--s)) / 2);
+    height: calc(var(--frame-h) * var(--s));
+    left: var(--frame-x);
+    overflow: hidden;
+    position: absolute;
+    top: var(--frame-y);
+    width: calc(var(--frame-w) * var(--s));
+  }
+
+  .polaroid-back-clip--desktop {
+    --frame-w: 667;
+    --frame-h: 791;
+  }
+
+  .polaroid-back-clip--mobile {
+    --frame-w: 482;
+    --frame-h: 678;
+    display: none;
+  }
+
+  .polaroid-back-svg {
+    height: 100%;
+    left: 0;
+    overflow: hidden;
     top: 0;
     width: 100%;
   }
@@ -453,6 +1085,22 @@ const mobileLens = {
       inset: auto;
       position: relative;
       width: 100%;
+    }
+
+    .polaroid-back-clip--desktop {
+      display: none;
+    }
+
+    .polaroid-back-clip--mobile {
+      display: block;
+    }
+
+    .polaroid-holo--desktop {
+      display: none;
+    }
+
+    .polaroid-holo--mobile {
+      display: block;
     }
   }
 </style>
