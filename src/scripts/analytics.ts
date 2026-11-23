@@ -86,10 +86,35 @@ function searchTagEvent(el: Element): string | null {
   return slug ? `click_search_${slug}` : null;
 }
 
-/** Distinct event names for the homepage pieces that are not already tracked elsewhere. */
+const PROJECT_EVENTS: Record<string, string> = {
+  userve: "click_userve",
+  oowls: "click_oowls",
+  "forkit ai": "click_forkit",
+  ubiquitous: "click_ubiquitous",
+  "green it!": "click_green_it",
+  halfsies: "click_halfsies",
+  "cyber imposter": "click_cyber_imposter",
+  "money wise": "click_money_wise",
+};
+
+function projectEvent(text: string): string | null {
+  const key = text.replace(/\s+/g, " ").trim().toLowerCase();
+  return PROJECT_EVENTS[key] ?? null;
+}
+
+/** Distinct event names for homepage clicks. */
 function clickEventName(target: Element): string | null {
   if (target.closest(".polaroid-tuner")) return null;
-  if (target.closest(".project-list, [data-carousel-accordion]")) return null;
+
+  const project = target.closest(".project-card-v2");
+  if (project) {
+    return projectEvent(project.querySelector("h2")?.textContent || "");
+  }
+  const carouselItem = target.closest(".carousel-accordion__item");
+  if (carouselItem) {
+    const heading = carouselItem.querySelector("h3, .carousel-accordion__spine-title");
+    return projectEvent(heading?.textContent || "");
+  }
 
   if (target.closest("[data-polaroid-like]")) return "click_like";
   if (target.closest(".polaroid-wrap")) return "click_polaroid";
