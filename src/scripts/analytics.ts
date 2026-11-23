@@ -140,6 +140,7 @@ export function initHomeClicks(root: ParentNode = document) {
     const name = clickEventName(target);
     if (!name) return;
     track(name, {});
+    if (Object.values(PROJECT_EVENTS).includes(name)) notifyClick(name);
   });
 }
 
@@ -153,14 +154,41 @@ export function notifyVisit() {
     return;
   }
 
-  const payload = JSON.stringify({
+  postNotify("/api/visit", {
     path: location.pathname,
     title: document.title,
     referrer: document.referrer,
   });
+}
+
+const CLICK_LABELS: Record<string, string> = {
+  click_userve: "USERVE",
+  click_oowls: "OOWLS",
+  click_forkit: "ForkIt AI",
+  click_ubiquitous: "Ubiquitous",
+  click_green_it: "Green it!",
+  click_halfsies: "Halfsies",
+  click_cyber_imposter: "Cyber Imposter",
+  click_money_wise: "Money wise",
+};
+
+/** Push when a visitor clicks a featured project or carousel item. */
+function notifyClick(eventName: string) {
+  if (ownerExcluded()) return;
+  const label = CLICK_LABELS[eventName];
+  if (!label) return;
+  postNotify("/api/click", {
+    event: eventName,
+    label,
+    path: location.pathname,
+  });
+}
+
+function postNotify(url: string, body: Record<string, string>) {
+  const payload = JSON.stringify(body);
   const blob = new Blob([payload], { type: "application/json" });
-  if (!navigator.sendBeacon("/api/visit", blob)) {
-    void fetch("/api/visit", {
+  if (!navigator.sendBeacon(url, blob)) {
+    void fetch(url, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: payload,
