@@ -1,5 +1,5 @@
 ---
-/** Figma export — base #9DA37E + discrete fractal noise (lime specks) */
+/** Figma export — base follows --hero-bg + discrete fractal noise (lime specks) */
 ---
 
 <svg
@@ -44,8 +44,41 @@
         <feMergeNode in="color1"></feMergeNode>
       </feMerge>
     </filter>
+    <filter
+      id="hero-timeline-noise-filter"
+      x="-259"
+      y="-161"
+      width="2246"
+      height="1393"
+      filterUnits="userSpaceOnUse"
+      color-interpolation-filters="sRGB"
+    >
+      <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+      <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"></feBlend>
+      <feTurbulence
+        type="fractalNoise"
+        baseFrequency="0.5 0.5"
+        stitchTiles="stitch"
+        numOctaves="3"
+        result="noise"
+        seed="6163"></feTurbulence>
+      <feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise"></feColorMatrix>
+      <feComponentTransfer in="alphaNoise" result="coloredNoise1">
+        <feFuncA
+          type="discrete"
+          tableValues="0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0"
+        ></feFuncA>
+      </feComponentTransfer>
+      <feComposite operator="in" in2="shape" in="coloredNoise1" result="noise1Clipped"></feComposite>
+      <feFlood flood-color="#D7E843" flood-opacity="0.2" result="color1Flood"></feFlood>
+      <feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1"></feComposite>
+      <feMerge>
+        <feMergeNode in="shape"></feMergeNode>
+        <feMergeNode in="color1"></feMergeNode>
+      </feMerge>
+    </filter>
   </defs>
   <g filter="url(#hero-stage-noise-filter)">
-    <rect width="1728" height="1071" fill="#9DA37E"></rect>
+    <rect width="1728" height="1071" fill="var(--hero-bg)"></rect>
   </g>
 </svg>

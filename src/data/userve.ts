@@ -198,10 +198,10 @@ export const userveSections: CaseStudySection[] = [
         heading: "Insights",
         intro:
           "In the competitive POS market, user frustration can undermine conversion and retention at every stage of the customer lifecycle—from initial exposure and onboarding to ongoing power use. Through user interviews, sales team shadowing, and usage data analysis, I identified three critical UX challenges across these stages.",
-        image: {
-          src: "/assets/Identified Problems.png",
-          alt: "Identified problems synthesized from discovery research",
-        },
+        image: image(
+          "Identified Problems.png",
+          "Identified problems synthesized from discovery research",
+        ),
       },
     ],
   },

@@ -30,7 +30,7 @@ const renderedCarousel = carouselProjects;
 <BaseLayout>
   <main class="portfolio-page">
     <div class="home-sheet" data-home-sheet>
-      <section class="hero-section" aria-labelledby="hero-name">
+      <section class="hero-section" data-polaroid-sharp aria-labelledby="hero-name">
 
         <div class="hero-stage">
           <HeroStageBackground />
@@ -77,6 +77,20 @@ const renderedCarousel = carouselProjects;
             </div>
 
             <div class="hero-timelines" data-hero-timelines aria-hidden="true">
+              <svg
+                class="hero-timelines-noise"
+                aria-hidden="true"
+                viewBox="0 0 1728 1071"
+                preserveAspectRatio="xMidYMax slice"
+              >
+                <rect
+                  width="1728"
+                  height="1071"
+                  fill="#000"
+                  fill-opacity="0.8"
+                  filter="url(#hero-timeline-noise-filter)"
+                ></rect>
+              </svg>
               <div
                 class="skill-map"
                 style={`--year-count: ${yearCount}`}
@@ -302,6 +316,25 @@ const renderedCarousel = carouselProjects;
         var yearBar = document.querySelector(".hero-year-bar");
         if (!heroSection || !timelines || !yearBar) return;
 
+        var focusMax = 5;
+        var focusShown = false;
+
+        function setFocusBlur(amount) {
+          var sharp = amount < 0.05;
+          if (sharp) {
+            if (focusShown) {
+              heroSection.dataset.polaroidSharp = "";
+              focusShown = false;
+            }
+            return;
+          }
+          if (!focusShown) {
+            delete heroSection.dataset.polaroidSharp;
+            focusShown = true;
+          }
+          heroSection.style.setProperty("--hero-focus-blur", amount.toFixed(2) + "px");
+        }
+
         var parallaxMax = window.innerHeight * 0.6;
         var lockLength = window.innerHeight;
         var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -352,6 +385,7 @@ const renderedCarousel = carouselProjects;
           heroSection.style.setProperty("--hero-scroll-length", "0px");
           heroSection.style.setProperty("--hero-panel-reveal", "1");
           heroSection.style.setProperty("--hero-parallax-y", "0px");
+          setFocusBlur(0);
           timelines.setAttribute("aria-hidden", "false");
           return true;
         }
@@ -374,6 +408,7 @@ const renderedCarousel = carouselProjects;
             "--hero-parallax-y",
             -eased * parallaxMax + "px"
           );
+          setFocusBlur(eased * focusMax);
           timelines.setAttribute("aria-hidden", progress > 0 ? "false" : "true");
         }
 
