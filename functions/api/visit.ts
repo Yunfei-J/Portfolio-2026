@@ -1,8 +1,8 @@
 interface Env {
-  NOTIFY_EMAIL?: string;
+  NTFY_TOPIC?: string;
 }
 
-const DEFAULT_NOTIFY_EMAIL = "yj497@cornell.edu";
+const DEFAULT_NTFY_TOPIC = "portfolio-363867a07f0c979b15f51969b04d31d4d3b2";
 
 interface VisitBody {
   path?: string;
@@ -11,7 +11,7 @@ interface VisitBody {
 }
 
 export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
-  const email = (env.NOTIFY_EMAIL || DEFAULT_NOTIFY_EMAIL).trim();
+  const topic = (env.NTFY_TOPIC || DEFAULT_NTFY_TOPIC).trim();
 
   const origin = request.headers.get("Origin");
   const expected = new URL(request.url).origin;
@@ -30,21 +30,18 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   }
 
   const path = (body.path || "/").slice(0, 200);
-  const title = (body.title || "Portfolio").slice(0, 160);
   const referrer = (body.referrer || "direct").slice(0, 300);
   const country = request.headers.get("CF-IPCountry") || "unknown";
+  const pageUrl = new URL(path, expected).toString();
 
-  const sent = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(email)}`, {
+  const sent = await fetch(`https://ntfy.sh/${topic}`, {
     method: "POST",
-    headers: { "Content-Type": "application/json", Accept: "application/json" },
-    body: JSON.stringify({
-      _subject: `Portfolio visit: ${path}`,
-      _template: "box",
-      page: path,
-      title,
-      referrer,
-      country,
-    }),
+    headers: {
+      Title: "Someone opened your portfolio",
+      Click: pageUrl,
+      Tags: "eyes",
+    },
+    body: `${path}\nFrom ${country}\nReferrer: ${referrer}`,
   });
 
   if (sent.ok) {

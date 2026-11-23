@@ -63,7 +63,7 @@ export function initHomeClicks(root: ParentNode = document) {
   });
 }
 
-/** One email per browser session when a visitor opens the live site. */
+/** One push per browser session when a visitor opens the live site. */
 export function notifyVisit() {
   if (ownerExcluded()) return;
   try {
