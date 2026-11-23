@@ -209,8 +209,10 @@ const renderedCarousel = carouselProjects;
       import { SEARCH_INDEX } from "../data/search-index";
       import { createSearchEngine, highlight, trackSearch } from "../scripts/search";
       import { initHomeSheets } from "../scripts/home-sheets";
+      import { initHomeClicks } from "../scripts/analytics";
 
       initHomeSheets();
+      initHomeClicks(document.querySelector(".portfolio-page") ?? document);
 
       const input = document.querySelector<HTMLInputElement>("[data-search]");
       const tagButtons = document.querySelectorAll<HTMLButtonElement>("[data-search-tag]");
