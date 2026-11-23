@@ -11,13 +11,7 @@ export function ownerExcluded(): boolean {
   return false;
 }
 
-const FALLBACK_MEASUREMENT_ID = "G-MBWRFHX01R";
-
-function measurementId(): string {
-  const script = document.querySelector('script[src*="gtag/js?id=G-"]');
-  const match = script?.getAttribute("src")?.match(/id=(G-[A-Z0-9]+)/);
-  return match?.[1] || FALLBACK_MEASUREMENT_ID;
-}
+const PORTFOLIO_MEASUREMENT_ID = "G-HWQWQ84N4X";
 
 function clientId(): string {
   const match = document.cookie.match(/(?:^|; )_ga=GA\d+\.\d+\.(\d+\.\d+)/);
@@ -52,16 +46,11 @@ function sessionParts(id: string): { sid: string; sct: string } {
 let pageLoadId = 0;
 let hitIndex = 0;
 
-/** Send a GA4 event on the measurement ID already used by the live tag. */
+/** Send a GA4 event to Portfolio 2026. */
 function track(name: string, params: Record<string, string>) {
   if (ownerExcluded()) return;
-  const win = window as typeof window & { gtag?: (...args: unknown[]) => void };
-  if (typeof win.gtag === "function") {
-    win.gtag("event", name, { ...params, transport_type: "beacon" });
-    return;
-  }
 
-  const id = measurementId();
+  const id = PORTFOLIO_MEASUREMENT_ID;
   const session = sessionParts(id);
   if (!pageLoadId) pageLoadId = Math.floor(Math.random() * 1e9);
   const url = new URL("https://www.google-analytics.com/g/collect");
@@ -88,41 +77,44 @@ function track(name: string, params: Record<string, string>) {
   }
 }
 
-function clickLabel(el: HTMLElement): string {
-  const named = el.getAttribute("aria-label")?.trim();
-  if (named) return named.slice(0, 80);
-  const heading = el.querySelector("h2, h3");
-  const headingText = heading?.textContent?.replace(/\s+/g, " ").trim();
-  if (headingText) return headingText.slice(0, 80);
-  return (el.textContent || "").replace(/\s+/g, " ").trim().slice(0, 80);
+function searchTagEvent(el: Element): string | null {
+  const slug = (el.textContent || "")
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "_")
+    .replace(/^_|_$/g, "");
+  return slug ? `click_search_${slug}` : null;
 }
 
-function clickRegion(el: HTMLElement): string {
-  if (el.closest(".hero-section")) return "hero";
-  if (el.closest(".project-list")) return "projects";
-  if (el.closest("[data-carousel-accordion]")) return "carousel";
-  if (el.closest(".reading-search")) return "search";
-  if (el.closest(".footer-links")) return "footer";
-  return "home";
+/** Distinct event names for the homepage pieces that are not already tracked elsewhere. */
+function clickEventName(target: Element): string | null {
+  if (target.closest(".polaroid-tuner")) return null;
+  if (target.closest(".project-list, [data-carousel-accordion]")) return null;
+
+  if (target.closest("[data-polaroid-like]")) return "click_like";
+  if (target.closest(".polaroid-wrap")) return "click_polaroid";
+
+  const tag = target.closest("[data-search-tag]");
+  if (tag) return searchTagEvent(tag);
+  if (target.closest(".search-result-card")) return "click_search_result";
+
+  const footer = target.closest(".footer-links a");
+  if (!(footer instanceof HTMLAnchorElement)) return null;
+  const text = (footer.textContent || "").trim().toLowerCase();
+  if (text === "linkedin") return "click_linkedin";
+  if (text === "cv") return "click_cv";
+  if (text === "email") return "click_email";
+  return null;
 }
 
-/** Record clicks on links and buttons on the homepage. */
+/** Record chosen homepage clicks as their own event names. */
 export function initHomeClicks(root: ParentNode = document) {
   root.addEventListener("click", (event) => {
     const target = event.target;
     if (!(target instanceof Element)) return;
-    const el = target.closest("a, button");
-    if (!(el instanceof HTMLElement)) return;
-    if (el.closest(".polaroid-tuner")) return;
-
-    const label = clickLabel(el);
-    if (!label) return;
-    const href = el instanceof HTMLAnchorElement ? el.href : "";
-    track("home_click", {
-      click_label: label,
-      click_url: href,
-      click_region: clickRegion(el),
-    });
+    const name = clickEventName(target);
+    if (!name) return;
+    track(name, {});
   });
 }
 
