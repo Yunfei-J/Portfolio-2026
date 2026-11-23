@@ -11,18 +11,81 @@ export function ownerExcluded(): boolean {
   return false;
 }
 
+const FALLBACK_MEASUREMENT_ID = "G-MBWRFHX01R";
+
+function measurementId(): string {
+  const script = document.querySelector('script[src*="gtag/js?id=G-"]');
+  const match = script?.getAttribute("src")?.match(/id=(G-[A-Z0-9]+)/);
+  return match?.[1] || FALLBACK_MEASUREMENT_ID;
+}
+
+function clientId(): string {
+  const match = document.cookie.match(/(?:^|; )_ga=GA\d+\.\d+\.(\d+\.\d+)/);
+  if (match) return match[1];
+  let id = "";
+  try {
+    id = localStorage.getItem("ga_cid") || "";
+  } catch {
+    id = "";
+  }
+  if (!id) {
+    id = `${Math.floor(Math.random() * 1e10)}.${Math.floor(Date.now() / 1000)}`;
+    try {
+      localStorage.setItem("ga_cid", id);
+    } catch {
+      /* keep the generated id for this hit */
+    }
+  }
+  return id;
+}
+
+function sessionParts(id: string): { sid: string; sct: string } {
+  const cookieName = `_ga_${id.slice(2)}=`;
+  const raw = document.cookie.split("; ").find((part) => part.startsWith(cookieName));
+  const value = raw ? decodeURIComponent(raw.slice(cookieName.length)) : "";
+  return {
+    sid: value.match(/s(\d+)/)?.[1] || String(Math.floor(Date.now() / 1000)),
+    sct: value.match(/o(\d+)/)?.[1] || "1",
+  };
+}
+
+let pageLoadId = 0;
+let hitIndex = 0;
+
+/** Send a GA4 event on the measurement ID already used by the live tag. */
 function track(name: string, params: Record<string, string>) {
   if (ownerExcluded()) return;
-  const win = window as typeof window & {
-    dataLayer?: Record<string, unknown>[];
-    gtag?: (...args: unknown[]) => void;
-  };
-  win.dataLayer = win.dataLayer || [];
+  const win = window as typeof window & { gtag?: (...args: unknown[]) => void };
   if (typeof win.gtag === "function") {
     win.gtag("event", name, { ...params, transport_type: "beacon" });
     return;
   }
-  win.dataLayer.push({ event: name, ...params });
+
+  const id = measurementId();
+  const session = sessionParts(id);
+  if (!pageLoadId) pageLoadId = Math.floor(Math.random() * 1e9);
+  const url = new URL("https://www.google-analytics.com/g/collect");
+  const query = url.searchParams;
+  query.set("v", "2");
+  query.set("tid", id);
+  query.set("cid", clientId());
+  query.set("sid", session.sid);
+  query.set("sct", session.sct);
+  query.set("seg", "1");
+  query.set("_p", String(pageLoadId));
+  query.set("_s", String(++hitIndex));
+  query.set("en", name);
+  query.set("dl", location.href);
+  query.set("dt", document.title);
+  query.set("ul", (navigator.language || "en-us").toLowerCase());
+  query.set("sr", `${screen.width}x${screen.height}`);
+  for (const [key, value] of Object.entries(params)) {
+    if (value) query.set(`ep.${key}`, value.slice(0, 100));
+  }
+  if (!navigator.sendBeacon(url.toString())) {
+    const img = new Image();
+    img.src = url.toString();
+  }
 }
 
 function clickLabel(el: HTMLElement): string {
