@@ -1,3 +1,5 @@
+import { placeFrom } from "../place";
+
 interface Env {
   NTFY_TOPIC?: string;
 }
@@ -45,7 +47,6 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   if (await cache.match(cacheKey)) return new Response(null, { status: 204 });
 
   const path = (body.path || "/").slice(0, 200);
-  const country = request.headers.get("CF-IPCountry") || "unknown";
 
   const sent = await fetch(`https://ntfy.sh/${topic}`, {
     method: "POST",
@@ -54,7 +55,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
       Click: new URL(path, expected).toString(),
       Tags: "point_right",
     },
-    body: `${label}\nFrom ${country}`,
+    body: `${label}\nFrom ${placeFrom(request)}`,
   });
 
   if (sent.ok) {

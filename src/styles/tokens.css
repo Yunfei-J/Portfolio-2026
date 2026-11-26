@@ -57,7 +57,7 @@
   /* ── Spacing (element / layout) ── */
   --side-padding: 100px;          /* horizontal page gutter */
   --hero-inner-gap: 155px;        /* gap between h1 and skill-map */
-  --hero-timeline-pad-bottom: 50px; /* bottom inset below skill rows */
+  --hero-timeline-pad-bottom: var(--space-xxxl); /* bottom inset below skill rows */
   --skill-row-gap: var(--space-md);
   --skill-dot-size: clamp(4px, calc(6 / 1440 * 100vw), 6px);
   --project-list-gap: var(--space-md);
@@ -87,8 +87,8 @@
   --wave-strip-visible-height: 48;
 
   /* ── Hero polaroid holo card (tune live with the dev-only panel) ── */
-  --polaroid-tilt-max: 8;               /* degrees at the card edge */
-  --polaroid-perspective: 1400px;       /* smaller = deeper 3D */
+  --polaroid-tilt-max: 6;               /* degrees at the card edge */
+  --polaroid-perspective: 1700px;       /* smaller = deeper 3D */
   --polaroid-spring-stiffness: 0.09;    /* follow speed while hovering */
   --polaroid-spring-damping: 0.24;      /* lower = more wobble */
   --polaroid-return-stiffness: 0.015;   /* ease-back speed after leaving */
@@ -98,9 +98,9 @@
   --polaroid-flip-turns: 1;
   --polaroid-flip-scale: 0.84;          /* smallest size while the back faces you */
   --polaroid-idle-shine: 0;             /* shine shown before hover, 0–1 */
-  --polaroid-foil-opacity: 0.45;
-  --polaroid-foil-brightness: 1.05;
-  --polaroid-foil-contrast: 1.5;
+  --polaroid-foil-opacity: 0.55;
+  --polaroid-foil-brightness: 0.95;
+  --polaroid-foil-contrast: 1.55;
   --polaroid-foil-saturate: 0.4;
   --polaroid-foil-blend: hue;
   --polaroid-foil-angle: 122deg;
@@ -112,10 +112,11 @@
   --polaroid-foil-4: #454941;
   --polaroid-foil-5: #2ec0ff;
   --polaroid-foil-6: #3f4b40;
-  --polaroid-glare-opacity: 0.7;
-  --polaroid-glare-size: 1;             /* highlight radius multiplier */
-  --polaroid-glare-shade: 0.3;          /* far-edge darkening, 0–1 */
-  --polaroid-back-color: var(--color-polaroid-frame);
+  --polaroid-foil-stripe: #000000;      /* hue of the scratch stripe under the colour bands */
+  --polaroid-glare-opacity: 0;
+  --polaroid-glare-size: 0.2;           /* highlight radius multiplier */
+  --polaroid-glare-shade: 0;            /* far-edge darkening, 0–1 */
+  --polaroid-frame-hover: #d7e843;      /* frame colour while hovering, front and back */
 }
 
 /* ── 0.8× at ≤1000px (tablet + mobile) ───────────────────────────────── */

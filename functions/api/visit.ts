@@ -1,3 +1,5 @@
+import { placeFrom } from "../place";
+
 interface Env {
   NTFY_TOPIC?: string;
 }
@@ -31,7 +33,6 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
 
   const path = (body.path || "/").slice(0, 200);
   const referrer = (body.referrer || "direct").slice(0, 300);
-  const country = request.headers.get("CF-IPCountry") || "unknown";
   const pageUrl = new URL(path, expected).toString();
 
   const sent = await fetch(`https://ntfy.sh/${topic}`, {
@@ -41,7 +42,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
       Click: pageUrl,
       Tags: "eyes",
     },
-    body: `${path}\nFrom ${country}\nReferrer: ${referrer}`,
+    body: `${path}\nFrom ${placeFrom(request)}\nReferrer: ${referrer}`,
   });
 
   if (sent.ok) {

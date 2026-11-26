@@ -52,17 +52,23 @@ export const userveSections: CaseStudySection[] = [
         type: "features",
         items: [
           {
-            title: "hardware",
+            title: "OS",
+            count: "3",
+            icon: "/assets/case-study-ui/os-icon.svg",
+            points: ["/IOS", "/Android", "/Windows"],
+          },
+          {
+            title: "Device",
             count: "4+",
             points: [
-              "/POS terminals",
-              "/tableside tablets",
-              "/self-service kiosks",
-              "/kitchen display",
+              "Tablets & Countertops",
+              "Mobile",
+              "Hand-held",
+              "Kiosks",
             ],
           },
           {
-            title: "software",
+            title: "Software",
             count: "4+",
             icon: "/assets/case-study-ui/software-icon.svg",
             points: [
@@ -73,13 +79,7 @@ export const userveSections: CaseStudySection[] = [
             ],
           },
           {
-            title: "OS",
-            count: "3",
-            icon: "/assets/case-study-ui/os-icon.svg",
-            points: ["/IOS", "/Android", "/Windows"],
-          },
-          {
-            title: "tenant",
+            title: "Tenant",
             count: "4+",
             icon: "/assets/case-study-ui/tenant-icon.svg",
             points: [
@@ -93,7 +93,7 @@ export const userveSections: CaseStudySection[] = [
       },
       {
         type: "mission",
-        heading: "The mission",
+        heading: "THE MISSION",
         statement:
           "Modernized a legacy POS through a full rebrand and usability overhaul, building the credibility needed to win higher-end merchants.",
       },

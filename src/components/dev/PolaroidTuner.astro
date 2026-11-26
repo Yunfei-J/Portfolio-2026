@@ -49,11 +49,14 @@ const groups: { title: string; controls: Control[] }[] = [
   },
   {
     title: "Shine colours",
-    controls: [1, 2, 3, 4, 5, 6].map((n) => ({
-      name: `--polaroid-foil-${n}`,
-      label: `Colour ${n}`,
-      type: "color" as const,
-    })),
+    controls: [
+      { name: "--polaroid-foil-stripe", label: "Stripe", type: "color" as const },
+      ...[1, 2, 3, 4, 5, 6].map((n) => ({
+        name: `--polaroid-foil-${n}`,
+        label: `Colour ${n}`,
+        type: "color" as const,
+      })),
+    ],
   },
   {
     title: "Glare",
@@ -64,8 +67,8 @@ const groups: { title: string; controls: Control[] }[] = [
     ],
   },
   {
-    title: "Back",
-    controls: [{ name: "--polaroid-back-color", label: "Back colour", type: "color" }],
+    title: "Frame",
+    controls: [{ name: "--polaroid-frame-hover", label: "Hovered colour", type: "color" }],
   },
 ];
 ---
@@ -132,6 +135,12 @@ const groups: { title: string; controls: Control[] }[] = [
     );
     const holdToggle = panel.querySelector<HTMLInputElement>("[data-tuner-hold]");
     const saved: Record<string, string> = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? "{}");
+    if (saved["--color-polaroid-frame"]) {
+      saved["--polaroid-frame-hover"] ??= saved["--color-polaroid-frame"];
+      delete saved["--color-polaroid-frame"];
+      root.style.removeProperty("--color-polaroid-frame");
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+    }
 
     const notify = () => document.dispatchEvent(new Event("polaroid:tune"));
     const current = (name: string) => getComputedStyle(root).getPropertyValue(name).trim();

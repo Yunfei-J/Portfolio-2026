@@ -341,8 +341,11 @@ const renderedCarousel = carouselProjects;
         var lockLength = window.innerHeight;
         var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-        function easeOut(t) {
-          return 1 - Math.pow(1 - t, 3);
+        var focusDelay = 0.2;
+
+        function focusAmount(t) {
+          if (t <= focusDelay) return 0;
+          return (t - focusDelay) / (1 - focusDelay);
         }
 
         function clamp(value, min, max) {
@@ -403,14 +406,12 @@ const renderedCarousel = carouselProjects;
             0,
             1
           );
-          var eased = easeOut(progress);
-
-          heroSection.style.setProperty("--hero-panel-reveal", String(eased));
+          heroSection.style.setProperty("--hero-panel-reveal", String(progress));
           heroSection.style.setProperty(
             "--hero-parallax-y",
-            -eased * parallaxMax + "px"
+            -progress * parallaxMax + "px"
           );
-          setFocusBlur(eased * focusMax);
+          setFocusBlur(focusAmount(progress) * focusMax);
           timelines.setAttribute("aria-hidden", progress > 0 ? "false" : "true");
         }
 

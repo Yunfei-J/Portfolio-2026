@@ -26,14 +26,14 @@ const tocItems = study.sections.map((section) => ({
 ---
 
 <main class="case-study-page--v2">
-  <div class="case-study-intro-pin" data-hero-pin>
+  <div class="case-study-intro-pin" data-hero-pin data-case-cover>
     <section class="case-study-intro" aria-label="Project introduction">
       <CaseStudyBackLink class="case-study-intro-back" />
       <CaseStudyHero meta={study.meta} />
     </section>
   </div>
 
-  <div class="case-study-with-toc">
+  <div class="case-study-with-toc" data-case-cover>
     <CaseStudyToc items={tocItems} />
     <div class="case-study-main">
       <CaseStudySections sections={study.sections} />

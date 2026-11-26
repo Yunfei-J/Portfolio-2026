@@ -20,7 +20,7 @@ const { block } = Astro.props;
     {
       block.items.map((item) => (
         <li class="case-study-feature">
-          <div class="case-study-feature-head">
+          <button type="button" class="case-study-feature-head" aria-expanded="false">
             <img
               class="case-study-feature-icon"
               src={item.icon ?? "/assets/case-study-ui/system-complexity-icon.svg"}
@@ -34,7 +34,7 @@ const { block } = Astro.props;
                 <span class="case-study-feature-count">{item.count}</span>
               ) : null}
             </div>
-          </div>
+          </button>
           <ul class="case-study-feature-points">
             {item.points.map((point) => (
               <li>{point}</li>
@@ -105,6 +105,18 @@ const { block } = Astro.props;
       const ac = new AbortController();
       root._featuresAbort = ac;
       const signal = ac.signal;
+
+      const heads = root.querySelectorAll<HTMLButtonElement>(".case-study-feature-head");
+      heads.forEach((head) => {
+        head.addEventListener(
+          "click",
+          () => {
+            const next = head.getAttribute("aria-expanded") === "true" ? "false" : "true";
+            heads.forEach((card) => card.setAttribute("aria-expanded", next));
+          },
+          { signal },
+        );
+      });
 
       const btn = root.querySelector("[data-features-expand]");
       const panel = root.querySelector("[data-features-panel]");

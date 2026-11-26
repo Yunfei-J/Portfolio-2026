@@ -92,7 +92,14 @@
 
 .case-study-intro-pin {
   --hero-pin-buffer: 50vh;
-  margin-bottom: var(--space-xxl);
+  isolation: isolate;
+  position: sticky;
+  top: var(--case-cover-top, 0px);
+  z-index: 1;
+}
+
+.case-study-intro-pin > .case-study-intro {
+  opacity: var(--case-cover-opacity, 1);
 }
 
 .case-study-intro {
@@ -122,10 +129,15 @@
   --toc-collapsed-width: 220px;
   --toc-expanded-width: 220px;
   align-items: start;
+  background: var(--paper);
   display: grid;
   gap: 3%;
   grid-template-columns: var(--toc-collapsed-width) minmax(0, 1fr);
+  isolation: isolate;
   padding-inline: var(--space-xxxl);
+  position: sticky;
+  top: var(--case-cover-top, 0px);
+  z-index: 2;
 }
 
 .case-study-main {
@@ -495,7 +507,7 @@
   border-radius: 12px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
   padding: var(--space-xs) var(--space-sm);
 }
 
@@ -505,15 +517,16 @@
   border-radius: 6px;
   color: #e5ff61;
   display: flex;
-  font-family: var(--font-serif);
-  font-size: var(--text-md);
+  font-family: var(--font-meta);
+  font-size: var(--text-xs);
   font-synthesis: none;
   font-weight: 400;
   gap: 8px;
-  letter-spacing: var(--tracking);
+  letter-spacing: 0.08em;
   line-height: 32px;
   margin: 0;
-  padding: 4px 12px;
+  padding: 2px 12px;
+  text-transform: uppercase;
 }
 
 .case-study-mission-label img {
@@ -528,8 +541,9 @@
   font-synthesis: none;
   font-weight: 400;
   letter-spacing: var(--tracking);
-  line-height: 31px;
+  line-height: 1.4;
   margin: 0;
+  padding: var(--space-micro);
 }
 
 .case-study-mission-pillars {
@@ -716,12 +730,17 @@
 
 .case-study-feature-head {
   align-items: center;
-  justify-content: center;
   background: rgb(255 255 255 / 0.5);
+  border: 0;
+  color: inherit;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
+  font: inherit;
   gap: 12px;
+  justify-content: center;
   padding: 12px;
+  width: 100%;
 }
 
 .case-study-feature-icon {
@@ -777,6 +796,7 @@
   padding: var(--space-xs);
 }
 
+.case-study-feature-head[aria-expanded="false"] + .case-study-feature-points,
 .case-study-features:has([data-features-expand][aria-expanded="false"]) .case-study-feature-points {
   display: none;
 }

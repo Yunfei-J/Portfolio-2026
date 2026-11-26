@@ -465,13 +465,12 @@ h1 span {
 
 .skill-dot {
   background: rgba(241, 255, 125, 1);
-  border-radius: 50%;
   height: var(--skill-dot-size);
   width: var(--skill-dot-size);
   left: calc((var(--year-index) + 0.5) / var(--year-count) * 100%);
   position: absolute;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) rotate(45deg);
 }
 
 /* Featured project cards → src/styles/project-card.css (v1 archived) */

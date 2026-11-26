@@ -102,7 +102,7 @@ const mobileLens = {
         <rect
           width={DESKTOP.w}
           height={DESKTOP.h}
-          fill="var(--color-polaroid-frame)"
+          fill="var(--polaroid-frame-fill)"
           mask="url(#frame-mask-desktop)"
         />
       </g>
@@ -204,7 +204,7 @@ const mobileLens = {
         <rect
           width={MOBILE.w}
           height={MOBILE.h}
-          fill="var(--color-polaroid-frame)"
+          fill="var(--polaroid-frame-fill)"
           mask="url(#frame-mask-mobile)"
         />
       </g>
@@ -316,7 +316,7 @@ const mobileLens = {
           y="12"
           width={DESKTOP.w - 24}
           height={DESKTOP.h - 24}
-          fill="var(--polaroid-back-color)"
+          fill="var(--polaroid-frame-fill)"
           mask="url(#polaroid-back-mask-desktop)"
         />
       </g>
@@ -324,7 +324,7 @@ const mobileLens = {
         <rect
           width={DESKTOP.w}
           height={DESKTOP.h}
-          fill="var(--polaroid-back-color)"
+          fill="var(--polaroid-frame-fill)"
           mask="url(#polaroid-back-mask-desktop)"
         />
       </g>
@@ -393,7 +393,7 @@ const mobileLens = {
           y="12"
           width={MOBILE.w - 24}
           height={MOBILE.h - 24}
-          fill="var(--polaroid-back-color)"
+          fill="var(--polaroid-frame-fill)"
           mask="url(#polaroid-back-mask-mobile)"
         />
       </g>
@@ -401,7 +401,7 @@ const mobileLens = {
         <rect
           width={MOBILE.w}
           height={MOBILE.h}
-          fill="var(--polaroid-back-color)"
+          fill="var(--polaroid-frame-fill)"
           mask="url(#polaroid-back-mask-mobile)"
         />
       </g>
@@ -760,6 +760,7 @@ const mobileLens = {
     --o: 0;
     --flip: 0;
     --pop: 1;
+    --polaroid-frame-fill: var(--color-polaroid-frame);
 
     cursor: pointer;
     inset: 0;
@@ -854,12 +855,12 @@ const mobileLens = {
       ),
       repeating-linear-gradient(
         133deg,
-        rgb(14 21 46 / 50%) 0%,
-        hsl(180 10% 60%) 3.8%,
-        hsl(180 29% 66%) 4.5%,
-        hsl(180 10% 60%) 5.2%,
-        rgb(14 21 46 / 50%) 10%,
-        rgb(14 21 46 / 50%) 12%
+        hsl(from var(--polaroid-foil-stripe) h 53% 12% / 50%) 0%,
+        hsl(from var(--polaroid-foil-stripe) h 10% 60%) 3.8%,
+        hsl(from var(--polaroid-foil-stripe) h 29% 66%) 4.5%,
+        hsl(from var(--polaroid-foil-stripe) h 10% 60%) 5.2%,
+        hsl(from var(--polaroid-foil-stripe) h 53% 12% / 50%) 10%,
+        hsl(from var(--polaroid-foil-stripe) h 53% 12% / 50%) 12%
       );
     background-position:
       calc(50% + (var(--px) - 50) * 2.6% * var(--polaroid-foil-travel))
@@ -896,6 +897,15 @@ const mobileLens = {
 
   .polaroid-tilt.is-shining .polaroid-back-flat {
     display: inline;
+  }
+
+  /* Hover shine straightens the front edge and swaps in the hovered frame colour. */
+  .polaroid-tilt.is-shining {
+    --polaroid-frame-fill: var(--polaroid-frame-hover);
+  }
+
+  .polaroid-tilt.is-shining .polaroid-frame > .polaroid-svg > g {
+    filter: none;
   }
 
   .polaroid-back {
